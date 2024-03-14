@@ -1,0 +1,101 @@
+{
+  "type": "alloygery:layered_ore",
+  "config": {
+    "discard_on_air_exposure_chance": 0.0,
+    "layer_patterns": [
+      [
+        {
+          "max_size": 5,
+          "min_size": 2,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "alloygery:nickeline"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:base_stone_nether"
+                }
+              }
+            ]
+          ],
+          "weight": 4
+        },
+        {
+          "max_size": 3,
+          "min_size": 2,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:basalt",
+                  "Properties": {
+                    "axis": "y"
+                  }
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:base_stone_nether"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:smooth_basalt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:base_stone_nether"
+                }
+              }
+            ]
+          ],
+          "weight": 2
+        },
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:obsidian"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:base_stone_nether"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:crying_obsidian"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:base_stone_nether"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:blackstone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:base_stone_nether"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        }
+      ]
+    ],
+    "size": 32
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "type": "alloygery:layered_ore",
+  "config": {
+    "discard_on_air_exposure_chance": 0.0,
+    "layer_patterns": [
+      [
+        {
+          "max_size": 2,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "alloygery:feronyte"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "alloygery:feronyte"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 3
+        },
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:basalt",
+                  "Properties": {
+                    "axis": "y"
+                  }
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:basalt",
+                  "Properties": {
+                    "axis": "y"
+                  }
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:smooth_basalt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:smooth_basalt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:blackstone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:blackstone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        },
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:tuff"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:tuff"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        }
+      ],
+      [
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "alloygery:feronyte"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "alloygery:feronyte"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        },
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:raw_iron_block"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:raw_iron_block"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:dripstone_block"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:dripstone_block"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:granite"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:granite"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:dripstone_block"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:dripstone_block"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:granite"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:granite"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        },
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:basalt",
+                  "Properties": {
+                    "axis": "y"
+                  }
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:basalt",
+                  "Properties": {
+                    "axis": "y"
+                  }
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:smooth_basalt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:smooth_basalt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:blackstone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:blackstone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:deepslate_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 2
+        }
+      ]
+    ],
+    "size": 24
+  }
+}
