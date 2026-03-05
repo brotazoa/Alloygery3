@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "minecraft:gold_ingot"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:gold_plate_armor_part"
+  }
+}

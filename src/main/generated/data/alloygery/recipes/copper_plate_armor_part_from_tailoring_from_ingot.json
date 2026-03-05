@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "minecraft:copper_ingot"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:copper_plate_armor_part"
+  }
+}

@@ -208,6 +208,11 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
         SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("rabbit_hide_binding"), Items.RABBIT_HIDE, exporter);
         SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("phantom_membrane_binding"), Items.PHANTOM_MEMBRANE, exporter);
 
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("tin_plate_armor_part"), CraftingMaterialModule.ITEMS.get("tin_ingot"), 2, 1, "from_ingot", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("copper_plate_armor_part"), Items.COPPER_INGOT, 2, 1, "from_ingot", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("gold_plate_armor_part"), Items.GOLD_INGOT, 2, 1, "from_ingot", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("bronze_plate_armor_part"), CraftingMaterialModule.ITEMS.get("bronze_ingot"), 2, 1, "from_ingot", exporter);
+
 		makeTailoringArmorPartRecipes(AlloygeryDefaultMaterials.TIN, exporter);
 		makeTailoringArmorPartRecipes(AlloygeryDefaultMaterials.COPPER, exporter);
 		makeTailoringArmorPartRecipes(AlloygeryDefaultMaterials.BRONZE, exporter);

@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:tin_ingot"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:tin_plate_armor_part"
+  }
+}
