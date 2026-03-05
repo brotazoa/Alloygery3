@@ -1,0 +1,51 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/phantom_membrane",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:durability",
+      "value": 10.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:mining_level",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:enchantability",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:mining_speed",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:attribute",
+      "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    }
+  ],
+  "repair_ingredient": []
+}

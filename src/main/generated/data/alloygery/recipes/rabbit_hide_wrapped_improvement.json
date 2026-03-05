@@ -1,0 +1,13 @@
+{
+  "type": "alloygery:smithing_improvement",
+  "addition": {
+    "item": "alloygery:rabbit_hide_panel"
+  },
+  "base": {
+    "tag": "alloygery:improvable_tool"
+  },
+  "improvement_material": "alloygery:alloygery_material/rabbit_hide",
+  "template": {
+    "item": "alloygery:wrapped_template"
+  }
+}

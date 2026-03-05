@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/armor/base_helmet",
+    "layer1": "alloygery:template/render_part/armor/base_helmet_chain",
+    "layer2": "alloygery:template/render_part/armor/plate_helmet_steel",
+    "layer3": "alloygery:template/render_part/armor/improvement_helmet_engraved",
+    "layer4": "alloygery:template/render_part/armor/upgrade_helmet",
+    "layer5": "alloygery:template/render_part/armor/trim_helmet"
+  }
+}

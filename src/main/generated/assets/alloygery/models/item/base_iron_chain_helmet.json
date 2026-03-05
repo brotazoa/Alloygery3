@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "alloygery:item/base_iron_chain_helmet_upgraded",
+      "predicate": {
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/base_iron_chain_helmet_trimmed",
+      "predicate": {
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/base_iron_chain_helmet_upgraded_trimmed",
+      "predicate": {
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "alloygery:template/render_part/armor/base_helmet",
+    "layer1": "alloygery:template/render_part/armor/base_helmet_chain"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/lapis",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "attribute": "additionalentityattributes:player.bonus_rare_loot_rolls",
+      "operation": "addition",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:attribute",
+      "value": 10.0
+    }
+  ],
+  "repair_ingredient": []
+}

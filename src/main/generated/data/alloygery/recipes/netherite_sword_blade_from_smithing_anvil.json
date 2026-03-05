@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "ingredient": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:netherite_sword_blade"
+  }
+}

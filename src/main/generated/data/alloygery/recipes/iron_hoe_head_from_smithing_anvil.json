@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "ingredient": {
+    "item": "minecraft:iron_ingot"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:iron_hoe_head"
+  }
+}

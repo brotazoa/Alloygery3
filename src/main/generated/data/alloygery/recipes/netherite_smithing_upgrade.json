@@ -1,0 +1,13 @@
+{
+  "type": "alloygery:smithing_upgrade",
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "base": {
+    "tag": "alloygery:upgradeable_equipment"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  },
+  "upgrade_material": "alloygery:alloygery_material/netherite"
+}

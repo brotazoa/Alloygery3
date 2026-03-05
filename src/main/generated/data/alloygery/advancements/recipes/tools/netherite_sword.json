@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alloygery:netherite_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tool_head_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:netherite_sword_blade"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tool_head_item",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alloygery:netherite_sword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

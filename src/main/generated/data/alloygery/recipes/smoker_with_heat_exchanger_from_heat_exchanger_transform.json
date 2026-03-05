@@ -1,0 +1,9 @@
+{
+  "type": "alloygery:heat_exchanger_block_transform",
+  "input": {
+    "item": "minecraft:smoker"
+  },
+  "output": {
+    "item": "alloygery:smoker_with_heat_exchanger"
+  }
+}

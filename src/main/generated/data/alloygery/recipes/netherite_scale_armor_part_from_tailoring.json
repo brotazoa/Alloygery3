@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:netherite_panel"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:netherite_scale_armor_part"
+  }
+}

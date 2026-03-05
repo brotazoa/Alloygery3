@@ -1,0 +1,41 @@
+{
+  "type": "alloygery:tool_shaped",
+  "category": "equipment",
+  "key": {
+    "h": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "tag": "minecraft:stone_tool_materials"
+    }
+  },
+  "pattern": [
+    "s",
+    "s",
+    "h"
+  ],
+  "properties_on_result": [
+    {
+      "apply_when_broken": true,
+      "operation": "base",
+      "part_type": "tool_type",
+      "property_type": "alloygery:primitive",
+      "value": 1.0
+    }
+  ],
+  "result": {
+    "item": "alloygery:stone_sword"
+  },
+  "show_notification": true,
+  "substitute_parts": {
+    "tool_binding": {
+      "item": "alloygery:stone_guard"
+    },
+    "tool_handle": {
+      "item": "alloygery:stick_handle"
+    },
+    "tool_head": {
+      "item": "alloygery:stone_sword_blade"
+    }
+  }
+}

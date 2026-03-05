@@ -1,0 +1,38 @@
+{
+  "type": "alloygery:tool_shaped",
+  "category": "equipment",
+  "key": {
+    "h": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "tag": "c:copper_ingots"
+    }
+  },
+  "pattern": [
+    "s",
+    "h",
+    "h"
+  ],
+  "properties_on_result": [
+    {
+      "apply_when_broken": true,
+      "operation": "base",
+      "part_type": "tool_type",
+      "property_type": "alloygery:primitive",
+      "value": 1.0
+    }
+  ],
+  "result": {
+    "item": "alloygery:copper_shovel"
+  },
+  "show_notification": true,
+  "substitute_parts": {
+    "tool_handle": {
+      "item": "alloygery:stick_handle"
+    },
+    "tool_head": {
+      "item": "alloygery:copper_shovel_head"
+    }
+  }
+}

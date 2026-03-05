@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "tag": "c:steel_ingots"
+    },
+    "p": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "ii",
+    "pp",
+    "pp"
+  ],
+  "result": {
+    "item": "minecraft:smithing_table"
+  },
+  "show_notification": true
+}

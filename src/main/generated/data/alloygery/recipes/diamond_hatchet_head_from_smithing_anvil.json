@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "ingredient": {
+    "item": "minecraft:diamond"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:diamond_hatchet_head"
+  }
+}

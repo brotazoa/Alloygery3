@@ -1,0 +1,9 @@
+{
+  "type": "alloygery:heat_exchanger_block_transform",
+  "input": {
+    "item": "alloygery:alloy_kiln"
+  },
+  "output": {
+    "item": "alloygery:alloy_kiln_with_heat_exchanger"
+  }
+}

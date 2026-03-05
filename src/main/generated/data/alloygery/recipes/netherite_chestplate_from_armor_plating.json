@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:chestplate_items"
+    },
+    [
+      {
+        "item": "alloygery:netherite_plate_armor_part"
+      },
+      {
+        "item": "alloygery:netherite_scale_armor_part"
+      },
+      {
+        "item": "alloygery:netherite_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:netherite_chestplate"
+  }
+}

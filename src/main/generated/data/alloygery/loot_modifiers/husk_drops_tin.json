@@ -1,0 +1,11 @@
+{
+  "type": "alloygery:replace_item",
+  "added_item": "alloygery:tin_ingot",
+  "conditions": [
+    {
+      "condition": "porting_lib:loot_table_id",
+      "loot_table_id": "minecraft:entity/husk"
+    }
+  ],
+  "removed_item": "minecraft:iron_ingot"
+}

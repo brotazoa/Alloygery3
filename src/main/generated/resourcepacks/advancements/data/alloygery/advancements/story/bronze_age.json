@@ -1,0 +1,38 @@
+{
+  "parent": "alloygery:story/alloying",
+  "criteria": {
+    "has_bronze_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:bronze_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.alloygery.bronze_age.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:bronze_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.bronze_age.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_bronze_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

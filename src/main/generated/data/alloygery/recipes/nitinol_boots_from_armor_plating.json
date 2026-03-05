@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:boots_items"
+    },
+    [
+      {
+        "item": "alloygery:nitinol_plate_armor_part"
+      },
+      {
+        "item": "alloygery:nitinol_scale_armor_part"
+      },
+      {
+        "item": "alloygery:nitinol_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:nitinol_boots"
+  }
+}

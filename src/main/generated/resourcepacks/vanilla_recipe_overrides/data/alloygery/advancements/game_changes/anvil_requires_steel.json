@@ -1,0 +1,29 @@
+{
+  "parent": "alloygery:game_changes/root",
+  "criteria": {
+    "alloygery_installed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.anvil_requires_steel.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:anvil"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.alloygery.anvil_requires_steel.title"
+    }
+  },
+  "requirements": [
+    [
+      "alloygery_installed"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

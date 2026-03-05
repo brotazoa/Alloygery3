@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alloygery:titanium_hammer"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tool_head_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:titanium_hammer_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tool_head_item",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alloygery:titanium_hammer"
+    ]
+  },
+  "sends_telemetry_event": false
+}

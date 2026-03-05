@@ -1,0 +1,24 @@
+{
+  "type": "alloygery:tool_shaped",
+  "category": "equipment",
+  "key": {
+    "b": {
+      "tag": "alloygery:tool_binding_items"
+    },
+    "h": {
+      "item": "alloygery:bronze_shovel_head"
+    },
+    "l": {
+      "tag": "alloygery:tool_handle_items"
+    }
+  },
+  "pattern": [
+    "  h",
+    " b ",
+    "l  "
+  ],
+  "result": {
+    "item": "alloygery:bronze_shovel"
+  },
+  "show_notification": true
+}

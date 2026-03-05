@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:alloying",
+  "experience": 1.4,
+  "inputs": [
+    {
+      "tag": "c:titanium_sources"
+    },
+    {
+      "tag": "c:gold_sources"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "alloygery:titanium_gold_ingot"
+  },
+  "smelting_time": 400
+}

@@ -3,7 +3,8 @@
   "id": "alloygery",
   "version": "${version}",
   "name": "Alloygery",
-  "description": "",
+  "description": "Enhancing progression by adding new ores and alloys, and a system where tools and armor are crafted from a combination of parts.",
+  "icon": "assets/alloygery/icon.png",
   "authors": [
     "Brotazoa"
   ],
@@ -11,7 +12,6 @@
     "repo": "https://github.com/brotazoa/Alloygery"
   },
   "license": "MIT",
-  "icon": "assets/alloygery/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
@@ -22,10 +22,17 @@
     ],
     "fabric-datagen": [
       "amorphia.alloygery.Alloygery"
+    ],
+    "emi": [
+      "amorphia.alloygery.compat.recipeViewers.emi.AlloygeryEmiPlugin"
+    ],
+    "rei_client": [
+      "amorphia.alloygery.compat.recipeViewers.rei.AlloygeryReiPlugin"
     ]
   },
   "mixins": [
-
+    "alloygery.accessor.mixins.json",
+    "alloygery.gear.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",

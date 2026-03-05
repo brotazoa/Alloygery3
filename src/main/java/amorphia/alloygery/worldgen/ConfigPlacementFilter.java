@@ -15,6 +15,8 @@ public class ConfigPlacementFilter extends PlacementFilter
 	@Override
 	protected boolean shouldPlace(PlacementContext context, RandomSource random, BlockPos pos)
 	{
+		// TODO: setup config to disable worldgen
+		// but maybe not, because users can override the datapack??
 		return true;
 	}
 

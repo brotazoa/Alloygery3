@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:boots_items"
+    },
+    [
+      {
+        "item": "alloygery:steel_plate_armor_part"
+      },
+      {
+        "item": "alloygery:steel_scale_armor_part"
+      },
+      {
+        "item": "alloygery:steel_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:steel_boots"
+  }
+}

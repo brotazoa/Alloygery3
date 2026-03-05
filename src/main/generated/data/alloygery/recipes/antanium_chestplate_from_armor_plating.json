@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:chestplate_items"
+    },
+    [
+      {
+        "item": "alloygery:antanium_plate_armor_part"
+      },
+      {
+        "item": "alloygery:antanium_scale_armor_part"
+      },
+      {
+        "item": "alloygery:antanium_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:antanium_chestplate"
+  }
+}

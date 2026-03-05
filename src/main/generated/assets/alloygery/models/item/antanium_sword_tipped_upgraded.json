@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/tool_part/sword_handle_template",
+    "layer1": "alloygery:template/render_part/tool_head/sword_template_antanium",
+    "layer2": "alloygery:template/render_part/tool_part/sword_guard_template",
+    "layer3": "alloygery:template/render_part/tool_upgrade/upgrade_sword",
+    "layer4": "alloygery:template/render_part/tool_improvement/tipped_sword_template"
+  }
+}

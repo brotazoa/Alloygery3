@@ -1,0 +1,24 @@
+{
+  "type": "alloygery:tool_shaped",
+  "category": "equipment",
+  "key": {
+    "b": {
+      "tag": "alloygery:hand_guard_items"
+    },
+    "h": {
+      "item": "alloygery:diamond_sword_blade"
+    },
+    "l": {
+      "tag": "alloygery:tool_handle_items"
+    }
+  },
+  "pattern": [
+    "  h",
+    " b ",
+    "l  "
+  ],
+  "result": {
+    "item": "alloygery:diamond_sword"
+  },
+  "show_notification": true
+}

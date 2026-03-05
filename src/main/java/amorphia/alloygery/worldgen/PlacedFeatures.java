@@ -15,6 +15,8 @@ import java.util.List;
 
 public class PlacedFeatures
 {
+	public static final ResourceKey<PlacedFeature> TIN_ORE = key("tin_ore");
+
 	public static final ResourceKey<PlacedFeature> NETHER_ORE_VEINS = key("nether_ore_veins");
 	public static final ResourceKey<PlacedFeature> END_ORE_VEINS = key("end_ore_veins");
 
@@ -34,6 +36,9 @@ public class PlacedFeatures
 	{
 		HolderGetter<ConfiguredFeature<?, ?>> featureLookup = cntx.lookup(Registries.CONFIGURED_FEATURE);
 
+		Holder<ConfiguredFeature<?, ?>> tinOre = featureLookup.getOrThrow(ConfiguredFeatures.TIN_ORE);
+		PlacementUtils.register(cntx, TIN_ORE, tinOre, placement(CountPlacement.of(8), -63, 70));
+
 		Holder<ConfiguredFeature<?, ?>> netherVeins = featureLookup.getOrThrow(ConfiguredFeatures.NETHER_ORE_VEINS);
 		Holder<ConfiguredFeature<?, ?>> endVeins = featureLookup.getOrThrow(ConfiguredFeatures.END_ORE_VEINS);
 
@@ -47,12 +52,12 @@ public class PlacedFeatures
 		Holder<ConfiguredFeature<?, ?>> overworldSwamp = featureLookup.getOrThrow(ConfiguredFeatures.OVERWOLD_SWAMP_IRON_ORE_VEINS);
 		Holder<ConfiguredFeature<?, ?>> overworldMessa = featureLookup.getOrThrow(ConfiguredFeatures.OVERWOLD_MESSA_GOLD_ORE_VEINS);
 
-		PlacementUtils.register(cntx, OVERWORLD_SHALLOW_ORE_VEINS, overworldShallow, placement(RarityFilter.onAverageOnceEvery(10), 20, 100));
-		PlacementUtils.register(cntx, OVERWORLD_DEEP_ORE_VEINS, overworldDeep, placement(RarityFilter.onAverageOnceEvery(8), -50, 10));
-		PlacementUtils.register(cntx, OVERWORLD_RICH_ORE_VEINS, overworldRich, placement(RarityFilter.onAverageOnceEvery(24), -60, -20));
+		PlacementUtils.register(cntx, OVERWORLD_SHALLOW_ORE_VEINS, overworldShallow, placement(RarityFilter.onAverageOnceEvery(15), 20, 100));
+		PlacementUtils.register(cntx, OVERWORLD_DEEP_ORE_VEINS, overworldDeep, placement(RarityFilter.onAverageOnceEvery(10), -60, 20));
+		PlacementUtils.register(cntx, OVERWORLD_RICH_ORE_VEINS, overworldRich, placement(RarityFilter.onAverageOnceEvery(24), -60, 0));
 
-		PlacementUtils.register(cntx, OVERWORLD_SWAMP_IRON_ORE_VEINS, overworldSwamp, placement(RarityFilter.onAverageOnceEvery(10), -40, 60));
-		PlacementUtils.register(cntx, OVERWORLD_MESSA_GOLD_ORE_VEINS, overworldMessa, placement(RarityFilter.onAverageOnceEvery(10), -40, 70));
+		PlacementUtils.register(cntx, OVERWORLD_SWAMP_IRON_ORE_VEINS, overworldSwamp, placement(RarityFilter.onAverageOnceEvery(8), -40, 60));
+		PlacementUtils.register(cntx, OVERWORLD_MESSA_GOLD_ORE_VEINS, overworldMessa, placement(RarityFilter.onAverageOnceEvery(8), -40, 70));
 
 	}
 

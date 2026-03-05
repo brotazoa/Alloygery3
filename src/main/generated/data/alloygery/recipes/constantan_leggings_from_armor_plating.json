@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:leggings_items"
+    },
+    [
+      {
+        "item": "alloygery:constantan_plate_armor_part"
+      },
+      {
+        "item": "alloygery:constantan_scale_armor_part"
+      },
+      {
+        "item": "alloygery:constantan_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:constantan_leggings"
+  }
+}

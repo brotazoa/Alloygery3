@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:aurorum",
+    "alloygery:cuproline",
+    "alloygery:teallite",
+    "alloygery:tin_ore",
+    "alloygery:deepslate_tin_ore",
+    "alloygery:raw_tin_block",
+    "alloygery:tin_block",
+    "alloygery:bronze_block"
+  ]
+}

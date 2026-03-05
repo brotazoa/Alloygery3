@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:iron_panel"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:iron_scale_armor_part"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "alloygery:smithing_improvement",
+  "addition": {
+    "item": "minecraft:lapis_lazuli"
+  },
+  "base": {
+    "tag": "alloygery:improvable_tool"
+  },
+  "improvement_material": "alloygery:alloygery_material/lapis",
+  "template": {
+    "item": "alloygery:tipped_template"
+  }
+}

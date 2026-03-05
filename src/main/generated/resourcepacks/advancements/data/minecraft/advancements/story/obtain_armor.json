@@ -1,0 +1,37 @@
+{
+  "parent": "alloygery:story/crafting",
+  "criteria": {
+    "has_armor": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "alloygery:base_armor_items"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.alloygery.obtain_armor.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:leather_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.obtain_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_armor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

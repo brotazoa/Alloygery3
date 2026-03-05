@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/tool_part/hoe_handle_template",
+    "layer1": "alloygery:template/render_part/tool_head/hoe_template_amethyst",
+    "layer2": "alloygery:template/render_part/tool_part/hoe_binding_template",
+    "layer3": "alloygery:template/render_part/tool_upgrade/upgrade_hoe"
+  }
+}

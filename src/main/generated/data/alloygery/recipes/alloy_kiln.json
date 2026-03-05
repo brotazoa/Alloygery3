@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:brick"
+    },
+    "f": {
+      "item": "minecraft:furnace"
+    },
+    "s": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "pattern": [
+    "bbb",
+    "bfb",
+    "sss"
+  ],
+  "result": {
+    "item": "alloygery:alloy_kiln"
+  },
+  "show_notification": true
+}

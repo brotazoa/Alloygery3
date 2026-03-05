@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:story/upgrade_tools",
+  "criteria": {
+    "place_alloy_kiln": {
+      "conditions": {
+        "location": [
+          {
+            "block": "alloygery:alloy_kiln",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.alloying.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:alloy_kiln"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.alloying.title"
+    }
+  },
+  "requirements": [
+    [
+      "place_alloy_kiln"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:base_wool_chestplate",
+    "alloygery:base_leather_chestplate",
+    "alloygery:base_rabbit_hide_chestplate",
+    "alloygery:base_iron_chain_chestplate",
+    "alloygery:tin_chestplate",
+    "alloygery:copper_chestplate",
+    "alloygery:bronze_chestplate",
+    "alloygery:iron_chestplate",
+    "alloygery:gold_chestplate",
+    "alloygery:antanium_chestplate",
+    "alloygery:diamond_chestplate",
+    "alloygery:steel_chestplate",
+    "alloygery:netherite_chestplate",
+    "alloygery:nickel_chestplate",
+    "alloygery:invar_chestplate",
+    "alloygery:constantan_chestplate",
+    "alloygery:titanium_chestplate",
+    "alloygery:titanium_gold_chestplate",
+    "alloygery:nitinol_chestplate",
+    "alloygery:leather_chestplate",
+    "alloygery:rabbit_hide_chestplate"
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "sources": [
+    {
+      "type": "directory",
+      "source": "template/crafting_material",
+      "prefix": "template/crafting_material/"
+    },
+    {
+      "type": "directory",
+      "source": "template/part",
+      "prefix": "template/part/"
+    },
+    {
+      "type": "directory",
+      "source": "template/render_part",
+      "prefix": "template/render_part/"
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:template/part/tool_head/axe_template",
+        "alloygery:template/render_part/tool_head/axe_template",
+
+        "alloygery:template/part/tool_head/hoe_template",
+        "alloygery:template/render_part/tool_head/hoe_template",
+
+        "alloygery:template/part/tool_head/pickaxe_template",
+        "alloygery:template/render_part/tool_head/pickaxe_template",
+
+        "alloygery:template/part/tool_head/shovel_template",
+        "alloygery:template/render_part/tool_head/shovel_template",
+
+        "alloygery:template/part/tool_head/sword_template",
+        "alloygery:template/render_part/tool_head/sword_template",
+
+        "alloygery:template/part/tool_head/hatchet_template",
+        "alloygery:template/render_part/tool_head/hatchet_template",
+
+        "alloygery:template/part/tool_head/knife_template",
+        "alloygery:template/render_part/tool_head/knife_template",
+
+        "alloygery:template/part/tool_head/hammer_template",
+        "alloygery:template/render_part/tool_head/hammer_template",
+
+        "alloygery:template/part/tool_head/excavator_template",
+        "alloygery:template/render_part/tool_head/excavator_template"
+      ],
+      "permutations": {
+        "amethyst": "alloygery:template/palette/amethyst",
+        "antanium": "alloygery:template/palette/antanium",
+        "bronze": "alloygery:template/palette/bronze",
+        "constantan": "alloygery:template/palette/constantan",
+        "copper": "alloygery:template/palette/copper",
+        "diamond": "alloygery:template/palette/diamond",
+        "emerald": "alloygery:template/palette/emerald",
+        "flint": "alloygery:template/palette/flint",
+        "gold": "alloygery:template/palette/gold",
+        "invar": "alloygery:template/palette/invar",
+        "iron": "alloygery:template/palette/iron",
+        "netherite": "alloygery:template/palette/netherite",
+        "nickel": "alloygery:template/palette/nickel",
+        "nitinol": "alloygery:template/palette/nitinol",
+        "steel": "alloygery:template/palette/steel",
+        "stone": "alloygery:template/palette/stone",
+        "tin": "alloygery:template/palette/tin",
+        "titanium": "alloygery:template/palette/titanium",
+        "titanium_gold": "alloygery:template/palette/titanium_gold"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:template/render_part/armor/plate_helmet",
+        "alloygery:template/render_part/armor/plate_chestplate",
+        "alloygery:template/render_part/armor/plate_leggings",
+        "alloygery:template/render_part/armor/plate_boots"
+      ],
+      "permutations": {
+        "antanium": "alloygery:template/palette/antanium",
+        "bronze": "alloygery:template/palette/bronze",
+        "constantan": "alloygery:template/palette/constantan",
+        "copper": "alloygery:template/palette/copper",
+        "diamond": "alloygery:template/palette/diamond",
+        "gold": "alloygery:template/palette/gold",
+        "invar": "alloygery:template/palette/invar",
+        "iron": "alloygery:template/palette/iron",
+        "netherite": "alloygery:template/palette/netherite",
+        "nickel": "alloygery:template/palette/nickel",
+        "nitinol": "alloygery:template/palette/nitinol",
+        "steel": "alloygery:template/palette/steel",
+        "tin": "alloygery:template/palette/tin",
+        "titanium": "alloygery:template/palette/titanium",
+        "titanium_gold": "alloygery:template/palette/titanium_gold",
+        "leather": "alloygery:template/palette/leather",
+        "rabbit_hide": "alloygery:template/palette/rabbit_hide"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:template/part/armor/plate_plate_armor_part",
+        "alloygery:template/part/armor/plate_scale_armor_part",
+        "alloygery:template/part/armor/plate_heavy_plate_armor_part"
+      ],
+      "permutations": {
+        "antanium": "alloygery:template/palette/antanium",
+        "bronze": "alloygery:template/palette/bronze",
+        "constantan": "alloygery:template/palette/constantan",
+        "copper": "alloygery:template/palette/copper",
+        "diamond": "alloygery:template/palette/diamond",
+        "gold": "alloygery:template/palette/gold",
+        "invar": "alloygery:template/palette/invar",
+        "iron": "alloygery:template/palette/iron",
+        "netherite": "alloygery:template/palette/netherite",
+        "nickel": "alloygery:template/palette/nickel",
+        "nitinol": "alloygery:template/palette/nitinol",
+        "steel": "alloygery:template/palette/steel",
+        "tin": "alloygery:template/palette/tin",
+        "titanium": "alloygery:template/palette/titanium",
+        "titanium_gold": "alloygery:template/palette/titanium_gold",
+        "leather": "alloygery:template/palette/leather",
+        "rabbit_hide": "alloygery:template/palette/rabbit_hide"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:template/crafting_material/dull_ingot_template",
+        "alloygery:template/crafting_material/dull_nugget_template"
+      ],
+      "permutations": {
+        "bronze": "alloygery:template/palette/bronze",
+        "invar": "alloygery:template/palette/invar",
+        "nickel": "alloygery:template/palette/nickel",
+        "steel": "alloygery:template/palette/steel"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:template/crafting_material/normal_ingot_template",
+        "alloygery:template/crafting_material/normal_nugget_template"
+      ],
+      "permutations": {
+        "constantan": "alloygery:template/palette/constantan",
+        "nitinol": "alloygery:template/palette/nitinol",
+        "tin": "alloygery:template/palette/tin",
+        "titanium": "alloygery:template/palette/titanium"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:template/crafting_material/shiny_ingot_template",
+        "alloygery:template/crafting_material/shiny_nugget_template"
+      ],
+      "permutations": {
+        "antanium": "alloygery:template/palette/antanium",
+        "copper": "alloygery:template/palette/copper",
+        "titanium_gold": "alloygery:template/palette/titanium_gold"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:template/crafting_material/dull_panel_template"
+      ],
+      "permutations": {
+        "bronze": "alloygery:template/palette/bronze",
+        "invar": "alloygery:template/palette/invar",
+        "netherite": "alloygery:template/palette/netherite",
+        "nickel": "alloygery:template/palette/nickel",
+        "steel": "alloygery:template/palette/steel"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:template/crafting_material/normal_panel_template"
+      ],
+      "permutations": {
+        "constantan": "alloygery:template/palette/constantan",
+        "iron": "alloygery:template/palette/iron",
+        "nitinol": "alloygery:template/palette/nitinol",
+        "tin": "alloygery:template/palette/tin",
+        "titanium": "alloygery:template/palette/titanium",
+        "leather": "alloygery:template/palette/leather",
+        "rabbit_hide": "alloygery:template/palette/rabbit_hide",
+        "wool": "alloygery:template/palette/wool"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:template/crafting_material/shiny_panel_template"
+      ],
+      "permutations": {
+        "antanium": "alloygery:template/palette/antanium",
+        "copper": "alloygery:template/palette/copper",
+        "gold": "alloygery:template/palette/gold",
+        "titanium_gold": "alloygery:template/palette/titanium_gold"
+      }
+    }
+  ]
+}

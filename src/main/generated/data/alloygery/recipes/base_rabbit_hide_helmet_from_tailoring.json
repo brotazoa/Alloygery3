@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "minecraft:rabbit_hide"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:base_rabbit_hide_helmet"
+  }
+}

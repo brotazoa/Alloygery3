@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:base_wool_boots",
+    "alloygery:base_leather_boots",
+    "alloygery:base_rabbit_hide_boots",
+    "alloygery:base_iron_chain_boots",
+    "alloygery:tin_boots",
+    "alloygery:copper_boots",
+    "alloygery:bronze_boots",
+    "alloygery:iron_boots",
+    "alloygery:gold_boots",
+    "alloygery:antanium_boots",
+    "alloygery:diamond_boots",
+    "alloygery:steel_boots",
+    "alloygery:netherite_boots",
+    "alloygery:nickel_boots",
+    "alloygery:invar_boots",
+    "alloygery:constantan_boots",
+    "alloygery:titanium_boots",
+    "alloygery:titanium_gold_boots",
+    "alloygery:nitinol_boots",
+    "alloygery:leather_boots",
+    "alloygery:rabbit_hide_boots"
+  ]
+}

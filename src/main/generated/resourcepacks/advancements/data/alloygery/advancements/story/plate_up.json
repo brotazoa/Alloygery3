@@ -1,0 +1,37 @@
+{
+  "parent": "alloygery:story/tailoring",
+  "criteria": {
+    "plate_armor": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "alloygery:plated_armor_items"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.alloygery.plate_up.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:iron_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.plate_up.title"
+    }
+  },
+  "requirements": [
+    [
+      "plate_armor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "minecraft:leather"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:leather_binding"
+  }
+}

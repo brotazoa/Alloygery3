@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:tin_panel"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:tin_heavy_plate_armor_part"
+  }
+}

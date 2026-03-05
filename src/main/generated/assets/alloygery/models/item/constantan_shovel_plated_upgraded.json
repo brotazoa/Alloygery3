@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/tool_part/shovel_handle_template",
+    "layer1": "alloygery:template/render_part/tool_head/shovel_template_constantan",
+    "layer2": "alloygery:template/render_part/tool_part/shovel_binding_template",
+    "layer3": "alloygery:template/render_part/tool_upgrade/upgrade_shovel",
+    "layer4": "alloygery:template/render_part/tool_improvement/plated_shovel_template"
+  }
+}

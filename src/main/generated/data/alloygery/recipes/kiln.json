@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:mud_bricks"
+    },
+    "f": {
+      "item": "minecraft:furnace"
+    },
+    "m": {
+      "item": "minecraft:packed_mud"
+    }
+  },
+  "pattern": [
+    "mmm",
+    "mfm",
+    "bbb"
+  ],
+  "result": {
+    "item": "alloygery:kiln"
+  },
+  "show_notification": true
+}

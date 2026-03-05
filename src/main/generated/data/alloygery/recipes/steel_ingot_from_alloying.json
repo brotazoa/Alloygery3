@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:alloying",
+  "experience": 1.4,
+  "inputs": [
+    {
+      "tag": "c:iron_sources"
+    },
+    {
+      "tag": "c:carbon_sources"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "alloygery:steel_ingot"
+  },
+  "smelting_time": 400
+}

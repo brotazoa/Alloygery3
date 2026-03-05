@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "alloygery:item/template/nugget/shiny_template"
+    "layer0": "alloygery:template/crafting_material/shiny_nugget_template_titanium_gold"
   }
 }

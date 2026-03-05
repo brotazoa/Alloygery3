@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/armor/base_leggings",
+    "layer1": "alloygery:template/render_part/armor/base_leggings_leather",
+    "layer2": "alloygery:template/render_part/armor/plate_leggings_constantan",
+    "layer3": "alloygery:template/render_part/armor/trim_leggings"
+  }
+}

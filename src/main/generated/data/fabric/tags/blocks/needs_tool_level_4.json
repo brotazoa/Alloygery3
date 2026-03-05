@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:titanite",
+    "alloygery:raw_titanium_block",
+    "alloygery:titanium_block",
+    "alloygery:titanium_gold_block",
+    "alloygery:nitinol_block"
+  ]
+}

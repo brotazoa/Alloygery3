@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/tool_part/knife_handle_template",
+    "layer1": "alloygery:template/render_part/tool_head/knife_template_antanium",
+    "layer2": "alloygery:template/render_part/tool_improvement/tipped_knife_template"
+  }
+}

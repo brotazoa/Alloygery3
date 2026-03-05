@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:stone_sword",
+    "alloygery:copper_sword",
+    "alloygery:bronze_sword",
+    "alloygery:iron_sword",
+    "alloygery:gold_sword",
+    "alloygery:antanium_sword",
+    "alloygery:steel_sword",
+    "alloygery:netherite_sword",
+    "alloygery:nickel_sword",
+    "alloygery:invar_sword",
+    "alloygery:constantan_sword",
+    "alloygery:titanium_sword",
+    "alloygery:titanium_gold_sword",
+    "alloygery:nitinol_sword",
+    "alloygery:diamond_sword",
+    "alloygery:amethyst_sword",
+    "alloygery:emerald_sword"
+  ]
+}

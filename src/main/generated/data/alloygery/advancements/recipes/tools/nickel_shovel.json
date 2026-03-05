@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alloygery:nickel_shovel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tool_head_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:nickel_shovel_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tool_head_item",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alloygery:nickel_shovel"
+    ]
+  },
+  "sends_telemetry_event": false
+}

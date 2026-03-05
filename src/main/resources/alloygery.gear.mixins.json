@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "amorphia.alloygery.gear.mixin",
+  "mixins": [
+    "BlockBehaviorLogsRequireToolMixin",
+    "EnchantmentHelperDynamicEnchantabilityMixin",
+    "EntityArmorOccludesVibrationsMixin",
+    "EntityFireImmuneTicksMixin",
+    "EntityFreezeTicksMixin",
+    "ItemEntityFireproofMixin",
+    "ItemStackDynamicGearMixin",
+    "PiglinAiDynamicPiglinLovedMixin",
+    "PowderedSnowBlockWalkOnMixin",
+    "VibrationSystemOccludeBlockBreakVibrationMixin"
+  ],
+  "client": [
+    "DynamicArmorHumanoidArmorLayerMixin",
+    "ItemModelGeneratorLayersMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

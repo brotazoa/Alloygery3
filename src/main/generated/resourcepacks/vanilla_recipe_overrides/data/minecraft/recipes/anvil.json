@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "c:steel_blocks"
+    },
+    "i": {
+      "tag": "c:steel_ingots"
+    }
+  },
+  "pattern": [
+    "bbb",
+    " i ",
+    "iii"
+  ],
+  "result": {
+    "item": "minecraft:anvil"
+  },
+  "show_notification": true
+}

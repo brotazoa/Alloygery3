@@ -1,14 +1,7 @@
 plugins {
-    id 'fabric-loom' version '1.3.+'
-
-    id "io.github.juuxel.loom-vineflower" version "1.+" // Vineflower, a better decompiler
-    id "io.github.p03w.machete" version "1.1.4" // automatic jar compressing on build
-
+    id 'fabric-loom' version '1.9.+'
     id 'maven-publish'
 }
-
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
 group = project.maven_group
@@ -18,32 +11,30 @@ version = "${mod_version}+${minecraft_version}" + (buildNumber != null ? "-${bui
 
 repositories {
 
-    mavenLocal() //local maven for Magna JIJ
+    mavenLocal() // local maven for Magna JIJ
     mavenCentral()
     maven { url 'https://jitpack.io' }
 
     maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
-    maven { url = "https://maven.quiltmc.org/repository/release" } // Quilt Mappings
 
     maven { url = "https://modmaven.dev" } // JEI
     maven { url = "https://maven.shedaniel.me/" } // Cloth Config, REI
-    maven { url = "https://api.modrinth.com/maven" } // LazyDFU, Additional Entity Attributes
+    maven { url = "https://api.modrinth.com/maven" } // Additional Entity Attributes
     maven { url = "https://maven.terraformersmc.com/" } // Mod Menu, Trinkets, EMI
     maven { url = "https://maven.ladysnake.org/releases" } // CCA for Trinkets
     maven { // Reach Entity Attributes
         url = "https://maven.jamieswhiteshirt.com/libs-release"
         content { includeGroup("com.jamieswhiteshirt") }
     }
-    maven { url = "https://mvn.devos.one/snapshots/" } // Porting-Lib
+    maven { url = "https://mvn.devos.one/releases" } // Porting-Lib
 }
 
 dependencies {
     // Setup
     minecraft("com.mojang:minecraft:${minecraft_version}")
     mappings(loom.layered {
-        it.mappings("org.quiltmc:quilt-mappings:${minecraft_version}+build.${quilt_mappings_version}:intermediary-v2")
-        it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
         it.officialMojangMappings { nameSyntheticMembers = false }
+        it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
     })
     modImplementation("net.fabricmc:fabric-loader:${fabric_loader_version}")
 
@@ -51,6 +42,8 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
     include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:$reach_entity_attributes_version")
     include modImplementation("maven.modrinth:AdditionalEntityAttributes:$additional_entity_attributes_version")
+    include modImplementation("maven.modrinth:ranged-weapon-api:$ranged_weapon_api_version")
+    include modImplementation("maven.modrinth:shield-api:$shield_api_version")
     include modImplementation("com.github.Draylar.omega-config:omega-config-base:$omega_config_version")
     include modImplementation ("dev.draylar:magna:${project.magna_version}") {
         exclude group: "net.fabricmc"
@@ -70,13 +63,10 @@ dependencies {
     modCompileOnly("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:$cca_version")
 
     // Development QOL
-    modLocalRuntime("maven.modrinth:lazydfu:${lazydfu_version}")
     modLocalRuntime("com.terraformersmc:modmenu:${modmenu_version}")
     modLocalRuntime("dev.emi:trinkets:$trinkets_version") { transitive = false }
     modLocalRuntime("dev.onyxstudios.cardinal-components-api:cardinal-components-base:$cca_version")
     modLocalRuntime("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:$cca_version")
-    // https://github.com/PlanetTeamSpeakk/DevLogin
-    modImplementation("com.ptsmods:devlogin:3.3.2") //dev login
 
     recipeViewers(dependencies)
 }
@@ -114,11 +104,6 @@ processResources {
     }
 }
 
-machete {
-    // disable machete locally for faster builds
-    enabled = buildNumber != null
-}
-
 tasks.withType(JavaCompile).configureEach {
     // ensure that the encoding is set to UTF-8, no matter what the system default is
     // this fixes some edge cases with special characters not displaying correctly
@@ -129,13 +114,13 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 java {
-    if (JavaVersion.current() < targetCompatibility) {
-        toolchain.languageVersion = JavaLanguageVersion.of(targetCompatibility)
-    }
     // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
     // if it is present.
     // If you remove this line, sources will not be generated.
     withSourcesJar()
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 jar {

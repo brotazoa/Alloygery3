@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:antanium_panel"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:antanium_scale_armor_part"
+  }
+}

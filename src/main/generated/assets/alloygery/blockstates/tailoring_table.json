@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "alloygery:block/tailoring_table",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "alloygery:block/tailoring_table"
+    },
+    "facing=south": {
+      "model": "alloygery:block/tailoring_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "alloygery:block/tailoring_table",
+      "y": 270
+    }
+  }
+}

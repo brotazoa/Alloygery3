@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:alloying",
+  "experience": 1.4,
+  "inputs": [
+    {
+      "tag": "c:nickel_sources"
+    },
+    {
+      "tag": "c:copper_sources"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "alloygery:constantan_ingot"
+  },
+  "smelting_time": 400
+}

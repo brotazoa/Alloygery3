@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 2.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "alloygery:tipped_template"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "alloygery:plated_template"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "alloygery:wrapped_template"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

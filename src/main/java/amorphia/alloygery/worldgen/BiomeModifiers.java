@@ -21,6 +21,8 @@ public class BiomeModifiers
 		Predicate<BiomeSelectionContext> isSwampLike = BiomeSelectors.tag(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS);
 		Predicate<BiomeSelectionContext> isMesaLike = BiomeSelectors.tag(BiomeTags.IS_BADLANDS);
 
+		addOreVein(isOverworld, PlacedFeatures.TIN_ORE);
+
 		addOreVein(isOverworld, PlacedFeatures.OVERWORLD_SHALLOW_ORE_VEINS);
 		addOreVein(isOverworld, PlacedFeatures.OVERWORLD_DEEP_ORE_VEINS);
 		addOreVein(isOverworld, PlacedFeatures.OVERWORLD_RICH_ORE_VEINS);

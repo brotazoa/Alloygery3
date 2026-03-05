@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:oak_planks"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "minecraft:oak_fence_gate"
+  }
+}

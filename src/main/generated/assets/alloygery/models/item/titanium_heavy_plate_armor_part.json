@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alloygery:template/part/armor/base_armor_part",
+    "layer1": "alloygery:template/part/armor/plate_heavy_plate_armor_part_titanium"
+  }
+}

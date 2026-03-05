@@ -1,0 +1,107 @@
+{
+  "sources": [
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:models/armor/base_boots_chain",
+        "alloygery:models/armor/base_chestplate_chain",
+        "alloygery:models/armor/base_helmet_chain",
+        "alloygery:models/armor/base_leggings_chain"
+      ],
+      "permutations": {
+        "antanium": "alloygery:template/palette/antanium",
+        "bronze": "alloygery:template/palette/bronze",
+        "constantan": "alloygery:template/palette/constantan",
+        "copper": "alloygery:template/palette/copper",
+        "gold": "alloygery:template/palette/gold",
+        "invar": "alloygery:template/palette/invar",
+        "iron": "alloygery:template/palette/iron",
+        "netherite": "alloygery:template/palette/netherite",
+        "nickel": "alloygery:template/palette/nickel",
+        "nitinol": "alloygery:template/palette/nitinol",
+        "steel": "alloygery:template/palette/steel",
+        "tin": "alloygery:template/palette/tin",
+        "titanium": "alloygery:template/palette/titanium",
+        "titanium_gold": "alloygery:template/palette/titanium_gold"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:models/armor/base_boots_leather",
+        "alloygery:models/armor/base_chestplate_leather",
+        "alloygery:models/armor/base_helmet_leather",
+        "alloygery:models/armor/base_leggings_leather"
+      ],
+      "permutations": {
+        "leather": "alloygery:template/palette/leather",
+        "rabbit_hide": "alloygery:template/palette/rabbit_hide"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:models/armor/base_boots_wool",
+        "alloygery:models/armor/base_chestplate_wool",
+        "alloygery:models/armor/base_helmet_wool",
+        "alloygery:models/armor/base_leggings_wool"
+      ],
+      "permutations": {
+        "wool": "alloygery:template/palette/wool"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:models/armor/plate_boots_plate",
+        "alloygery:models/armor/plate_chestplate_plate",
+        "alloygery:models/armor/plate_helmet_plate",
+        "alloygery:models/armor/plate_leggings_plate",
+        "alloygery:models/armor/plate_boots_scale",
+        "alloygery:models/armor/plate_chestplate_scale",
+        "alloygery:models/armor/plate_helmet_scale",
+        "alloygery:models/armor/plate_leggings_scale",
+        "alloygery:models/armor/plate_boots_heavy_plate",
+        "alloygery:models/armor/plate_chestplate_heavy_plate",
+        "alloygery:models/armor/plate_helmet_heavy_plate",
+        "alloygery:models/armor/plate_leggings_heavy_plate"
+      ],
+      "permutations": {
+        "antanium": "alloygery:template/palette/antanium",
+        "bronze": "alloygery:template/palette/bronze",
+        "constantan": "alloygery:template/palette/constantan",
+        "copper": "alloygery:template/palette/copper",
+        "diamond": "alloygery:template/palette/diamond",
+        "gold": "alloygery:template/palette/gold",
+        "invar": "alloygery:template/palette/invar",
+        "iron": "alloygery:template/palette/iron",
+        "netherite": "alloygery:template/palette/netherite",
+        "nickel": "alloygery:template/palette/nickel",
+        "nitinol": "alloygery:template/palette/nitinol",
+        "steel": "alloygery:template/palette/steel",
+        "tin": "alloygery:template/palette/tin",
+        "titanium": "alloygery:template/palette/titanium",
+        "titanium_gold": "alloygery:template/palette/titanium_gold",
+        "leather": "alloygery:template/palette/leather",
+        "rabbit_hide": "alloygery:template/palette/rabbit_hide"
+      }
+    },
+    {
+      "type": "paletted_permutations",
+      "palette_key": "alloygery:template/palette/material_palette",
+      "textures": [
+        "alloygery:models/armor/upgrade_boots",
+        "alloygery:models/armor/upgrade_chestplate",
+        "alloygery:models/armor/upgrade_helmet",
+        "alloygery:models/armor/upgrade_leggings"
+      ],
+      "permutations": {
+        "netherite": "alloygery:template/palette/netherite"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "tag": "c:steel_ingots"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "t": {
+      "item": "minecraft:redstone_torch"
+    }
+  },
+  "pattern": [
+    "isi",
+    "iti",
+    "isi"
+  ],
+  "result": {
+    "count": 12,
+    "item": "minecraft:activator_rail"
+  },
+  "show_notification": true
+}

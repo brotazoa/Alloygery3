@@ -1,0 +1,13 @@
+{
+  "type": "alloygery:smithing_improvement",
+  "addition": {
+    "item": "minecraft:quartz"
+  },
+  "base": {
+    "tag": "alloygery:improvable_tool"
+  },
+  "improvement_material": "alloygery:alloygery_material/quartz",
+  "template": {
+    "item": "alloygery:tipped_template"
+  }
+}

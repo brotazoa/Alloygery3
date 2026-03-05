@@ -1,0 +1,8 @@
+{
+  "pack": {
+    "description": {
+      "translate": "pack.alloygery.logs_require_tool.description"
+    },
+    "pack_format": 15
+  }
+}

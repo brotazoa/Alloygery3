@@ -1,0 +1,39 @@
+{
+  "parent": "alloygery:story/bronze_age",
+  "criteria": {
+    "has_bronze_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:bronze_pickaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.bronze_tools.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:bronze_pickaxe",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.bronze_tools.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_bronze_pickaxe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

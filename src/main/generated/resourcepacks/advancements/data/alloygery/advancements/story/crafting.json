@@ -1,0 +1,37 @@
+{
+  "parent": "alloygery:story/flint_age",
+  "criteria": {
+    "place_crafting_table": {
+      "conditions": {
+        "location": [
+          {
+            "block": "minecraft:crafting_table",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.crafting.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:crafting_table"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.crafting.title"
+    }
+  },
+  "requirements": [
+    [
+      "place_crafting_table"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

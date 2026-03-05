@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alloygery:nickel_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "alloygery:nickel_ingot"
+  }
+}

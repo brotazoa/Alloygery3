@@ -1,0 +1,27 @@
+{
+  "type": "alloygery:tool_shaped",
+  "category": "equipment",
+  "key": {
+    "l": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "l l",
+    "lll",
+    "lll"
+  ],
+  "properties_on_result": [
+    {
+      "apply_when_broken": true,
+      "operation": "base",
+      "part_type": "tool_type",
+      "property_type": "alloygery:primitive",
+      "value": 1.0
+    }
+  ],
+  "result": {
+    "item": "alloygery:base_leather_chestplate"
+  },
+  "show_notification": true
+}

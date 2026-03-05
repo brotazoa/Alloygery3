@@ -1,0 +1,38 @@
+{
+  "parent": "alloygery:story/bronze_tools",
+  "criteria": {
+    "has_iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.smelt_iron.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:iron_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.smelt_iron.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

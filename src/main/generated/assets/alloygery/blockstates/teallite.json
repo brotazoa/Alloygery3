@@ -1,7 +1,18 @@
 {
   "variants": {
-    "": {
-      "model": "alloygery:block/teallite"
-    }
+    "": [
+      {
+        "model": "alloygery:block/teallite_0"
+      },
+      {
+        "model": "alloygery:block/teallite_1"
+      },
+      {
+        "model": "alloygery:block/teallite_2"
+      },
+      {
+        "model": "alloygery:block/teallite_3"
+      }
+    ]
   }
 }

@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:nether/root",
+  "criteria": {
+    "place_heat_exchanger": {
+      "conditions": {
+        "location": [
+          {
+            "block": "alloygery:heat_exchanger",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.heated_exchange.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:heat_exchanger"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.heated_exchange.title"
+    }
+  },
+  "requirements": [
+    [
+      "place_heat_exchanger"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

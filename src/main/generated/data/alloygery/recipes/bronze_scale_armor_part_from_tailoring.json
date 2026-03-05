@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:bronze_panel"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:bronze_scale_armor_part"
+  }
+}

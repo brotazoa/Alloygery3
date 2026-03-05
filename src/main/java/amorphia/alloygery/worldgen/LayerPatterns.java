@@ -100,7 +100,8 @@ public class LayerPatterns
 	public static final Supplier<LayerPattern> NICKELINE = () -> LayerPattern.netherBuilder()
 			.layer(l -> l.block(WorldGenModule.NICKELINE).weight(4).size(2, 5))
 			.layer(l -> l.block(Blocks.BASALT).block(Blocks.SMOOTH_BASALT).weight(2).size(2, 3))
-			.layer(l -> l.block(Blocks.OBSIDIAN).block(Blocks.CRYING_OBSIDIAN).block(Blocks.BLACKSTONE).weight(1).size(1, 1)).build();
+			.layer(l -> l.passiveBlock().weight(1).size(1, 2))
+			.build();
 
 	// titanium end vein
 	public static final Supplier<LayerPattern> TITANITE = () -> LayerPattern.endBuilder()

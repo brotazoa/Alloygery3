@@ -1,0 +1,238 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/gold",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:durability",
+      "value": 32.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:mining_level",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:enchantability",
+      "value": 22.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:mining_speed",
+      "value": 15.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:durability",
+      "value": -25.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:mining_level",
+      "value": -1.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:enchantability",
+      "value": 10.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:mining_speed",
+      "value": 5.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:attribute",
+      "value": -3.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:durability",
+      "value": 0.5
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:mining_speed",
+      "value": 1.5
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:attribute",
+      "value": 0.8
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:attribute",
+      "value": 0.3
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "reach-entity-attributes:reach",
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:attribute",
+      "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "reach-entity-attributes:attack_range",
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:attribute",
+      "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:loved_by_piglins",
+      "value": 3.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:loved_by_piglins",
+      "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:loved_by_piglins",
+      "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:loved_by_piglins",
+      "value": 3.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "multiply_total",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:mining_speed",
+      "value": 1.5
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:mining_level",
+      "value": -1.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:durability",
+      "value": 7.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:enchantability",
+      "value": 20.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 4.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor_toughness",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:loved_by_piglins",
+      "value": 3.0
+    }
+  ],
+  "repair_ingredient": {
+    "tag": "c:gold_ingots"
+  }
+}

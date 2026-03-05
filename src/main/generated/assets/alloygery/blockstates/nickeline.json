@@ -1,7 +1,18 @@
 {
   "variants": {
-    "": {
-      "model": "alloygery:block/nickeline"
-    }
+    "": [
+      {
+        "model": "alloygery:block/nickeline_0"
+      },
+      {
+        "model": "alloygery:block/nickeline_1"
+      },
+      {
+        "model": "alloygery:block/nickeline_2"
+      },
+      {
+        "model": "alloygery:block/nickeline_3"
+      }
+    ]
   }
 }

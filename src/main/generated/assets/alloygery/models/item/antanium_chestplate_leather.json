@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/armor/base_chestplate",
+    "layer1": "alloygery:template/render_part/armor/base_chestplate_leather",
+    "layer2": "alloygery:template/render_part/armor/plate_chestplate_antanium"
+  }
+}

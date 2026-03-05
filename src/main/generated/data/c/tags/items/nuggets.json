@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:tin_nugget",
+    "alloygery:copper_nugget",
+    "alloygery:bronze_nugget",
+    "alloygery:antanium_nugget",
+    "alloygery:steel_nugget",
+    "alloygery:nickel_nugget",
+    "alloygery:invar_nugget",
+    "alloygery:constantan_nugget",
+    "alloygery:titanium_nugget",
+    "alloygery:titanium_gold_nugget",
+    "alloygery:nitinol_nugget"
+  ]
+}

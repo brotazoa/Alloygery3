@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "l": {
+      "tag": "c:hides"
+    },
+    "s": {
+      "tag": "c:stripped_logs"
+    },
+    "w": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "lw",
+    "ss"
+  ],
+  "result": {
+    "item": "alloygery:tailoring_table"
+  },
+  "show_notification": true
+}

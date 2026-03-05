@@ -1,0 +1,34 @@
+{
+  "parent": "alloygery:game_changes/root",
+  "criteria": {
+    "wrong_tool": {
+      "conditions": {
+        "block_predicate": {
+          "tag": "minecraft:iron_ores"
+        }
+      },
+      "trigger": "alloygery:wrong_tool_for_drops"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.iron_requires_bronze.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:iron_ore"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.iron_requires_bronze.title"
+    }
+  },
+  "requirements": [
+    [
+      "wrong_tool"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

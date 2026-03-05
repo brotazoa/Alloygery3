@@ -1,7 +1,18 @@
 {
   "variants": {
-    "": {
-      "model": "alloygery:block/feronyte"
-    }
+    "": [
+      {
+        "model": "alloygery:block/feronyte_0"
+      },
+      {
+        "model": "alloygery:block/feronyte_1"
+      },
+      {
+        "model": "alloygery:block/feronyte_2"
+      },
+      {
+        "model": "alloygery:block/feronyte_3"
+      }
+    ]
   }
 }

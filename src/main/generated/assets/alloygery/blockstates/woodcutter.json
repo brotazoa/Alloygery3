@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "alloygery:block/woodcutter",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "alloygery:block/woodcutter"
+    },
+    "facing=south": {
+      "model": "alloygery:block/woodcutter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "alloygery:block/woodcutter",
+      "y": 270
+    }
+  }
+}

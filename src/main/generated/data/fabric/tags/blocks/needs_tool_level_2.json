@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:feronyte",
+    "alloygery:antanium_block",
+    "alloygery:steel_block",
+    "minecraft:iron_block",
+    "minecraft:raw_iron_block",
+    "minecraft:iron_ore",
+    "minecraft:deepslate_iron_ore"
+  ]
+}

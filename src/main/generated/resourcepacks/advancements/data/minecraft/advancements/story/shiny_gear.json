@@ -1,0 +1,58 @@
+{
+  "parent": "minecraft:story/mine_diamond",
+  "criteria": {
+    "has_diamond_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:diamond_helmet",
+              "alloygery:diamond_helmet"
+            ]
+          },
+          {
+            "items": [
+              "minecraft:diamond_chestplate",
+              "alloygery:diamond_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "minecraft:diamond_leggings",
+              "alloygery:diamond_leggings"
+            ]
+          },
+          {
+            "items": [
+              "minecraft:diamond_boots",
+              "alloygery:diamond_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.alloygery.shiny_gear.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:diamond_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.shiny_gear.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_diamond_armor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

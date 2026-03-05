@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:helmet_items"
+    },
+    [
+      {
+        "item": "alloygery:diamond_plate_armor_part"
+      },
+      {
+        "item": "alloygery:diamond_scale_armor_part"
+      },
+      {
+        "item": "alloygery:diamond_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:diamond_helmet"
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "dyeable": true,
+  "material": "alloygery:alloygery_material/rabbit_hide",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:durability",
+      "value": 10.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:mining_level",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:enchantability",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:mining_speed",
+      "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "reach-entity-attributes:reach",
+      "operation": "multiply_total",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:attribute",
+      "value": 1.2
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "reach-entity-attributes:attack_range",
+      "operation": "multiply_total",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:attribute",
+      "value": 1.1
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:durability",
+      "value": 5.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:enchantability",
+      "value": 15.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 5.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor_toughness",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:freeze_protection",
+      "value": 100.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:walk_on_powdered_snow",
+      "value": 3.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:durability",
+      "value": 5.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:enchantability",
+      "value": 15.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 5.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor_toughness",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "additionalentityattributes:generic.jump_height",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 20.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:freeze_protection",
+      "value": 100.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "additionalentityattributes:generic.jump_height",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 20.0
+    }
+  ],
+  "repair_ingredient": []
+}

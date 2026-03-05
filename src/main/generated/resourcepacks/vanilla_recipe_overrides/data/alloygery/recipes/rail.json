@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "tag": "c:steel_ingots"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "i i",
+    "isi",
+    "i i"
+  ],
+  "result": {
+    "count": 32,
+    "item": "minecraft:rail"
+  },
+  "show_notification": true
+}

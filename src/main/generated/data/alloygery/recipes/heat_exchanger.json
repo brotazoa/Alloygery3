@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:polished_blackstone_bricks"
+    },
+    "f": {
+      "item": "minecraft:furnace"
+    },
+    "i": {
+      "item": "alloygery:constantan_ingot"
+    }
+  },
+  "pattern": [
+    "iii",
+    "ifi",
+    "bbb"
+  ],
+  "result": {
+    "item": "alloygery:heat_exchanger"
+  },
+  "show_notification": true
+}

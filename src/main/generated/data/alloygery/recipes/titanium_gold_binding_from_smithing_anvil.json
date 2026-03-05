@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "ingredient": {
+    "item": "alloygery:titanium_gold_ingot"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:titanium_gold_binding"
+  }
+}

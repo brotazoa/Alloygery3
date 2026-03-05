@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "n": {
+      "item": "alloygery:raw_tin_nugget"
+    }
+  },
+  "pattern": [
+    "nn",
+    "nn"
+  ],
+  "result": {
+    "item": "alloygery:raw_tin"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:base_wool_helmet",
+    "alloygery:base_leather_helmet",
+    "alloygery:base_rabbit_hide_helmet",
+    "alloygery:base_iron_chain_helmet",
+    "alloygery:tin_helmet",
+    "alloygery:copper_helmet",
+    "alloygery:bronze_helmet",
+    "alloygery:iron_helmet",
+    "alloygery:gold_helmet",
+    "alloygery:antanium_helmet",
+    "alloygery:diamond_helmet",
+    "alloygery:steel_helmet",
+    "alloygery:netherite_helmet",
+    "alloygery:nickel_helmet",
+    "alloygery:invar_helmet",
+    "alloygery:constantan_helmet",
+    "alloygery:titanium_helmet",
+    "alloygery:titanium_gold_helmet",
+    "alloygery:nitinol_helmet",
+    "alloygery:leather_helmet",
+    "alloygery:rabbit_hide_helmet"
+  ]
+}

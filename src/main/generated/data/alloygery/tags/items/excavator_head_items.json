@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_excavator_head",
+    "alloygery:bronze_excavator_head",
+    "alloygery:iron_excavator_head",
+    "alloygery:gold_excavator_head",
+    "alloygery:antanium_excavator_head",
+    "alloygery:steel_excavator_head",
+    "alloygery:netherite_excavator_head",
+    "alloygery:nickel_excavator_head",
+    "alloygery:invar_excavator_head",
+    "alloygery:constantan_excavator_head",
+    "alloygery:titanium_excavator_head",
+    "alloygery:titanium_gold_excavator_head",
+    "alloygery:nitinol_excavator_head",
+    "alloygery:diamond_excavator_head",
+    "alloygery:amethyst_excavator_head",
+    "alloygery:emerald_excavator_head"
+  ]
+}

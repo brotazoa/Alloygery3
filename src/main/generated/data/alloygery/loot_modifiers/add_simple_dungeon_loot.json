@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:add_table",
+  "conditions": [
+    {
+      "condition": "porting_lib:loot_table_id",
+      "loot_table_id": "minecraft:chests/simple_dungeon"
+    }
+  ],
+  "loot_table": "alloygery:chests/alloygery_simple_dungeon_loot"
+}

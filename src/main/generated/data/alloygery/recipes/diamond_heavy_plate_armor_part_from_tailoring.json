@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "minecraft:diamond"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:diamond_heavy_plate_armor_part"
+  }
+}

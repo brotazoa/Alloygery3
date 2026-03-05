@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alloygery:template/part/tool_head/excavator_template_titanium_gold"
+  }
+}

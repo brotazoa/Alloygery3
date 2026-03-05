@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:spruce_planks"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "minecraft:spruce_sign"
+  }
+}

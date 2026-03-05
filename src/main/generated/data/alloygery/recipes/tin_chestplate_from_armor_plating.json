@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:chestplate_items"
+    },
+    [
+      {
+        "item": "alloygery:tin_plate_armor_part"
+      },
+      {
+        "item": "alloygery:tin_scale_armor_part"
+      },
+      {
+        "item": "alloygery:tin_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:tin_chestplate"
+  }
+}

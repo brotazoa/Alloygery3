@@ -1,0 +1,55 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/bamboo",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:durability",
+      "value": 0.8
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:mining_speed",
+      "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:attribute",
+      "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:attribute",
+      "value": 0.8
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "reach-entity-attributes:reach",
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:attribute",
+      "value": 1.2
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "reach-entity-attributes:attack_range",
+      "operation": "multiply_base",
+      "part_type": "tool_handle",
+      "property_type": "alloygery:attribute",
+      "value": 1.2
+    }
+  ],
+  "repair_ingredient": {
+    "item": "minecraft:bamboo_planks"
+  }
+}

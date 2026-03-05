@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:acacia_planks"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "minecraft:acacia_stairs"
+  }
+}

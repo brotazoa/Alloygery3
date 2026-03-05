@@ -1,0 +1,40 @@
+{
+  "parent": "alloygery:story/smithing_anvil",
+  "criteria": {
+    "has_iron_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_pickaxe",
+              "alloygery:iron_pickaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.iron_tools.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:iron_pickaxe",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.iron_tools.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_pickaxe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

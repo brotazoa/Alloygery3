@@ -1,0 +1,378 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "alloygery:item/tin_leggings_upgraded",
+      "predicate": {
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_trimmed",
+      "predicate": {
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_upgraded_trimmed",
+      "predicate": {
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain",
+      "predicate": {
+        "alloygery:armor_style": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_padded",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.4
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_padded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.4,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_padded_upgraded",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.4,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_padded_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.4,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_engraved",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.5
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_engraved_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.5,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_engraved_upgraded",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.5,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_engraved_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.5,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_reinforced",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.6
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_reinforced_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.6,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_reinforced_upgraded",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.6,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_chain_reinforced_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.1,
+        "alloygery:improvement_type": 0.6,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather",
+      "predicate": {
+        "alloygery:armor_style": 0.2
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_padded",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.4
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_padded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.4,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_padded_upgraded",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.4,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_padded_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.4,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_engraved",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.5
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_engraved_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.5,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_engraved_upgraded",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.5,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_engraved_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.5,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_reinforced",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.6
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_reinforced_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.6,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_reinforced_upgraded",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.6,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_leather_reinforced_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.2,
+        "alloygery:improvement_type": 0.6,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool",
+      "predicate": {
+        "alloygery:armor_style": 0.3
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_padded",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.4
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_padded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.4,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_padded_upgraded",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.4,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_padded_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.4,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_engraved",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.5
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_engraved_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.5,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_engraved_upgraded",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.5,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_engraved_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.5,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_reinforced",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.6
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_reinforced_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.6,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_reinforced_upgraded",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.6,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/tin_leggings_wool_reinforced_upgraded_trimmed",
+      "predicate": {
+        "alloygery:armor_style": 0.3,
+        "alloygery:improvement_type": 0.6,
+        "alloygery:upgraded": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "alloygery:template/render_part/this_should_never_render"
+  }
+}

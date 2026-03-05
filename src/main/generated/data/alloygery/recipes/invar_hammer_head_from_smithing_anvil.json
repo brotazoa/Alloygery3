@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "ingredient": {
+    "item": "alloygery:invar_ingot"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:invar_hammer_head"
+  }
+}

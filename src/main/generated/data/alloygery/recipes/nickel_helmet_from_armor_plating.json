@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:helmet_items"
+    },
+    [
+      {
+        "item": "alloygery:nickel_plate_armor_part"
+      },
+      {
+        "item": "alloygery:nickel_scale_armor_part"
+      },
+      {
+        "item": "alloygery:nickel_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:nickel_helmet"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "alloygery:smithing_improvement",
+  "addition": {
+    "item": "alloygery:titanium_ingot"
+  },
+  "base": {
+    "tag": "alloygery:improvable_tool"
+  },
+  "improvement_material": "alloygery:alloygery_material/titanium",
+  "template": {
+    "item": "alloygery:plated_template"
+  }
+}

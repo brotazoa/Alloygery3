@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/tool_part/pickaxe_handle_template",
+    "layer1": "alloygery:template/render_part/tool_head/pickaxe_template_titanium_gold",
+    "layer2": "alloygery:template/render_part/tool_part/pickaxe_binding_template",
+    "layer3": "alloygery:template/render_part/tool_upgrade/upgrade_pickaxe",
+    "layer4": "alloygery:template/render_part/tool_improvement/tipped_pickaxe_template"
+  }
+}

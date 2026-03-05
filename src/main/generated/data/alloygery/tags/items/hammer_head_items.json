@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_hammer_head",
+    "alloygery:bronze_hammer_head",
+    "alloygery:iron_hammer_head",
+    "alloygery:gold_hammer_head",
+    "alloygery:antanium_hammer_head",
+    "alloygery:steel_hammer_head",
+    "alloygery:netherite_hammer_head",
+    "alloygery:nickel_hammer_head",
+    "alloygery:invar_hammer_head",
+    "alloygery:constantan_hammer_head",
+    "alloygery:titanium_hammer_head",
+    "alloygery:titanium_gold_hammer_head",
+    "alloygery:nitinol_hammer_head",
+    "alloygery:diamond_hammer_head",
+    "alloygery:amethyst_hammer_head",
+    "alloygery:emerald_hammer_head"
+  ]
+}

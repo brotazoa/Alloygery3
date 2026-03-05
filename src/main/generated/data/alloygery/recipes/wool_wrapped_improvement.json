@@ -1,0 +1,13 @@
+{
+  "type": "alloygery:smithing_improvement",
+  "addition": {
+    "item": "alloygery:wool_panel"
+  },
+  "base": {
+    "tag": "alloygery:improvable_tool"
+  },
+  "improvement_material": "alloygery:alloygery_material/wool",
+  "template": {
+    "item": "alloygery:wrapped_template"
+  }
+}

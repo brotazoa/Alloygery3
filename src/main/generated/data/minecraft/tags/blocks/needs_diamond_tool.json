@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:raw_nickel_block",
+    "alloygery:nickel_block",
+    "alloygery:invar_block",
+    "alloygery:constantan_block"
+  ]
+}

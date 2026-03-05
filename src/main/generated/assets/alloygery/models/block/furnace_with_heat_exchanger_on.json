@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "alloygery:block/furnace_with_heat_exchanger_bottom",
+    "front": "alloygery:block/furnace_with_heat_exchanger_front_on",
+    "side": "alloygery:block/furnace_with_heat_exchanger_side",
+    "top": "alloygery:block/furnace_with_heat_exchanger_top"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:nitinol_panel"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:nitinol_plate_armor_part"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:constantan_panel"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:constantan_scale_armor_part"
+  }
+}

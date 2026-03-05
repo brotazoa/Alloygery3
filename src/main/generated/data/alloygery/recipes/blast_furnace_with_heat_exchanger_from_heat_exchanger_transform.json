@@ -1,0 +1,9 @@
+{
+  "type": "alloygery:heat_exchanger_block_transform",
+  "input": {
+    "item": "minecraft:blast_furnace"
+  },
+  "output": {
+    "item": "alloygery:blast_furnace_with_heat_exchanger"
+  }
+}

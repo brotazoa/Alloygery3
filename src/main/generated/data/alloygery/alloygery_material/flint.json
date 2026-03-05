@@ -1,0 +1,53 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/flint",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:durability",
+      "value": 60.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:mining_level",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:enchantability",
+      "value": 5.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:mining_speed",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    }
+  ],
+  "repair_ingredient": {
+    "item": "minecraft:flint"
+  }
+}

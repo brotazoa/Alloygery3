@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:hay_block",
+    "minecraft:dried_kelp_block",
+    "#minecraft:sword_efficient",
+    {
+      "id": "#c:mineable/knife",
+      "required": false
+    }
+  ]
+}

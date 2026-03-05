@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "n": {
+      "item": "alloygery:raw_copper_nugget"
+    }
+  },
+  "pattern": [
+    "nn",
+    "nn"
+  ],
+  "result": {
+    "item": "minecraft:raw_copper"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:mushroom_stem"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:mushroom_stem_handle"
+  }
+}

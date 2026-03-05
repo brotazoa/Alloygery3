@@ -1,0 +1,82 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/wool",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:occlude_vibrations",
+      "value": 3.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:durability",
+      "value": 5.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:enchantability",
+      "value": 20.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor_toughness",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "additionalentityattributes:generic.mob_detection_range",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": -20.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:freeze_protection",
+      "value": 200.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:occlude_vibrations",
+      "value": 3.0
+    }
+  ],
+  "repair_ingredient": []
+}

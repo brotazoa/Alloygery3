@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:invar_panel"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:invar_plate_armor_part"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alloygery:blast_furnace_with_heat_exchanger_from_heat_exchanger_transform"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alloygery:blast_furnace_with_heat_exchanger_from_heat_exchanger_transform"
+    ]
+  },
+  "sends_telemetry_event": false
+}

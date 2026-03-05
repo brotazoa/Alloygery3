@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "c": {
+      "tag": "c:chests"
+    },
+    "i": {
+      "tag": "c:steel_ingots"
+    }
+  },
+  "pattern": [
+    "i i",
+    "ici",
+    " i "
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:hopper"
+  },
+  "show_notification": true
+}

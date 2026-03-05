@@ -1,0 +1,60 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/emerald",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:durability",
+      "value": 1200.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:mining_level",
+      "value": 2.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:enchantability",
+      "value": 10.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:mining_speed",
+      "value": 6.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:attribute",
+      "value": 2.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "multiply_total",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:durability",
+      "value": 1.5
+    }
+  ],
+  "repair_ingredient": {
+    "item": "minecraft:emerald"
+  }
+}

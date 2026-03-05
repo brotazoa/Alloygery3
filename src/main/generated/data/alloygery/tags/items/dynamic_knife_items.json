@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:flint_knife",
+    "alloygery:stone_knife",
+    "alloygery:copper_knife",
+    "alloygery:bronze_knife",
+    "alloygery:iron_knife",
+    "alloygery:gold_knife",
+    "alloygery:antanium_knife",
+    "alloygery:steel_knife",
+    "alloygery:netherite_knife",
+    "alloygery:nickel_knife",
+    "alloygery:invar_knife",
+    "alloygery:constantan_knife",
+    "alloygery:titanium_knife",
+    "alloygery:titanium_gold_knife",
+    "alloygery:nitinol_knife",
+    "alloygery:diamond_knife",
+    "alloygery:amethyst_knife",
+    "alloygery:emerald_knife"
+  ]
+}

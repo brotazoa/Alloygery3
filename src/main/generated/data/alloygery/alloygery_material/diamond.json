@@ -1,0 +1,106 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/diamond",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:durability",
+      "value": 1561.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:mining_level",
+      "value": 3.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:enchantability",
+      "value": 10.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:mining_speed",
+      "value": 8.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:attribute",
+      "value": 3.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:durability",
+      "value": 35.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:enchantability",
+      "value": 10.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 8.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor_toughness",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 4.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.knockback_resistance",
+      "operation": "addition",
+      "part_type": "armor_plate",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:mining_level",
+      "value": 1.0
+    }
+  ],
+  "repair_ingredient": {
+    "item": "minecraft:diamond"
+  }
+}

@@ -2,28 +2,29 @@ package amorphia.alloygery.worldgen;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.AlloygeryCreativeTabs;
+import amorphia.alloygery.datagen.loot.AlloygeryBlockLootTableProvider;
+import amorphia.alloygery.datagen.AlloygeryBlockTagProvider;
 import amorphia.alloygery.datagen.AlloygeryEnglishLanguageProvider;
 import amorphia.alloygery.datagen.AlloygeryModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 public class WorldGenModule
 {
 	public static final Map<String, Block> BLOCKS = new LinkedHashMap<>();
+
+	public static final Block TIN_ORE = makeOreBlock("tin_ore");
+	public static final Block DEEPSLATE_TIN_ORE = makeOreBlock("deepslate_tin_ore");
 
 	public static final Block TEALLITE = makeOreBlock("teallite");
 	public static final Block CUPROLINE = makeOreBlock("cuproline");
@@ -78,7 +79,13 @@ public class WorldGenModule
 	{
 		AlloygeryModelProvider.addProvider(new WorldGenModelProvider());
 		AlloygeryEnglishLanguageProvider.addProvider(new WorldGenEnglishLanguageProvider());
+		AlloygeryBlockLootTableProvider.addProvider(new WorldGenBlockLootTableProvider());
+		AlloygeryBlockTagProvider.addProvider(new WorldGenTagProvider());
 
-		pack.addProvider(WorldGenDataProvider::new);
+//		pack.addProvider(WorldGenDataProvider::new);
+
+		FabricDataGenerator.Pack worldgenPack = fabricDataGenerator.createBuiltinResourcePack(Alloygery.asResource("worldgen"));
+		worldgenPack.addProvider(WorldGenDataProvider::new);
+		worldgenPack.addProvider((FabricDataGenerator.Pack.Factory<WorldgenPackMetadataProvider>) WorldgenPackMetadataProvider::new);
 	}
 }

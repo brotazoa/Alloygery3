@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:stone_axe",
+    "alloygery:copper_axe",
+    "alloygery:bronze_axe",
+    "alloygery:iron_axe",
+    "alloygery:gold_axe",
+    "alloygery:antanium_axe",
+    "alloygery:steel_axe",
+    "alloygery:netherite_axe",
+    "alloygery:nickel_axe",
+    "alloygery:invar_axe",
+    "alloygery:constantan_axe",
+    "alloygery:titanium_axe",
+    "alloygery:titanium_gold_axe",
+    "alloygery:nitinol_axe",
+    "alloygery:diamond_axe",
+    "alloygery:amethyst_axe",
+    "alloygery:emerald_axe"
+  ]
+}

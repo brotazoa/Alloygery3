@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:base_wool_helmet",
+    "alloygery:base_wool_chestplate",
+    "alloygery:base_wool_leggings",
+    "alloygery:base_wool_boots",
+    "alloygery:base_leather_helmet",
+    "alloygery:base_leather_chestplate",
+    "alloygery:base_leather_leggings",
+    "alloygery:base_leather_boots",
+    "alloygery:base_rabbit_hide_helmet",
+    "alloygery:base_rabbit_hide_chestplate",
+    "alloygery:base_rabbit_hide_leggings",
+    "alloygery:base_rabbit_hide_boots",
+    "alloygery:base_iron_chain_helmet",
+    "alloygery:base_iron_chain_chestplate",
+    "alloygery:base_iron_chain_leggings",
+    "alloygery:base_iron_chain_boots"
+  ]
+}

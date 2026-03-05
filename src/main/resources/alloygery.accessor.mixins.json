@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "amorphia.alloygery.accessor",
+  "mixins": [
+    "LootContextAccessor",
+    "ArmorUUIDAccessor",
+    "DiggerItemBlocksAccessor",
+    "ItemUUIDAccessor"
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

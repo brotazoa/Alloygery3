@@ -1,0 +1,39 @@
+{
+  "parent": "minecraft:story/root",
+  "criteria": {
+    "has_flint_hatchet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:flint_hatchet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.alloygery.flint_age.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:flint_hatchet",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.flint_age.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_flint_hatchet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

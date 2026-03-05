@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:chestplate_items"
+    },
+    [
+      {
+        "item": "alloygery:titanium_gold_plate_armor_part"
+      },
+      {
+        "item": "alloygery:titanium_gold_scale_armor_part"
+      },
+      {
+        "item": "alloygery:titanium_gold_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:titanium_gold_chestplate"
+  }
+}

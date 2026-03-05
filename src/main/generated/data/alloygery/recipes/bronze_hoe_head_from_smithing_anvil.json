@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "ingredient": {
+    "item": "alloygery:bronze_ingot"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:bronze_hoe_head"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:stick_handle",
+    "alloygery:tin_handle",
+    "alloygery:copper_handle",
+    "alloygery:bronze_handle",
+    "alloygery:iron_handle",
+    "alloygery:gold_handle",
+    "alloygery:antanium_handle",
+    "alloygery:steel_handle",
+    "alloygery:netherite_handle",
+    "alloygery:nickel_handle",
+    "alloygery:invar_handle",
+    "alloygery:constantan_handle",
+    "alloygery:titanium_handle",
+    "alloygery:titanium_gold_handle",
+    "alloygery:nitinol_handle",
+    "alloygery:acacia_handle",
+    "alloygery:bamboo_handle",
+    "alloygery:birch_handle",
+    "alloygery:cherry_handle",
+    "alloygery:crimson_handle",
+    "alloygery:dark_oak_handle",
+    "alloygery:jungle_handle",
+    "alloygery:mangrove_handle",
+    "alloygery:mushroom_stem_handle",
+    "alloygery:oak_handle",
+    "alloygery:spruce_handle",
+    "alloygery:warped_handle",
+    "alloygery:bone_handle"
+  ]
+}

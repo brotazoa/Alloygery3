@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:tin_ingot",
+    "alloygery:bronze_ingot",
+    "alloygery:antanium_ingot",
+    "alloygery:steel_ingot",
+    "alloygery:nickel_ingot",
+    "alloygery:invar_ingot",
+    "alloygery:constantan_ingot",
+    "alloygery:titanium_ingot",
+    "alloygery:titanium_gold_ingot",
+    "alloygery:nitinol_ingot",
+    "minecraft:netherite_ingot"
+  ]
+}

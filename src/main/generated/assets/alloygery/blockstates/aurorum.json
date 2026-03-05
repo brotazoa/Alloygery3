@@ -1,7 +1,18 @@
 {
   "variants": {
-    "": {
-      "model": "alloygery:block/aurorum"
-    }
+    "": [
+      {
+        "model": "alloygery:block/aurorum_0"
+      },
+      {
+        "model": "alloygery:block/aurorum_1"
+      },
+      {
+        "model": "alloygery:block/aurorum_2"
+      },
+      {
+        "model": "alloygery:block/aurorum_3"
+      }
+    ]
   }
 }

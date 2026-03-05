@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "ingredient": {
+    "item": "minecraft:amethyst_shard"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:amethyst_hammer_head"
+  }
+}

@@ -10,6 +10,7 @@ public enum CraftingMaterialTypes
 	RAW_BLOCK,
 	NUGGET,
 	INGOT,
+	PANEL,
 	BLOCK,
 	;
 

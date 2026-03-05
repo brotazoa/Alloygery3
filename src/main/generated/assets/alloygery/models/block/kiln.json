@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "alloygery:block/kiln_bottom",
+    "front": "alloygery:block/kiln_front",
+    "side": "alloygery:block/kiln_side",
+    "top": "alloygery:block/kiln_top"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_hammer",
+    "alloygery:bronze_hammer",
+    "alloygery:iron_hammer",
+    "alloygery:gold_hammer",
+    "alloygery:antanium_hammer",
+    "alloygery:steel_hammer",
+    "alloygery:netherite_hammer",
+    "alloygery:nickel_hammer",
+    "alloygery:invar_hammer",
+    "alloygery:constantan_hammer",
+    "alloygery:titanium_hammer",
+    "alloygery:titanium_gold_hammer",
+    "alloygery:nitinol_hammer",
+    "alloygery:diamond_hammer",
+    "alloygery:amethyst_hammer",
+    "alloygery:emerald_hammer"
+  ]
+}

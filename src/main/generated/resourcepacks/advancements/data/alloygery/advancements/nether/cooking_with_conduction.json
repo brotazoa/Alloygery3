@@ -1,0 +1,36 @@
+{
+  "parent": "alloygery:nether/heated_exchange",
+  "criteria": {
+    "convert_alloy_kiln": {
+      "conditions": {
+        "converted_block": {
+          "blocks": [
+            "alloygery:alloy_kiln_with_heat_exchanger"
+          ]
+        }
+      },
+      "trigger": "alloygery:block_convert"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.cooking_with_conduction.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:alloy_kiln_with_heat_exchanger"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.cooking_with_conduction.title"
+    }
+  },
+  "requirements": [
+    [
+      "convert_alloy_kiln"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

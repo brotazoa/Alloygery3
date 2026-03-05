@@ -1,0 +1,8 @@
+{
+  "entries": [
+    "alloygery:husk_drops_tin",
+    "alloygery:add_simple_dungeon_loot",
+    "alloygery:add_abandoned_mineshaft_loot"
+  ],
+  "replace": false
+}

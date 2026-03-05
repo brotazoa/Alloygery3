@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:leggings_items"
+    },
+    [
+      {
+        "item": "alloygery:copper_plate_armor_part"
+      },
+      {
+        "item": "alloygery:copper_scale_armor_part"
+      },
+      {
+        "item": "alloygery:copper_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:copper_leggings"
+  }
+}

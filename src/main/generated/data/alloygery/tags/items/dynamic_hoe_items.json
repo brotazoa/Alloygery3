@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:stone_hoe",
+    "alloygery:copper_hoe",
+    "alloygery:bronze_hoe",
+    "alloygery:iron_hoe",
+    "alloygery:gold_hoe",
+    "alloygery:antanium_hoe",
+    "alloygery:steel_hoe",
+    "alloygery:netherite_hoe",
+    "alloygery:nickel_hoe",
+    "alloygery:invar_hoe",
+    "alloygery:constantan_hoe",
+    "alloygery:titanium_hoe",
+    "alloygery:titanium_gold_hoe",
+    "alloygery:nitinol_hoe",
+    "alloygery:diamond_hoe",
+    "alloygery:amethyst_hoe",
+    "alloygery:emerald_hoe"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:alloying",
+  "experience": 2.8,
+  "inputs": [
+    {
+      "tag": "c:gold_sources"
+    },
+    {
+      "tag": "c:copper_sources"
+    },
+    {
+      "tag": "c:iron_sources"
+    },
+    {
+      "tag": "c:iron_sources"
+    }
+  ],
+  "output": {
+    "count": 4,
+    "item": "alloygery:antanium_ingot"
+  },
+  "smelting_time": 800
+}

@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "alloygery_installed": {
+      "conditions": {},
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "alloygery:textures/gui/advancements/bricks.png",
+    "description": {
+      "translate": "advancements.alloygery.game_changes.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:alloy_kiln"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.alloygery.game_changes.title"
+    }
+  },
+  "requirements": [
+    [
+      "alloygery_installed"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,20 @@
+{
+  "type": "alloygery:tool_shaped",
+  "category": "equipment",
+  "key": {
+    "h": {
+      "item": "alloygery:bronze_hatchet_head"
+    },
+    "l": {
+      "tag": "alloygery:tool_handle_items"
+    }
+  },
+  "pattern": [
+    " h",
+    "l "
+  ],
+  "result": {
+    "item": "alloygery:bronze_hatchet"
+  },
+  "show_notification": true
+}

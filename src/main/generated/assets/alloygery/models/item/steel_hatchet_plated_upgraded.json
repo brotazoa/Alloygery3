@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/tool_part/hatchet_handle_template",
+    "layer1": "alloygery:template/render_part/tool_head/hatchet_template_steel",
+    "layer2": "alloygery:template/render_part/tool_upgrade/upgrade_hatchet",
+    "layer3": "alloygery:template/render_part/tool_improvement/plated_hatchet_template"
+  }
+}

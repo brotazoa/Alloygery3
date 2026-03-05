@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:copper_panel"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:copper_heavy_plate_armor_part"
+  }
+}

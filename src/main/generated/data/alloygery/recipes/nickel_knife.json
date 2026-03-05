@@ -1,0 +1,20 @@
+{
+  "type": "alloygery:tool_shaped",
+  "category": "equipment",
+  "key": {
+    "h": {
+      "item": "alloygery:nickel_knife_blade"
+    },
+    "l": {
+      "tag": "alloygery:tool_handle_items"
+    }
+  },
+  "pattern": [
+    " h",
+    "l "
+  ],
+  "result": {
+    "item": "alloygery:nickel_knife"
+  },
+  "show_notification": true
+}

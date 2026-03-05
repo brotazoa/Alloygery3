@@ -1,7 +1,18 @@
 {
   "variants": {
-    "": {
-      "model": "alloygery:block/titanite"
-    }
+    "": [
+      {
+        "model": "alloygery:block/titanite_0"
+      },
+      {
+        "model": "alloygery:block/titanite_1"
+      },
+      {
+        "model": "alloygery:block/titanite_2"
+      },
+      {
+        "model": "alloygery:block/titanite_3"
+      }
+    ]
   }
 }

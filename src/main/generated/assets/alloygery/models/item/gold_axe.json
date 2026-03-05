@@ -1,0 +1,73 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "alloygery:item/gold_axe_with_binding",
+      "predicate": {
+        "alloygery:tool_has_binding": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/gold_axe_upgraded",
+      "predicate": {
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/gold_axe_with_binding_upgraded",
+      "predicate": {
+        "alloygery:tool_has_binding": 1.0,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/gold_axe_tipped",
+      "predicate": {
+        "alloygery:improvement_type": 0.1,
+        "alloygery:tool_has_binding": 1
+      }
+    },
+    {
+      "model": "alloygery:item/gold_axe_tipped_upgraded",
+      "predicate": {
+        "alloygery:improvement_type": 0.1,
+        "alloygery:tool_has_binding": 1.0,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/gold_axe_plated",
+      "predicate": {
+        "alloygery:improvement_type": 0.2,
+        "alloygery:tool_has_binding": 1
+      }
+    },
+    {
+      "model": "alloygery:item/gold_axe_plated_upgraded",
+      "predicate": {
+        "alloygery:improvement_type": 0.2,
+        "alloygery:tool_has_binding": 1.0,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/gold_axe_wrapped",
+      "predicate": {
+        "alloygery:improvement_type": 0.3,
+        "alloygery:tool_has_binding": 1
+      }
+    },
+    {
+      "model": "alloygery:item/gold_axe_wrapped_upgraded",
+      "predicate": {
+        "alloygery:improvement_type": 0.3,
+        "alloygery:tool_has_binding": 1.0,
+        "alloygery:upgraded": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "alloygery:template/render_part/tool_part/axe_handle_template",
+    "layer1": "alloygery:template/render_part/tool_head/axe_template_gold"
+  }
+}

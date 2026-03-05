@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:jungle_planks"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "minecraft:jungle_fence_gate"
+  }
+}

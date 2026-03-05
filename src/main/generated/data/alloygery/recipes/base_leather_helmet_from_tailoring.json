@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "minecraft:leather"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:base_leather_helmet"
+  }
+}

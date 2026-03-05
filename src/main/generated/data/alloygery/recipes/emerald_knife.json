@@ -1,0 +1,20 @@
+{
+  "type": "alloygery:tool_shaped",
+  "category": "equipment",
+  "key": {
+    "h": {
+      "item": "alloygery:emerald_knife_blade"
+    },
+    "l": {
+      "tag": "alloygery:tool_handle_items"
+    }
+  },
+  "pattern": [
+    " h",
+    "l "
+  ],
+  "result": {
+    "item": "alloygery:emerald_knife"
+  },
+  "show_notification": true
+}

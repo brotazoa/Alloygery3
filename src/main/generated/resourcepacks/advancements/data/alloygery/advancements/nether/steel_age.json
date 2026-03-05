@@ -1,0 +1,38 @@
+{
+  "parent": "alloygery:nether/cooking_with_conduction",
+  "criteria": {
+    "has_steel_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:steel_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.alloygery.steel_age.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:steel_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.steel_age.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_steel_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

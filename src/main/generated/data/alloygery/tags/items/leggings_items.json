@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:base_wool_leggings",
+    "alloygery:base_leather_leggings",
+    "alloygery:base_rabbit_hide_leggings",
+    "alloygery:base_iron_chain_leggings",
+    "alloygery:tin_leggings",
+    "alloygery:copper_leggings",
+    "alloygery:bronze_leggings",
+    "alloygery:iron_leggings",
+    "alloygery:gold_leggings",
+    "alloygery:antanium_leggings",
+    "alloygery:diamond_leggings",
+    "alloygery:steel_leggings",
+    "alloygery:netherite_leggings",
+    "alloygery:nickel_leggings",
+    "alloygery:invar_leggings",
+    "alloygery:constantan_leggings",
+    "alloygery:titanium_leggings",
+    "alloygery:titanium_gold_leggings",
+    "alloygery:nitinol_leggings",
+    "alloygery:leather_leggings",
+    "alloygery:rabbit_hide_leggings"
+  ]
+}

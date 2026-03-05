@@ -1,0 +1,22 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/redstone",
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "multiply_total",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:mining_speed",
+      "value": 1.3
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "multiply_total",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:attribute",
+      "value": 1.3
+    }
+  ],
+  "repair_ingredient": []
+}

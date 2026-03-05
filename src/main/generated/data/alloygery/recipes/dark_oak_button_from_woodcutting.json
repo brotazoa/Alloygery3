@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:dark_oak_planks"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "minecraft:dark_oak_button"
+  }
+}

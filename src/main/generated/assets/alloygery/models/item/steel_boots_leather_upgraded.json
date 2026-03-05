@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/armor/base_boots",
+    "layer1": "alloygery:template/render_part/armor/base_boots_leather",
+    "layer2": "alloygery:template/render_part/armor/upgrade_boots",
+    "layer3": "alloygery:template/render_part/armor/plate_boots_steel"
+  }
+}

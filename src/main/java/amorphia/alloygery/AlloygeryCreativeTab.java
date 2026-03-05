@@ -28,7 +28,7 @@ public class AlloygeryCreativeTab implements IAlloygeryCreativeTab
 	public void build()
 	{
 		final Item iconItem = Registry.register(BuiltInRegistries.ITEM, icon, new Item(new Item.Properties()));
-		final CreativeModeTab GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(iconItem)).title(Component.translatable(icon.getNamespace() + ".creative_tab." + icon.getPath())).displayItems((context, items) -> {
+		final CreativeModeTab GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(iconItem)).title(Component.translatable(icon.toLanguageKey("creative_tab"))).displayItems((context, items) -> {
 			for(Item item : entries)
 				items.accept(item);
 		}).build();

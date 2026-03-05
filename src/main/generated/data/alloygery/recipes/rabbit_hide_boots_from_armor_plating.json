@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:armor_plating",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "alloygery:boots_items"
+    },
+    [
+      {
+        "item": "alloygery:rabbit_hide_plate_armor_part"
+      },
+      {
+        "item": "alloygery:rabbit_hide_scale_armor_part"
+      },
+      {
+        "item": "alloygery:rabbit_hide_heavy_plate_armor_part"
+      }
+    ]
+  ],
+  "result": {
+    "item": "alloygery:rabbit_hide_boots"
+  }
+}

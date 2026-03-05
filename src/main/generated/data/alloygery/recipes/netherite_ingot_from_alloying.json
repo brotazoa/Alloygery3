@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:alloying",
+  "experience": 2.8,
+  "inputs": [
+    {
+      "tag": "c:gold_sources"
+    },
+    {
+      "tag": "c:gold_sources"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    }
+  ],
+  "output": {
+    "count": 4,
+    "item": "minecraft:netherite_ingot"
+  },
+  "smelting_time": 800
+}

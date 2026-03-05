@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "ingredient": {
+    "item": "alloygery:nickel_ingot"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:nickel_sword_blade"
+  }
+}

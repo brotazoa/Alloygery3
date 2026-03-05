@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alloygery:template/crafting_material/normal_panel_template_nitinol"
+  }
+}

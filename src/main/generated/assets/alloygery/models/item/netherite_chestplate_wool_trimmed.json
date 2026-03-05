@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:template/render_part/armor/base_chestplate",
+    "layer1": "alloygery:template/render_part/armor/base_chestplate_wool",
+    "layer2": "alloygery:template/render_part/armor/plate_chestplate_netherite",
+    "layer3": "alloygery:template/render_part/armor/trim_chestplate"
+  }
+}

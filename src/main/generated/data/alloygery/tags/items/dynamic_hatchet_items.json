@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:flint_hatchet",
+    "alloygery:stone_hatchet",
+    "alloygery:copper_hatchet",
+    "alloygery:bronze_hatchet",
+    "alloygery:iron_hatchet",
+    "alloygery:gold_hatchet",
+    "alloygery:antanium_hatchet",
+    "alloygery:steel_hatchet",
+    "alloygery:netherite_hatchet",
+    "alloygery:nickel_hatchet",
+    "alloygery:invar_hatchet",
+    "alloygery:constantan_hatchet",
+    "alloygery:titanium_hatchet",
+    "alloygery:titanium_gold_hatchet",
+    "alloygery:nitinol_hatchet",
+    "alloygery:diamond_hatchet",
+    "alloygery:amethyst_hatchet",
+    "alloygery:emerald_hatchet"
+  ]
+}

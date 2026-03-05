@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_excavator",
+    "alloygery:bronze_excavator",
+    "alloygery:iron_excavator",
+    "alloygery:gold_excavator",
+    "alloygery:antanium_excavator",
+    "alloygery:steel_excavator",
+    "alloygery:netherite_excavator",
+    "alloygery:nickel_excavator",
+    "alloygery:invar_excavator",
+    "alloygery:constantan_excavator",
+    "alloygery:titanium_excavator",
+    "alloygery:titanium_gold_excavator",
+    "alloygery:nitinol_excavator",
+    "alloygery:diamond_excavator",
+    "alloygery:amethyst_excavator",
+    "alloygery:emerald_excavator"
+  ]
+}

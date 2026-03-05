@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:stone_guard",
+    "alloygery:copper_guard",
+    "alloygery:bronze_guard",
+    "alloygery:iron_guard",
+    "alloygery:gold_guard",
+    "alloygery:antanium_guard",
+    "alloygery:steel_guard",
+    "alloygery:netherite_guard",
+    "alloygery:nickel_guard",
+    "alloygery:invar_guard",
+    "alloygery:constantan_guard",
+    "alloygery:titanium_guard",
+    "alloygery:titanium_gold_guard",
+    "alloygery:nitinol_guard",
+    "alloygery:diamond_guard",
+    "alloygery:amethyst_guard",
+    "alloygery:emerald_guard"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "item": "alloygery:gold_panel"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:gold_heavy_plate_armor_part"
+  }
+}

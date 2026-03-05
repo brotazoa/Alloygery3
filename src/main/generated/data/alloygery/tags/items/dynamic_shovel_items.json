@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:stone_shovel",
+    "alloygery:copper_shovel",
+    "alloygery:bronze_shovel",
+    "alloygery:iron_shovel",
+    "alloygery:gold_shovel",
+    "alloygery:antanium_shovel",
+    "alloygery:steel_shovel",
+    "alloygery:netherite_shovel",
+    "alloygery:nickel_shovel",
+    "alloygery:invar_shovel",
+    "alloygery:constantan_shovel",
+    "alloygery:titanium_shovel",
+    "alloygery:titanium_gold_shovel",
+    "alloygery:nitinol_shovel",
+    "alloygery:diamond_shovel",
+    "alloygery:amethyst_shovel",
+    "alloygery:emerald_shovel"
+  ]
+}

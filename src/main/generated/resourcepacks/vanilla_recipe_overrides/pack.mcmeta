@@ -1,0 +1,8 @@
+{
+  "pack": {
+    "description": {
+      "translate": "pack.alloygery.vanilla_recipe_overrides.description"
+    },
+    "pack_format": 15
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "alloygery:item/antanium_knife_upgraded",
+      "predicate": {
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/antanium_knife_tipped",
+      "predicate": {
+        "alloygery:improvement_type": 0.1
+      }
+    },
+    {
+      "model": "alloygery:item/antanium_knife_tipped_upgraded",
+      "predicate": {
+        "alloygery:improvement_type": 0.1,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/antanium_knife_plated",
+      "predicate": {
+        "alloygery:improvement_type": 0.2
+      }
+    },
+    {
+      "model": "alloygery:item/antanium_knife_plated_upgraded",
+      "predicate": {
+        "alloygery:improvement_type": 0.2,
+        "alloygery:upgraded": 1.0
+      }
+    },
+    {
+      "model": "alloygery:item/antanium_knife_wrapped",
+      "predicate": {
+        "alloygery:improvement_type": 0.3
+      }
+    },
+    {
+      "model": "alloygery:item/antanium_knife_wrapped_upgraded",
+      "predicate": {
+        "alloygery:improvement_type": 0.3,
+        "alloygery:upgraded": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "alloygery:template/render_part/tool_part/knife_handle_template",
+    "layer1": "alloygery:template/render_part/tool_head/knife_template_antanium"
+  }
+}
