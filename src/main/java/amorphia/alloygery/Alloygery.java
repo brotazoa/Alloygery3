@@ -44,6 +44,7 @@ public class Alloygery implements ModInitializer, ClientModInitializer, DataGene
 					ResourceManagerHelper.registerBuiltinResourcePack(asResource("easier_starting_recipes"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
 					ResourceManagerHelper.registerBuiltinResourcePack(asResource("convert_vanilla_gear_to_alloygery_gear"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
 					ResourceManagerHelper.registerBuiltinResourcePack(asResource("vanilla_recipe_overrides"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
+					ResourceManagerHelper.registerBuiltinResourcePack(asResource("disable_vanilla_oregen"), modContainer, ResourcePackActivationType.NORMAL);
 				}
 		);
 

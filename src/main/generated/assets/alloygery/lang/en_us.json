@@ -747,6 +747,7 @@
   "pack.alloygery.logs_require_tool.description": "Logs require the correct tool for item drops.",
   "pack.alloygery.vanilla_recipe_overrides.description": "Opinionated changes to some Vanilla recipes. Defaults to enabled for new worlds.",
   "pack.alloygery.worldgen.description": "Worldgen for Alloygery. Defaults to enabled for new worlds.",
+  "pack.alloygery.worldgen.disable_vanilla_oregen": "Disable Vanilla Style Ore Generation",
   "part_type.alloygery.armor_base.tooltip": "Armor Base",
   "part_type.alloygery.armor_improvement.tooltip": "Armor Improvement",
   "part_type.alloygery.armor_plate.tooltip": "Armor Plate",

@@ -9,5 +9,7 @@ public class WorldGenEnglishLanguageProvider implements AlloygeryEnglishLanguage
 	public void generateTranslations(FabricLanguageProvider.TranslationBuilder translationBuilder)
 	{
 		WorldGenModule.BLOCKS.forEach((path, block) -> translationBuilder.add(block, AlloygeryEnglishLanguageProvider.englishNameFromPath(path)));
+
+		translationBuilder.add("pack.alloygery.worldgen.disable_vanilla_oregen", "Disable Vanilla Style Ore Generation");
 	}
 }

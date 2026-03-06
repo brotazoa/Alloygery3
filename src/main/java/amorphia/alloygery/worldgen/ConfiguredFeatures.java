@@ -59,7 +59,7 @@ public class ConfiguredFeatures
 				LayerPatterns.CUPROLINE_SHALLOW.get(),
 				LayerPatterns.FERONYTE_DEEP.get()
 		);
-		FeatureUtils.register(cntx, OVERWORLD_SHALLOW_ORE_VEINS, Features.LAYERED_ORE, new LayeredOreConfiguration(shallow, 32, 0));
+		FeatureUtils.register(cntx, OVERWORLD_SHALLOW_ORE_VEINS, Features.LAYERED_ORE, new LayeredOreConfiguration(shallow, 24, 0));
 
 		List<LayerPattern> deep = List.of(
 			//LayerPatterns.TEALLITE_DEEP.get(),
@@ -91,11 +91,11 @@ public class ConfiguredFeatures
 		List<LayerPattern> netherLayerPatterns = List.of(
 				LayerPatterns.NICKELINE.get()
 		);
-		FeatureUtils.register(cntx, NETHER_ORE_VEINS, Features.LAYERED_ORE, new LayeredOreConfiguration(netherLayerPatterns, 32, 0));
+		FeatureUtils.register(cntx, NETHER_ORE_VEINS, Features.LAYERED_ORE, new LayeredOreConfiguration(netherLayerPatterns, 24, 0));
 
 		List<LayerPattern> endLayerPatterns = List.of(
 				LayerPatterns.TITANITE.get()
 		);
-		FeatureUtils.register(cntx, END_ORE_VEINS, Features.LAYERED_ORE, new LayeredOreConfiguration(endLayerPatterns, 32, 0));
+		FeatureUtils.register(cntx, END_ORE_VEINS, Features.LAYERED_ORE, new LayeredOreConfiguration(endLayerPatterns, 24, 0));
 	}
 }

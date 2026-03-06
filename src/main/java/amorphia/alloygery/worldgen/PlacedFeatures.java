@@ -56,7 +56,7 @@ public class PlacedFeatures
 		Holder<ConfiguredFeature<?, ?>> overworldMessa = featureLookup.getOrThrow(ConfiguredFeatures.OVERWOLD_MESSA_GOLD_ORE_VEINS);
 
 		PlacementUtils.register(cntx, OVERWORLD_SURFACE_ORE_VEINS, overworldSurface, List.of(
-				RarityFilter.onAverageOnceEvery(11),
+				RarityFilter.onAverageOnceEvery(15),
 				HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 				InSquarePlacement.spread(),
 				ConfigPlacementFilter.INSTANCE

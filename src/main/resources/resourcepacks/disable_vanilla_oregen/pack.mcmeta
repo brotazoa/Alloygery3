@@ -1,0 +1,8 @@
+{
+  "pack": {
+    "description": {
+        "translate": "pack.alloygery.worldgen.disable_vanilla_oregen"
+    },
+    "pack_format": 15
+  }
+}

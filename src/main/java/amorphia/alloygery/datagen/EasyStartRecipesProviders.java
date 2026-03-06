@@ -4,6 +4,7 @@ import amorphia.alloygery.gear.GearModule;
 import amorphia.alloygery.gear.datagen.recipe.BaseArmorRecipeShapedBuilder;
 import amorphia.alloygery.gear.property.PrimitiveProperty;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.DetectedVersion;
 import net.minecraft.data.PackOutput;
