@@ -1,0 +1,335 @@
+{
+  "type": "alloygery:layered_ore",
+  "config": {
+    "discard_on_air_exposure_chance": 0.0,
+    "layer_patterns": [
+      [
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "alloygery:teallite"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "alloygery:teallite"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 3
+        },
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:cobblestone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:cobblestone"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:clay"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:clay"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:tuff"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:tuff"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        },
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:coarse_dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:coarse_dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:gravel"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:gravel"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        }
+      ],
+      [
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "alloygery:cuproline"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "alloygery:cuproline"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 3
+        },
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:dripstone_block"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:dripstone_block"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:granite"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:granite"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:coarse_dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:coarse_dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        },
+        {
+          "max_size": 1,
+          "min_size": 1,
+          "targets": [
+            [
+              {
+                "state": {
+                  "Name": "minecraft:dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:coarse_dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:coarse_dirt"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ],
+            [
+              {
+                "state": {
+                  "Name": "minecraft:gravel"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "minecraft:stone_ore_replaceables"
+                }
+              },
+              {
+                "state": {
+                  "Name": "minecraft:gravel"
+                },
+                "target": {
+                  "predicate_type": "minecraft:tag_match",
+                  "tag": "alloygery:overworld_surface_ore_replaceables"
+                }
+              }
+            ]
+          ],
+          "weight": 1
+        }
+      ]
+    ],
+    "size": 6
+  }
+}

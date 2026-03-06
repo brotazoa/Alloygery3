@@ -49,6 +49,11 @@ public class LayerPattern
 		return new OverworldBuilder();
 	}
 
+	public static OverworldSurfaceBuilder overworldSurfaceBuilder()
+	{
+		return new OverworldSurfaceBuilder();
+	}
+
 	public static NetherBuilder netherBuilder()
 	{
 		return new NetherBuilder();
@@ -74,6 +79,17 @@ public class LayerPattern
 		public OverworldBuilder layer(Consumer<Layer.OverworldBuilder> builder)
 		{
 			Layer.OverworldBuilder layerBuilder = new Layer.OverworldBuilder();
+			builder.accept(layerBuilder);
+			layers.add(layerBuilder.build());
+			return this;
+		}
+	}
+
+	public static class OverworldSurfaceBuilder extends Builder
+	{
+		public OverworldSurfaceBuilder layer(Consumer<Layer.OverworldSurfaceBuilder> builder)
+		{
+			Layer.OverworldSurfaceBuilder layerBuilder = new Layer.OverworldSurfaceBuilder();
 			builder.accept(layerBuilder);
 			layers.add(layerBuilder.build());
 			return this;

@@ -29,6 +29,8 @@ public class ConfiguredFeatures
 	public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWOLD_SWAMP_IRON_ORE_VEINS = key("overworld_swamp_iron_ore_veins");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWOLD_MESSA_GOLD_ORE_VEINS = key("overworld_messa_gold_ore_veins");
 
+	public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_SURFACE_ORE_VEINS = key("overworld_surface_ore_veins");
+
 	private static ResourceKey<ConfiguredFeature<?, ?>> key(String name)
 	{
 		return ResourceKey.create(Registries.CONFIGURED_FEATURE, Alloygery.asResource(name));
@@ -45,6 +47,12 @@ public class ConfiguredFeatures
 		);
 
 		FeatureUtils.register(cntx, TIN_ORE, Feature.ORE, new OreConfiguration(tinTargetStates, 8));
+
+		List<LayerPattern> surface = List.of(
+				LayerPatterns.TEALLITE_SURFACE.get(),
+				LayerPatterns.CUPROLINE_SURFACE.get()
+		);
+		FeatureUtils.register(cntx, OVERWORLD_SURFACE_ORE_VEINS, Features.LAYERED_ORE, new LayeredOreConfiguration(surface, 6, 0));
 
 		List<LayerPattern> shallow = List.of(
 				LayerPatterns.TEALLITE_SHALLOW.get(),

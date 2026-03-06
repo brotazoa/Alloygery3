@@ -1,0 +1,19 @@
+{
+  "feature": "alloygery:overworld_surface_ore_veins",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 11
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "alloygery:config_filter"
+    }
+  ]
+}

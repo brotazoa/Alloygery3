@@ -55,6 +55,7 @@ public class Layer
 
 	public static class Builder
 	{
+		protected static final RuleTest SURFACE_ORE_REPLACEABLES = new TagMatchTest(WorldGenModule.OVERWORLD_SURFACE_ORE_REPLACEABLES);
 		protected static final RuleTest STONE_ORE_REPLACEABLES = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
 		protected static final RuleTest DEEPSLATE_ORE_REPLACEABLES = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 		protected static final RuleTest NETHER_ORE_REPLACEABLES = new TagMatchTest(BlockTags.BASE_STONE_NETHER);
@@ -115,6 +116,34 @@ public class Layer
 		public OverworldBuilder blocks(BlockState stone, BlockState deepslate)
 		{
 			this.targets.add(ImmutableList.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, stone), OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, deepslate)));
+			return this;
+		}
+	}
+
+	public static class OverworldSurfaceBuilder extends Builder
+	{
+		public OverworldSurfaceBuilder passiveBlock()
+		{
+			return block(Blocks.DIRT).block(Blocks.COARSE_DIRT).block(Blocks.GRAVEL);
+		}
+
+		public OverworldSurfaceBuilder blocks(Block... blocks)
+		{
+			for (Block block : blocks)
+			{
+				block(block);
+			}
+			return this;
+		}
+
+		public OverworldSurfaceBuilder block(Block block)
+		{
+			return block(block.defaultBlockState());
+		}
+
+		public OverworldSurfaceBuilder block(BlockState stone)
+		{
+			this.targets.add(ImmutableList.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, stone), OreConfiguration.target(SURFACE_ORE_REPLACEABLES, stone)));
 			return this;
 		}
 	}

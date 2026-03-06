@@ -7,6 +7,13 @@ import java.util.function.Supplier;
 public class LayerPatterns
 {
 	// tin
+	// surface
+	public static final Supplier<LayerPattern> TEALLITE_SURFACE = () ->
+			LayerPattern.overworldSurfaceBuilder()
+					.layer(l -> l.block(WorldGenModule.TEALLITE).weight(3).size(1, 1))
+					.layer(l -> l.blocks(Blocks.COBBLESTONE, Blocks.CLAY, Blocks.TUFF).weight(1).size(1, 1))
+					.layer(l -> l.passiveBlock().weight(1).size(1, 1))
+					.build();
 	// shallow
 	public static final Supplier<LayerPattern> TEALLITE_SHALLOW = () ->
 			LayerPattern.overworldBuilder()
@@ -25,6 +32,13 @@ public class LayerPatterns
 					.build();
 
 	// copper
+	// surface
+	public static final Supplier<LayerPattern> CUPROLINE_SURFACE = () ->
+			LayerPattern.overworldSurfaceBuilder()
+					.layer(l -> l.block(WorldGenModule.CUPROLINE).weight(3).size(1, 1))
+					.layer(l -> l.blocks(Blocks.DRIPSTONE_BLOCK, Blocks.GRANITE, Blocks.COARSE_DIRT).weight(1).size(1, 1))
+					.layer(l -> l.passiveBlock().weight(1).size(1, 1))
+					.build();
 	// shallow
 	public static final Supplier<LayerPattern> CUPROLINE_SHALLOW = () ->
 			LayerPattern.overworldBuilder()

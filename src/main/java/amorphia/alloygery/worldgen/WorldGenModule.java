@@ -10,7 +10,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -32,6 +34,8 @@ public class WorldGenModule
 	public static final Block AURORUM = makeOreBlock("aurorum");
 	public static final Block NICKELINE = makeOreBlock("nickeline");
 	public static final Block TITANITE = makeOreBlock("titanite");
+
+	public static final TagKey<Block> OVERWORLD_SURFACE_ORE_REPLACEABLES = TagKey.create(Registries.BLOCK, Alloygery.asResource("overworld_surface_ore_replaceables"));
 
 	private static Block makeOreBlock(String path)
 	{

@@ -40,7 +40,9 @@ public class LayeredOreFeature extends Feature<LayeredOreConfiguration>
 
 		int placedAmount = 0;
 		int size = config.size;
-		int radius = Mth.ceil(config.size / 2f);
+		float rndSizeOffset = Mth.randomBetween(random, 0.8f, 1.2f);
+		size = Mth.ceil(size * rndSizeOffset);
+		int radius = Mth.ceil(size / 2f);
 		int x0 = origin.getX() - radius;
 		int y0 = origin.getY() - radius;
 		int z0 = origin.getZ() - radius;
