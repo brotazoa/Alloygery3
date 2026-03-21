@@ -213,6 +213,10 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
 		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("gold_plate_armor_part"), Items.GOLD_INGOT, 2, 1, "from_ingot", exporter);
 		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("bronze_plate_armor_part"), CraftingMaterialModule.ITEMS.get("bronze_ingot"), 2, 1, "from_ingot", exporter);
 
+		SingleIngredientRecipeBuilder.tailoring(CraftingMaterialModule.ITEMS.get("wool_panel"), ItemTags.WOOL, exporter);
+		SingleIngredientRecipeBuilder.tailoring(CraftingMaterialModule.ITEMS.get("leather_panel"), Items.LEATHER, exporter);
+		SingleIngredientRecipeBuilder.tailoring(CraftingMaterialModule.ITEMS.get("rabbit_hide_panel"), Items.RABBIT_HIDE, exporter);
+
 		makeTailoringArmorPartRecipes(AlloygeryDefaultMaterials.TIN, exporter);
 		makeTailoringArmorPartRecipes(AlloygeryDefaultMaterials.COPPER, exporter);
 		makeTailoringArmorPartRecipes(AlloygeryDefaultMaterials.BRONZE, exporter);

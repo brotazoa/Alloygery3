@@ -62,9 +62,9 @@ public class PlacedFeatures
 				ConfigPlacementFilter.INSTANCE
 				)
 		);
-		PlacementUtils.register(cntx, OVERWORLD_SHALLOW_ORE_VEINS, overworldShallow, placement(RarityFilter.onAverageOnceEvery(18), 20, 80));
-		PlacementUtils.register(cntx, OVERWORLD_DEEP_ORE_VEINS, overworldDeep, placement(RarityFilter.onAverageOnceEvery(10), -60, 20));
-		PlacementUtils.register(cntx, OVERWORLD_RICH_ORE_VEINS, overworldRich, placement(RarityFilter.onAverageOnceEvery(24), -60, 0));
+		PlacementUtils.register(cntx, OVERWORLD_SHALLOW_ORE_VEINS, overworldShallow, placement(RarityFilter.onAverageOnceEvery(18), 30, 80));
+		PlacementUtils.register(cntx, OVERWORLD_DEEP_ORE_VEINS, overworldDeep, placement(RarityFilter.onAverageOnceEvery(10), -30, 30));
+		PlacementUtils.register(cntx, OVERWORLD_RICH_ORE_VEINS, overworldRich, placement(RarityFilter.onAverageOnceEvery(8), -60, -20));
 
 		PlacementUtils.register(cntx, OVERWORLD_SWAMP_IRON_ORE_VEINS, overworldSwamp, placement(RarityFilter.onAverageOnceEvery(8), -40, 60));
 		PlacementUtils.register(cntx, OVERWORLD_MESSA_GOLD_ORE_VEINS, overworldMessa, placement(RarityFilter.onAverageOnceEvery(8), -40, 70));

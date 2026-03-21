@@ -30,7 +30,9 @@ import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -144,9 +146,30 @@ public class TailoringTableBlock extends Block implements MachinesModelProvider.
         final TagKey<Item> hides = TagKey.create(Registries.ITEM, Alloygery.asCommonResource("hides"));
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, this.asItem())
                 .define('s', stripped_logs)
-                .define('l', hides)
-                .define('w', ItemTags.WOOL)
-                .pattern("lw")
+                .define('f', Ingredient.of(
+                        Items.LEATHER,
+                        Items.RABBIT_HIDE,
+                        Items.BLACK_WOOL,
+                        Items.BLUE_WOOL,
+                        Items.BROWN_WOOL,
+                        Items.CYAN_WOOL,
+                        Items.GRAY_WOOL,
+                        Items.GREEN_WOOL,
+                        Items.LIGHT_BLUE_WOOL,
+                        Items.LIGHT_GRAY_WOOL,
+                        Items.LIME_WOOL,
+                        Items.MAGENTA_WOOL,
+                        Items.ORANGE_WOOL,
+                        Items.PINK_WOOL,
+                        Items.PURPLE_WOOL,
+                        Items.RED_WOOL,
+                        Items.WHITE_WOOL,
+                        Items.YELLOW_WOOL
+                        )
+                )
+                //.define('l', hides)
+                //.define('w', ItemTags.WOOL)
+                .pattern("ff")
                 .pattern("ss")
                 .unlockedBy("has_stripped_logs", RecipeProvider.has(stripped_logs))
                 .save(exporter);

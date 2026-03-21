@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:tailoring",
+  "ingredient": {
+    "tag": "minecraft:wool"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:wool_panel"
+  }
+}
