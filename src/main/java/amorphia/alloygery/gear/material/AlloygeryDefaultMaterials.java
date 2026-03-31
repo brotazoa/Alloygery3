@@ -511,8 +511,12 @@ public class AlloygeryDefaultMaterials
                 .build());
 
         STRING = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("string")).build());
-        PAPER = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("paper")).build());
-        BONE = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("bone")).build());
+        PAPER = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("paper"))
+				.standardToolBindingProperties(0, 0, 20, 0.0f, 0.0f, 0.0f)
+				.build());
+        BONE = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("bone"))
+				.standardToolHandleProperties(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.1f)
+				.build());
         DRIED_KELP = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("dried_kelp")).build());
     }
 }

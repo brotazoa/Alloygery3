@@ -1,7 +1,7 @@
 {
   "type": "alloygery:tailoring",
   "ingredient": {
-    "item": "minecraft:white_wool"
+    "item": "alloygery:wool_panel"
   },
   "material_cost": 2,
   "result": {

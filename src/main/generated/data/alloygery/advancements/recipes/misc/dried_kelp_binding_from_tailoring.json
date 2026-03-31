@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "alloygery:rabbit_hide_panel"
+              "minecraft:dried_kelp"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "alloygery:base_rabbit_hide_helmet_from_tailoring"
+        "recipe": "alloygery:dried_kelp_binding_from_tailoring"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "alloygery:base_rabbit_hide_helmet_from_tailoring"
+      "alloygery:dried_kelp_binding_from_tailoring"
     ]
   },
   "sends_telemetry_event": false

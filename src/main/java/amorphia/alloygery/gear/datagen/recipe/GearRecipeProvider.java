@@ -189,33 +189,51 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
 
     private void makeTailoringRecipes(Consumer<FinishedRecipe> exporter)
     {
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_helmet"), Items.LEATHER, 2, 1, null, exporter);
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_chestplate"), Items.LEATHER, 4, 1, null, exporter);
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_leggings"), Items.LEATHER, 3, 1, null, exporter);
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_boots"), Items.LEATHER, 2, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_helmet"), Items.LEATHER, 2, 1, "from_leather", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_chestplate"), Items.LEATHER, 4, 1, "from_leather", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_leggings"), Items.LEATHER, 3, 1, "from_leather", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_boots"), Items.LEATHER, 2, 1, "from_leather", exporter);
 
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_helmet"), Items.RABBIT_HIDE, 2, 1, null, exporter);
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_chestplate"), Items.RABBIT_HIDE, 4, 1, null, exporter);
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_leggings"), Items.RABBIT_HIDE, 3, 1, null, exporter);
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_boots"), Items.RABBIT_HIDE, 2, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_helmet"), CraftingMaterialModule.ITEMS.get("leather_panel"), 2, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_chestplate"), CraftingMaterialModule.ITEMS.get("leather_panel"), 4, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_leggings"), CraftingMaterialModule.ITEMS.get("leather_panel"), 3, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_leather_boots"), CraftingMaterialModule.ITEMS.get("leather_panel"), 2, 1, null, exporter);
 
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_helmet"), Items.WHITE_WOOL, 2, 1, null, exporter);
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_chestplate"), Items.WHITE_WOOL, 4, 1, null, exporter);
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_leggings"), Items.WHITE_WOOL, 3, 1, null, exporter);
-		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_boots"), Items.WHITE_WOOL, 2, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_helmet"), Items.RABBIT_HIDE, 2, 1, "from_rabbit_hide", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_chestplate"), Items.RABBIT_HIDE, 4, 1, "from_rabbit_hide", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_leggings"), Items.RABBIT_HIDE, 3, 1, "from_rabbit_hide", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_boots"), Items.RABBIT_HIDE, 2, 1, "from_rabbit_hide", exporter);
+
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_helmet"), CraftingMaterialModule.ITEMS.get("rabbit_hide_panel"), 2, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_chestplate"), CraftingMaterialModule.ITEMS.get("rabbit_hide_panel"), 4, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_leggings"), CraftingMaterialModule.ITEMS.get("rabbit_hide_panel"), 3, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_rabbit_hide_boots"), CraftingMaterialModule.ITEMS.get("rabbit_hide_panel"), 2, 1, null, exporter);
+
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_helmet"), Items.WHITE_WOOL, 2, 1, "from_wool", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_chestplate"), Items.WHITE_WOOL, 4, 1, "from_wool", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_leggings"), Items.WHITE_WOOL, 3, 1, "from_wool", exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_boots"), Items.WHITE_WOOL, 2, 1, "from_wool", exporter);
+
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_helmet"), CraftingMaterialModule.ITEMS.get("wool_panel"), 2, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_chestplate"), CraftingMaterialModule.ITEMS.get("wool_panel"), 4, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_leggings"), CraftingMaterialModule.ITEMS.get("wool_panel"), 3, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("base_wool_boots"), CraftingMaterialModule.ITEMS.get("wool_panel"), 2, 1, null, exporter);
 
         SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("leather_binding"), Items.LEATHER, exporter);
         SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("rabbit_hide_binding"), Items.RABBIT_HIDE, exporter);
         SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("phantom_membrane_binding"), Items.PHANTOM_MEMBRANE, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("string_binding"), Items.STRING, 4, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("dried_kelp_binding"), Items.DRIED_KELP, 4, 1, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("paper_binding"), Items.PAPER, 4, 1, null, exporter);
 
 		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("tin_plate_armor_part"), CraftingMaterialModule.ITEMS.get("tin_ingot"), 2, 1, "from_ingot", exporter);
 		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("copper_plate_armor_part"), Items.COPPER_INGOT, 2, 1, "from_ingot", exporter);
 		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("gold_plate_armor_part"), Items.GOLD_INGOT, 2, 1, "from_ingot", exporter);
 		SingleIngredientRecipeBuilder.tailoring(GearModule.ITEMS.get("bronze_plate_armor_part"), CraftingMaterialModule.ITEMS.get("bronze_ingot"), 2, 1, "from_ingot", exporter);
 
-		SingleIngredientRecipeBuilder.tailoring(CraftingMaterialModule.ITEMS.get("wool_panel"), ItemTags.WOOL, exporter);
-		SingleIngredientRecipeBuilder.tailoring(CraftingMaterialModule.ITEMS.get("leather_panel"), Items.LEATHER, exporter);
-		SingleIngredientRecipeBuilder.tailoring(CraftingMaterialModule.ITEMS.get("rabbit_hide_panel"), Items.RABBIT_HIDE, exporter);
+		SingleIngredientRecipeBuilder.tailoring(CraftingMaterialModule.ITEMS.get("wool_panel"), ItemTags.WOOL, 1, 2, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(CraftingMaterialModule.ITEMS.get("leather_panel"), Items.LEATHER, 1, 2, null, exporter);
+		SingleIngredientRecipeBuilder.tailoring(CraftingMaterialModule.ITEMS.get("rabbit_hide_panel"), Items.RABBIT_HIDE, 1, 2, null, exporter);
 
 		makeTailoringArmorPartRecipes(AlloygeryDefaultMaterials.TIN, exporter);
 		makeTailoringArmorPartRecipes(AlloygeryDefaultMaterials.COPPER, exporter);
@@ -265,6 +283,8 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
         SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("oak_handle"), Items.OAK_PLANKS, exporter);
         SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("spruce_handle"), Items.SPRUCE_PLANKS, exporter);
         SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("warped_handle"), Items.WARPED_PLANKS, exporter);
+		SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("bone_handle"), Items.BONE, 2, 1, null, exporter);
+		SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("stick_handle"), Items.STICK, 2, 1, null, exporter);
     }
 
 	public static void generateArmorPlatingRecipe(Item result, Ingredient plate, Consumer<FinishedRecipe> exporter)

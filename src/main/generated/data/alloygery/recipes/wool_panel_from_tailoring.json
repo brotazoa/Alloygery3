@@ -5,6 +5,7 @@
   },
   "material_cost": 1,
   "result": {
+    "count": 2,
     "item": "alloygery:wool_panel"
   }
 }

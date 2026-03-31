@@ -1,7 +1,7 @@
 {
   "type": "alloygery:tailoring",
   "ingredient": {
-    "item": "minecraft:leather"
+    "item": "alloygery:leather_panel"
   },
   "material_cost": 3,
   "result": {

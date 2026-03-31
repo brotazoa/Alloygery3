@@ -1,10 +1,10 @@
 {
   "type": "alloygery:tailoring",
   "ingredient": {
-    "item": "alloygery:rabbit_hide_panel"
+    "item": "minecraft:leather"
   },
   "material_cost": 3,
   "result": {
-    "item": "alloygery:base_rabbit_hide_leggings"
+    "item": "alloygery:base_leather_leggings"
   }
 }

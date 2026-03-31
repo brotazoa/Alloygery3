@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:stick"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:stick_handle"
+  }
+}

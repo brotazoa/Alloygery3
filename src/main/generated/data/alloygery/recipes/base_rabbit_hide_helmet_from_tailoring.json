@@ -1,7 +1,7 @@
 {
   "type": "alloygery:tailoring",
   "ingredient": {
-    "item": "minecraft:rabbit_hide"
+    "item": "alloygery:rabbit_hide_panel"
   },
   "material_cost": 2,
   "result": {

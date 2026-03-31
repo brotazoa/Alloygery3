@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:bone"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:bone_handle"
+  }
+}

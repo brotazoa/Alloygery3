@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "alloygery:rabbit_hide_panel"
+              "minecraft:rabbit_hide"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "alloygery:base_rabbit_hide_helmet_from_tailoring"
+        "recipe": "alloygery:base_rabbit_hide_boots_from_tailoring_from_rabbit_hide"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "alloygery:base_rabbit_hide_helmet_from_tailoring"
+      "alloygery:base_rabbit_hide_boots_from_tailoring_from_rabbit_hide"
     ]
   },
   "sends_telemetry_event": false
