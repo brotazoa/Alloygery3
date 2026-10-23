@@ -50,47 +50,48 @@ public class LogsRequireToolProviders
 		@Override
 		protected void addTags(HolderLookup.Provider lookup)
 		{
-			getOrCreateTagBuilder(LOG_BLOCKS).add(
-					Blocks.ACACIA_LOG,
-					Blocks.ACACIA_WOOD,
-					Blocks.STRIPPED_ACACIA_LOG,
-					Blocks.STRIPPED_ACACIA_WOOD,
-
-					Blocks.BIRCH_LOG,
-					Blocks.BIRCH_WOOD,
-					Blocks.STRIPPED_BIRCH_LOG,
-					Blocks.STRIPPED_BIRCH_WOOD,
-
-					Blocks.CHERRY_LOG,
-					Blocks.CHERRY_WOOD,
-					Blocks.STRIPPED_CHERRY_LOG,
-					Blocks.STRIPPED_CHERRY_WOOD,
-
-					Blocks.DARK_OAK_LOG,
-					Blocks.DARK_OAK_WOOD,
-					Blocks.STRIPPED_DARK_OAK_LOG,
-					Blocks.STRIPPED_DARK_OAK_WOOD,
-
-					Blocks.JUNGLE_LOG,
-					Blocks.JUNGLE_WOOD,
-					Blocks.STRIPPED_JUNGLE_LOG,
-					Blocks.STRIPPED_JUNGLE_WOOD,
-
-					Blocks.MANGROVE_LOG,
-					Blocks.MANGROVE_WOOD,
-					Blocks.STRIPPED_MANGROVE_LOG,
-					Blocks.STRIPPED_MANGROVE_WOOD,
-
-					Blocks.OAK_LOG,
-					Blocks.OAK_WOOD,
-					Blocks.STRIPPED_OAK_LOG,
-					Blocks.STRIPPED_OAK_WOOD,
-
-					Blocks.SPRUCE_LOG,
-					Blocks.SPRUCE_WOOD,
-					Blocks.STRIPPED_SPRUCE_LOG,
-					Blocks.STRIPPED_SPRUCE_WOOD
-			);
+			getOrCreateTagBuilder(LOG_BLOCKS).addOptionalTag(TagKey.create(Registries.BLOCK, Alloygery.asVanillaResource("logs")));
+//			getOrCreateTagBuilder(LOG_BLOCKS).add(
+//					Blocks.ACACIA_LOG,
+//					Blocks.ACACIA_WOOD,
+//					Blocks.STRIPPED_ACACIA_LOG,
+//					Blocks.STRIPPED_ACACIA_WOOD,
+//
+//					Blocks.BIRCH_LOG,
+//					Blocks.BIRCH_WOOD,
+//					Blocks.STRIPPED_BIRCH_LOG,
+//					Blocks.STRIPPED_BIRCH_WOOD,
+//
+//					Blocks.CHERRY_LOG,
+//					Blocks.CHERRY_WOOD,
+//					Blocks.STRIPPED_CHERRY_LOG,
+//					Blocks.STRIPPED_CHERRY_WOOD,
+//
+//					Blocks.DARK_OAK_LOG,
+//					Blocks.DARK_OAK_WOOD,
+//					Blocks.STRIPPED_DARK_OAK_LOG,
+//					Blocks.STRIPPED_DARK_OAK_WOOD,
+//
+//					Blocks.JUNGLE_LOG,
+//					Blocks.JUNGLE_WOOD,
+//					Blocks.STRIPPED_JUNGLE_LOG,
+//					Blocks.STRIPPED_JUNGLE_WOOD,
+//
+//					Blocks.MANGROVE_LOG,
+//					Blocks.MANGROVE_WOOD,
+//					Blocks.STRIPPED_MANGROVE_LOG,
+//					Blocks.STRIPPED_MANGROVE_WOOD,
+//
+//					Blocks.OAK_LOG,
+//					Blocks.OAK_WOOD,
+//					Blocks.STRIPPED_OAK_LOG,
+//					Blocks.STRIPPED_OAK_WOOD,
+//
+//					Blocks.SPRUCE_LOG,
+//					Blocks.SPRUCE_WOOD,
+//					Blocks.STRIPPED_SPRUCE_LOG,
+//					Blocks.STRIPPED_SPRUCE_WOOD
+//			);
 		}
 	}
 

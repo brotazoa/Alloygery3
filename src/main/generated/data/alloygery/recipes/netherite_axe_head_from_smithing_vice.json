@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_vice",
+  "ingredient": {
+    "item": "minecraft:netherite_axe"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:netherite_axe_head"
+  }
+}

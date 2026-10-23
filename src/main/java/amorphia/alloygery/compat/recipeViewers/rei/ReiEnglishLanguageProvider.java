@@ -14,6 +14,7 @@ public class ReiEnglishLanguageProvider implements AlloygeryEnglishLanguageProvi
 		translationBuilder.add("category.rei.alloygery.tailoring", "Tailoring");
 		translationBuilder.add("category.rei.alloygery.woodcutting", "Woodcutting");
 		translationBuilder.add("category.rei.alloygery.firing", "Firing");
+		translationBuilder.add("category.rei.alloygery.smithing_vice", "Smithing Vice");
 		translationBuilder.add("category.rei.alloygery.heat_exchanger_smelting", "Advanced Smelting");
 		translationBuilder.add("category.rei.alloygery.heat_exchanger_blasting", "Advanced Blasting");
 		translationBuilder.add("category.rei.alloygery.heat_exchanger_smoking", "Advanced Smoking");

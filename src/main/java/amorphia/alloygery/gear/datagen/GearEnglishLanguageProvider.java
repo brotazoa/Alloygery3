@@ -77,7 +77,9 @@ public class GearEnglishLanguageProvider implements AlloygeryEnglishLanguageProv
 		// generic attribute tooltips
 		translationBuilder.add("property.alloygery.generic_attribute.base", "Base ");
 		translationBuilder.add("property.alloygery.generic_attribute.total", "Total ");
-		translationBuilder.add("property.alloygery.generic_attribute.part", " From Part");
+		translationBuilder.add("property.alloygery.generic_attribute.part", " from part");
+		translationBuilder.add("property.alloygery.generic_attribute.min", " can't be less than");
+		translationBuilder.add("property.alloygery.generic_attribute.max", " can't be more than");
 
 		// smithing improvement tooltips
 		translationBuilder.add(Util.makeDescriptionId("item", Alloygery.asResource("smithing_improvement.applies_to_armor")), "Armor");
@@ -124,6 +126,8 @@ public class GearEnglishLanguageProvider implements AlloygeryEnglishLanguageProv
         translationBuilder.add(location.toLanguageKey("property", "base"), "Base " + englishFromLocation);
         translationBuilder.add(location.toLanguageKey("property", "total"), "Total " + englishFromLocation);
 		translationBuilder.add(location.toLanguageKey("property", "part"), englishFromLocation + " from Part");
+		translationBuilder.add(location.toLanguageKey("property", "min"), englishFromLocation + " can't be less than");
+		translationBuilder.add(location.toLanguageKey("property", "max"), englishFromLocation + " can't be more than");
     }
 
 	private void translateAlloygeryItemTag(String tagPath, FabricLanguageProvider.TranslationBuilder translationBuilder)

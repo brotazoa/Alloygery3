@@ -1,6 +1,7 @@
 {
   "dyeable": false,
   "material": "alloygery:alloygery_material/netherite",
+  "merge": false,
   "properties": [
     {
       "apply_when_broken": false,
@@ -216,7 +217,7 @@
       "operation": "multiply_total",
       "part_type": "tool_upgrade",
       "property_type": "alloygery:durability",
-      "value": 1.1
+      "value": 1.25
     },
     {
       "apply_when_broken": false,
@@ -231,7 +232,7 @@
       "operation": "multiply_total",
       "part_type": "tool_upgrade",
       "property_type": "alloygery:attribute",
-      "value": 1.2
+      "value": 1.5
     },
     {
       "apply_when_broken": false,
@@ -239,7 +240,7 @@
       "operation": "addition",
       "part_type": "tool_upgrade",
       "property_type": "alloygery:attribute",
-      "value": 1.0
+      "value": 2.0
     },
     {
       "apply_when_broken": false,

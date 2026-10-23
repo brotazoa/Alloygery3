@@ -36,6 +36,10 @@ import amorphia.alloygery.machines.smithing_anvil.SmithingAnvilBlock;
 import amorphia.alloygery.machines.smithing_anvil.SmithingAnvilMenu;
 import amorphia.alloygery.machines.smithing_anvil.SmithingAnvilRecipe;
 import amorphia.alloygery.machines.smithing_anvil.SmithingAnvilScreen;
+import amorphia.alloygery.machines.smithing_vice.SmithingViceBlock;
+import amorphia.alloygery.machines.smithing_vice.SmithingViceMenu;
+import amorphia.alloygery.machines.smithing_vice.SmithingViceRecipe;
+import amorphia.alloygery.machines.smithing_vice.SmithingViceScreen;
 import amorphia.alloygery.machines.tailoring_table.TailoringTableBlock;
 import amorphia.alloygery.machines.tailoring_table.TailoringTableMenu;
 import amorphia.alloygery.machines.tailoring_table.TailoringTableRecipe;
@@ -51,6 +55,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.StatFormatter;
@@ -95,6 +100,9 @@ public class MachinesModule
     public static final Block TAILORING_TABLE = new TailoringTableBlock();
     public static RecipeSerializer<TailoringTableRecipe> TAILORING_TABLE_RECIPE_SERIALIZER;
 
+	public static final Block SMITHING_VICE = new SmithingViceBlock();
+	public static RecipeSerializer<SmithingViceRecipe> SMITHING_VICE_RECIPE_SERIALIZER;
+
 	// block entities
 	public static BlockEntityType<AlloyKilnBlockEntity> ALLOY_KILN_BLOCK_ENTITY;
 	public static BlockEntityType<KilnBlockEntity> KILN_BLOCK_ENTITY;
@@ -118,6 +126,7 @@ public class MachinesModule
     public static MenuType<WoodcutterMenu> WOODCUTTER_MENU_TYPE;
     public static MenuType<SmithingAnvilMenu> SMITHING_ANVIL_MENU_TYPE;
     public static MenuType<TailoringTableMenu> TAILORING_TABLE_MENU_TYPE;
+	public static MenuType<SmithingViceMenu> SMITHING_VICE_MENU_TYPE;
 
 	// stats
 	public static final ResourceLocation INTERACT_WITH_ALLOY_KILN = Alloygery.asResource("interact_with_alloy_kiln");
@@ -131,6 +140,7 @@ public class MachinesModule
     public static final ResourceLocation INTERACT_WITH_WOODCUTTER = Alloygery.asResource("interact_with_woodcutter");
     public static final ResourceLocation INTERACT_WITH_SMITING_ANVIL = Alloygery.asResource("interact_with_smithing_anvil");
     public static final ResourceLocation INTERACT_WITH_TAILORING_TABLE = Alloygery.asResource("interact_with_tailoring_table");
+	public static final ResourceLocation INTERACT_WITH_SMITHING_VICE = Alloygery.asResource("interact_with_smithing_vice");
 
 	private static void registerBlock(String path, Block block)
 	{
@@ -166,6 +176,7 @@ public class MachinesModule
         registerBlock("woodcutter", WOODCUTTER);
         registerBlock("smithing_anvil", SMITHING_ANVIL);
         registerBlock("tailoring_table", TAILORING_TABLE);
+		registerBlock("smithing_vice", SMITHING_VICE);
 
 		// block entities
 		ALLOY_KILN_BLOCK_ENTITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Alloygery.asResource("alloy_kiln_block_entity"),
@@ -211,6 +222,9 @@ public class MachinesModule
         Registry.register(BuiltInRegistries.RECIPE_TYPE, TailoringTableRecipe.Type.ID, TailoringTableRecipe.Type.INSTANCE);
         TAILORING_TABLE_RECIPE_SERIALIZER = Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, TailoringTableRecipe.Type.ID, new TailoringTableRecipe.Serializer(TailoringTableRecipe::new));
 
+		Registry.register(BuiltInRegistries.RECIPE_TYPE, SmithingViceRecipe.Type.ID, SmithingViceRecipe.Type.INSTANCE);
+		SMITHING_VICE_RECIPE_SERIALIZER = Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, SmithingViceRecipe.Type.ID, new SmithingViceRecipe.Serializer(SmithingViceRecipe::new));
+
 		// menus
 		ALLOY_KILN_MENU_TYPE = Registry.register(BuiltInRegistries.MENU, Alloygery.asResource("alloy_kiln"), new MenuType<>(AlloyKilnMenu::new, FeatureFlags.VANILLA_SET));
 		KILN_MENU_TYPE = Registry.register(BuiltInRegistries.MENU, Alloygery.asResource("kiln"), new MenuType<>(KilnMenu::new, FeatureFlags.VANILLA_SET));
@@ -223,6 +237,7 @@ public class MachinesModule
         WOODCUTTER_MENU_TYPE = Registry.register(BuiltInRegistries.MENU, Alloygery.asResource("woodcutter"), new MenuType<>(WoodcutterMenu::new, FeatureFlags.VANILLA_SET));
         SMITHING_ANVIL_MENU_TYPE = Registry.register(BuiltInRegistries.MENU, Alloygery.asResource("smithing_anvil"), new MenuType<>(SmithingAnvilMenu::new, FeatureFlags.VANILLA_SET));
         TAILORING_TABLE_MENU_TYPE = Registry.register(BuiltInRegistries.MENU, Alloygery.asResource("tailoring_table"), new MenuType<>(TailoringTableMenu::new, FeatureFlags.VANILLA_SET));
+		SMITHING_VICE_MENU_TYPE = Registry.register(BuiltInRegistries.MENU, Alloygery.asResource("smithing_vice"), new MenuType<>(SmithingViceMenu::new, FeatureFlags.VANILLA_SET));
 
 		// stats
 		registerCustomStat(INTERACT_WITH_ALLOY_KILN);
@@ -236,6 +251,7 @@ public class MachinesModule
         registerCustomStat(INTERACT_WITH_WOODCUTTER);
         registerCustomStat(INTERACT_WITH_SMITING_ANVIL);
         registerCustomStat(INTERACT_WITH_TAILORING_TABLE);
+		registerCustomStat(INTERACT_WITH_SMITHING_VICE);
 	}
 
 	public static void initializeClient()
@@ -251,6 +267,7 @@ public class MachinesModule
         MenuScreens.register(WOODCUTTER_MENU_TYPE, WoodcutterScreen::new);
         MenuScreens.register(SMITHING_ANVIL_MENU_TYPE, SmithingAnvilScreen::new);
         MenuScreens.register(TAILORING_TABLE_MENU_TYPE, TailoringTableScreen::new);
+		MenuScreens.register(SMITHING_VICE_MENU_TYPE, SmithingViceScreen::new);
 
         BlockRenderLayerMap.INSTANCE.putBlock(WOODCUTTER, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TAILORING_TABLE, RenderType.cutout());

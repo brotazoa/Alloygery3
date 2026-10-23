@@ -11,6 +11,7 @@ import amorphia.alloygery.machines.heatExchanger.kiln.KilnWithHeatExchangerBlock
 import amorphia.alloygery.machines.heatExchanger.smoker.SmokerWithHeatExchangerBlock;
 import amorphia.alloygery.machines.kiln.FiringRecipe;
 import amorphia.alloygery.machines.smithing_anvil.SmithingAnvilRecipe;
+import amorphia.alloygery.machines.smithing_vice.SmithingViceRecipe;
 import amorphia.alloygery.machines.tailoring_table.TailoringTableRecipe;
 import amorphia.alloygery.machines.woodcutter.WoodcutterRecipe;
 import dev.emi.emi.api.EmiPlugin;
@@ -31,6 +32,7 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 	public static final EmiStack TAILORING_TABLE = EmiStack.of(MachinesModule.TAILORING_TABLE);
 	public static final EmiStack WOODCUTTER = EmiStack.of(MachinesModule.WOODCUTTER);
 	public static final EmiStack KILN = EmiStack.of(MachinesModule.KILN);
+	public static final EmiStack SMITHING_VICE = EmiStack.of(MachinesModule.SMITHING_VICE);
 
 	public static final EmiStack ALLOY_KILN_WITH_EXCHANGER = EmiStack.of(MachinesModule.ALLOY_KILN_WITH_HEAT_EXCHANGER);
 	public static final EmiStack BLAST_FURNACE_WITH_HEAT_EXCHANGER = EmiStack.of(MachinesModule.BLAST_FURNACE_WITH_HEAT_EXCHANGER);
@@ -44,6 +46,7 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 	public static final EmiRecipeCategory TAILORING = new EmiRecipeCategory(Alloygery.asResource("emi_tailoring"), TAILORING_TABLE);
 	public static final EmiRecipeCategory WOODCUTTING = new EmiRecipeCategory(Alloygery.asResource("emi_woodcutting"), WOODCUTTER);
 	public static final EmiRecipeCategory FIRING = new EmiRecipeCategory(Alloygery.asResource("emi_firing"), KILN);
+	public static final EmiRecipeCategory VICING = new EmiRecipeCategory(Alloygery.asResource("emi_smithing_vice"), SMITHING_VICE);
 
 	public static final EmiRecipeCategory HEAT_EXCHANGER_BLASTING = new EmiRecipeCategory(Alloygery.asResource("emi_heat_exchanger_blasting"), BLAST_FURNACE_WITH_HEAT_EXCHANGER);
 	public static final EmiRecipeCategory HEAT_EXCHANGER_SMELTING = new EmiRecipeCategory(Alloygery.asResource("emi_heat_exchanger_smelting"), FURNACE_WITH_HEAT_EXCHANGER);
@@ -66,6 +69,7 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 		emiRegistry.addCategory(HEAT_EXCHANGER_FIRING);
 		emiRegistry.addCategory(HEAT_EXCHANGER_SMOKING);
 		emiRegistry.addCategory(HEAT_EXCHANGER_TRANSFORM);
+		emiRegistry.addCategory(VICING);
 
 		emiRegistry.addWorkstation(ALLOYING, ALLOY_KILN_WITH_EXCHANGER);
 		emiRegistry.addWorkstation(SIMPLE_ALLOYING, ALLOY_KILN);
@@ -78,6 +82,7 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 		emiRegistry.addWorkstation(HEAT_EXCHANGER_FIRING, KILN_WITH_HEAT_EXCHANGER);
 		emiRegistry.addWorkstation(HEAT_EXCHANGER_SMOKING, SMOKER_WITH_HEAT_EXCHANGER);
 		emiRegistry.addWorkstation(HEAT_EXCHANGER_TRANSFORM, HEAT_EXCHANGER);
+		emiRegistry.addWorkstation(VICING, SMITHING_VICE);
 
 		for (AlloyingRecipe recipe : emiRegistry.getRecipeManager().getAllRecipesFor(AlloyingRecipe.Type.INSTANCE))
 		{
@@ -140,6 +145,11 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 		for(HeatExchangerBlockTransformRecipe recipe : emiRegistry.getRecipeManager().getAllRecipesFor(HeatExchangerBlockTransformRecipe.Type.INSTANCE))
 		{
 			emiRegistry.addRecipe(new PlaceOnHeatExchangerEmiRecipe(recipe));
+		}
+
+		for(SmithingViceRecipe recipe : emiRegistry.getRecipeManager().getAllRecipesFor(SmithingViceRecipe.Type.INSTANCE))
+		{
+			emiRegistry.addRecipe(new SingleIngredientEmiRecipe(recipe, VICING));
 		}
 	}
 }

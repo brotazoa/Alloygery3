@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_vice",
+  "ingredient": {
+    "item": "minecraft:diamond_chestplate"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:diamond_scale_armor_part"
+  }
+}

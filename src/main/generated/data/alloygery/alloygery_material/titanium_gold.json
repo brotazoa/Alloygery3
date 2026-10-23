@@ -1,6 +1,7 @@
 {
   "dyeable": false,
   "material": "alloygery:alloygery_material/titanium_gold",
+  "merge": false,
   "properties": [
     {
       "apply_when_broken": false,
@@ -173,10 +174,10 @@
     },
     {
       "apply_when_broken": false,
-      "operation": "addition",
+      "operation": "multiply_total",
       "part_type": "tool_improvement",
       "property_type": "alloygery:mining_speed",
-      "value": 2.0
+      "value": 1.25
     },
     {
       "apply_when_broken": false,

@@ -1,6 +1,7 @@
 {
   "dyeable": false,
   "material": "alloygery:alloygery_material/birch",
+  "merge": false,
   "properties": [
     {
       "apply_when_broken": false,

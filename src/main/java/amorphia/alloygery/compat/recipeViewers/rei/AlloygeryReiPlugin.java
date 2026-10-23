@@ -7,6 +7,7 @@ import amorphia.alloygery.machines.alloyKiln.SimpleAlloyingRecipe;
 import amorphia.alloygery.machines.heatExchanger.HeatExchangerBlockTransformRecipe;
 import amorphia.alloygery.machines.kiln.FiringRecipe;
 import amorphia.alloygery.machines.smithing_anvil.SmithingAnvilRecipe;
+import amorphia.alloygery.machines.smithing_vice.SmithingViceRecipe;
 import amorphia.alloygery.machines.tailoring_table.TailoringTableRecipe;
 import amorphia.alloygery.machines.woodcutter.WoodcutterRecipe;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
@@ -34,6 +35,7 @@ public class AlloygeryReiPlugin implements REIClientPlugin
 	public static final CategoryIdentifier<HeatExchangerCookingReiDisplay> HEAT_EXCHANGER_SMOKING = CategoryIdentifier.of(Alloygery.asResource("heat_exchanger_smoking"));
 	public static final CategoryIdentifier<HeatExchangerCookingReiDisplay> HEAT_EXCHANGER_FIRING = CategoryIdentifier.of(Alloygery.asResource("heat_exchanger_firing"));
 	public static final CategoryIdentifier<PlaceOnHeatExchangerReiDisplay> HEAT_EXCHANGER_TRANSFORM = CategoryIdentifier.of(HeatExchangerBlockTransformRecipe.Type.ID);
+	public static final CategoryIdentifier<SingleIngredientReiDisplay> SMITHING_VICE = CategoryIdentifier.of(SmithingViceRecipe.Type.ID);
 
 	@Override
 	public void registerCategories(CategoryRegistry registry)
@@ -49,6 +51,7 @@ public class AlloygeryReiPlugin implements REIClientPlugin
 		registry.add(new SmokingHeatExchangerCookingReiCategory());
 		registry.add(new FiringHeatExchangerCookingReiCategory());
 		registry.add(new PlaceOnHeatExchangerReiCategory());
+		registry.add(new SmithingViceReiCategory());
 
 		registry.addWorkstations(ALLOYING, EntryStacks.of(MachinesModule.ALLOY_KILN_WITH_HEAT_EXCHANGER));
 		registry.addWorkstations(SIMPLE_ALLOYING, EntryStacks.of(MachinesModule.ALLOY_KILN));
@@ -61,6 +64,7 @@ public class AlloygeryReiPlugin implements REIClientPlugin
 		registry.addWorkstations(HEAT_EXCHANGER_SMOKING, EntryStacks.of(MachinesModule.SMOKER_WITH_HEAT_EXCHANGER));
 		registry.addWorkstations(HEAT_EXCHANGER_FIRING, EntryStacks.of(MachinesModule.KILN_WITH_HEAT_EXCHANGER));
 		registry.addWorkstations(HEAT_EXCHANGER_TRANSFORM, EntryStacks.of(MachinesModule.HEAT_EXCHANGER));
+		registry.addWorkstations(SMITHING_VICE, EntryStacks.of(MachinesModule.SMITHING_VICE));
 	}
 
 	@Override
@@ -124,6 +128,11 @@ public class AlloygeryReiPlugin implements REIClientPlugin
 		for(HeatExchangerBlockTransformRecipe recipe : Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(HeatExchangerBlockTransformRecipe.Type.INSTANCE))
 		{
 			registry.add(new PlaceOnHeatExchangerReiDisplay(recipe));
+		}
+
+		for(SmithingViceRecipe recipe : Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(SmithingViceRecipe.Type.INSTANCE))
+		{
+			registry.add(new SingleIngredientReiDisplay(recipe, SMITHING_VICE));
 		}
 	}
 }

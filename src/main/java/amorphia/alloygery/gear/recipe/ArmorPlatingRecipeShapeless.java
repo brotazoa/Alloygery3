@@ -5,6 +5,7 @@ import amorphia.alloygery.gear.convert.VanillaItemConverter;
 import amorphia.alloygery.gear.item.ArmorStyles;
 import amorphia.alloygery.gear.item.PartTypes;
 import amorphia.alloygery.gear.item.armor.ArmorBaseItem;
+import amorphia.alloygery.gear.item.armor.DyeableArmorBaseItem;
 import amorphia.alloygery.gear.item.part.ArmorPart;
 import amorphia.alloygery.gear.item.part.DyeableArmorPart;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
@@ -93,8 +94,8 @@ public class ArmorPlatingRecipeShapeless extends ShapelessRecipe
 			ListTag partsListTag = NBTHelper.createPartsListTag(new PartTypes[] { PartTypes.ARMOR_BASE, PartTypes.ARMOR_PLATE });
 			Item baseItem = BuiltInRegistries.ITEM.get(NBTHelper.getItemIdentifierFromTag(NBTHelper.getPartTagFromItemStack(baseStack, PartTypes.ARMOR_BASE)));
 			CompoundTag baseTag = NBTHelper.createArmorPartTagWithStyle(baseItem == Items.AIR ? armorBaseItem : baseItem, PartTypes.ARMOR_BASE, baseStyle, baseMaterial);
-			if(NBTHelper.partHasDyeColor(baseStack, PartTypes.ARMOR_BASE))
-				baseTag.putInt(AlloygeryNBTKeys.DYE_COLOR, NBTHelper.getPartDyeColorFromStack(baseStack, PartTypes.ARMOR_BASE));
+			if(baseStack.getItem() instanceof DyeableArmorBaseItem dyeableArmorBaseItem)
+				baseTag.putInt(AlloygeryNBTKeys.DYE_COLOR, dyeableArmorBaseItem.getColor(baseStack));
 
 			CompoundTag plateTag = NBTHelper.createArmorPartTagWithStyle(armorPart, PartTypes.ARMOR_PLATE, plateStyle, plateMaterial);
 			if(partStack.getItem() instanceof DyeableArmorPart dyeableArmorPart)
@@ -106,7 +107,7 @@ public class ArmorPlatingRecipeShapeless extends ShapelessRecipe
 
 			final float damage = baseStack.getMaxDamage() - baseStack.getDamageValue();
 			final float damage_as_percent_of_max = damage/baseStack.getMaxDamage();
-			final float armor_damage = (armorStack.getMaxDamage() * damage_as_percent_of_max) - armorStack.getMaxDamage();
+			final float armor_damage = armorStack.getMaxDamage() - (armorStack.getMaxDamage() * damage_as_percent_of_max);
 			armorStack.setDamageValue(Math.round(armor_damage));
 
 			EnchantmentHelper.setEnchantments(mergeEnchantments(baseStack, partStack), armorStack);

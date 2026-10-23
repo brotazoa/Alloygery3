@@ -56,15 +56,30 @@ public class MaterialHelper
 
     public static IAlloygeryMaterialData createMaterialDataFromMaterial(AlloygeryMaterial material)
     {
-        return new IAlloygeryMaterialData()
-        {
-            final AlloygeryMaterial dataHolder = copy(material);
-            @Override
-            public AlloygeryMaterial applyTo(AlloygeryMaterial applyToMaterial)
-            {
-                return override(applyToMaterial, dataHolder);
-            }
-        };
+		if(material.mergeFlag)
+		{
+			return new IAlloygeryMaterialData()
+			{
+				final AlloygeryMaterial dataHolder = copy(material);
+				@Override
+				public AlloygeryMaterial applyTo(AlloygeryMaterial applyToMaterial)
+				{
+					return merge(applyToMaterial, dataHolder);
+				}
+			};
+		}
+		else
+		{
+			return new IAlloygeryMaterialData()
+			{
+				final AlloygeryMaterial dataHolder = copy(material);
+				@Override
+				public AlloygeryMaterial applyTo(AlloygeryMaterial applyToMaterial)
+				{
+					return override(applyToMaterial, dataHolder);
+				}
+			};
+		}
     }
 
     public static String getSimpleName(AlloygeryMaterial material)
@@ -180,6 +195,12 @@ public class MaterialHelper
             this.material.addProperty(property);
             return this;
         }
+
+		public MaterialBuilder setMergeFlag(boolean shouldMerge)
+	    {
+			this.material.mergeFlag = shouldMerge;
+			return this;
+		}
 
         public MaterialBuilder applyData(IAlloygeryMaterialData data)
         {

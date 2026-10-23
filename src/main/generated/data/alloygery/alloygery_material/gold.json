@@ -1,6 +1,7 @@
 {
   "dyeable": false,
   "material": "alloygery:alloygery_material/gold",
+  "merge": false,
   "properties": [
     {
       "apply_when_broken": false,
@@ -149,6 +150,13 @@
       "part_type": "tool_binding",
       "property_type": "alloygery:loved_by_piglins",
       "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "max",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:durability",
+      "value": 175.0
     },
     {
       "apply_when_broken": false,

@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_vice",
+  "ingredient": {
+    "item": "minecraft:diamond_sword"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:diamond_sword_blade"
+  }
+}

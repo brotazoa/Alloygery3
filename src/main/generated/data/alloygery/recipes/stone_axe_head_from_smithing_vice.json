@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_vice",
+  "ingredient": {
+    "item": "minecraft:stone_axe"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:stone_axe_head"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "dyeable": true,
   "material": "alloygery:alloygery_material/leather",
+  "merge": false,
   "properties": [
     {
       "apply_when_broken": false,

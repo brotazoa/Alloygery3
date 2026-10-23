@@ -81,6 +81,7 @@ public class PropertyHelper
 
     public static <P extends Property> float computePropertyValue(List<P> properties)
     {
+		// calc base
         float base = 0.0f;
         for (P property : properties.stream().filter(p -> p.operation.equals(PropertyOperation.BASE)).toList())
             base += property.value;
@@ -90,6 +91,7 @@ public class PropertyHelper
 		for(P property : properties.stream().filter(p -> p.operation.equals(PropertyOperation.MULTIPLY_BASE)).toList())
 			multiplyBase += adjustedBaseAbs * property.value - adjustedBaseAbs;
 
+		// calc addition
         float addition = 0.0f;
 		for(PartTypes partType : PartTypes.VALUES_CACHE)
 		{
@@ -107,6 +109,7 @@ public class PropertyHelper
 			addition += partAddition;
 		}
 
+		// calc total
 		float baseTotal = base + addition + multiplyBase;
 		for(P property : properties.stream().filter(p -> p.operation.equals(PropertyOperation.MULTIPLY_TOTAL)).toList())
 			baseTotal = baseTotal == 0 ? property.value : baseTotal * property.value;
@@ -129,23 +132,42 @@ public class PropertyHelper
 //        return baseTotal + multiplyTotal;
     }
 
+	public static <P extends Property> float computePropertyMinMax(List<P> properties, float propertyBaseValue)
+	{
+		// calc min and max
+		float min = Float.NEGATIVE_INFINITY;
+		for(P property : properties.stream().filter(p -> p.operation.equals(PropertyOperation.MIN)).toList())
+			min = Math.max(property.value, min);
+
+		float max = Float.POSITIVE_INFINITY;
+		for(P property : properties.stream().filter(p -> p.operation.equals(PropertyOperation.MAX)).toList())
+			max = Math.min(property.value, max);
+
+		return Math.clamp(propertyBaseValue, Math.min(min, max), Math.max(max, min));
+	}
+
+	public static <P extends Property> float computePropertyValueWithMinMax(List<P> properties)
+	{
+		return computePropertyMinMax(properties, computePropertyValue(properties));
+	}
+
     public static int computeIntegerPropertyValueRoundDown(List<? extends Property> properties, Integer min, Integer max)
     {
-        return Math.min(max, Math.max(min, (int) Math.floor(computePropertyValue(properties))));
+        return Math.min(max, Math.max(min, (int) Math.floor(computePropertyMinMax(properties, computePropertyValue(properties)))));
     }
 
     public static int computeIntegerPropertyValueRoundUp(List<? extends Property> properties, Integer min, Integer max)
     {
-        return Math.min(max, Math.max(min, (int) Math.ceil(computePropertyValue(properties))));
+        return Math.min(max, Math.max(min, (int) Math.ceil(computePropertyMinMax(properties, computePropertyValue(properties)))));
     }
 
     public static float computeFloatPropertyValue(List<? extends Property> properties, Float min, Float max)
     {
-        return Math.min(max, Math.max(min, computePropertyValue(properties)));
+        return Math.min(max, Math.max(min, computePropertyMinMax(properties, computePropertyValue(properties))));
     }
 
     public static boolean computeBooleanPropertyValue(List<? extends Property> properties)
     {
-        return computePropertyValue(properties) > 0;
+        return computePropertyMinMax(properties, computePropertyValue(properties)) > 0;
     }
 }

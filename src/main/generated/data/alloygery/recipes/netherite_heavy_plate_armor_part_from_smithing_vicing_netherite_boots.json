@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_vice",
+  "ingredient": {
+    "item": "minecraft:netherite_boots"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:netherite_heavy_plate_armor_part"
+  }
+}

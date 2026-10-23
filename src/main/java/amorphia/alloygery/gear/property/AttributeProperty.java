@@ -32,7 +32,7 @@ public class AttributeProperty extends Property
 
     public static float compute(Attribute attribute, ItemStack stack)
     {
-		return PropertyHelper.computePropertyValue(
+		return PropertyHelper.computePropertyValueWithMinMax(
 				PropertyHelper.brokenFilter(
 						PropertyHelper.getPropertiesOfTypeFromItemStack(AttributeProperty.class, stack).stream().filter(p -> p.targetAttribute.equals(attribute)).toList(),
 						PropertyHelper.isBroken(stack)

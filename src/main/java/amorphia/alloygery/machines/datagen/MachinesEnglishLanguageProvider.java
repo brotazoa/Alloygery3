@@ -34,6 +34,8 @@ public class MachinesEnglishLanguageProvider implements AlloygeryEnglishLanguage
 
         translationBuilder.add("container.alloygery.tailoring_table", "Tailoring Table");
 
+		translationBuilder.add("container.alloygery.smithing_vice", "Smithing Vice");
+
 		// blocks
 		MachinesModule.BLOCKS.forEach((path, block) -> translationBuilder.add(block, AlloygeryEnglishLanguageProvider.englishNameFromPath(path)));
 
@@ -48,6 +50,8 @@ public class MachinesEnglishLanguageProvider implements AlloygeryEnglishLanguage
 		translateStat(MachinesModule.INTERACT_WITH_SMOKER_WITH_HEAT_EXCHANGER, translationBuilder);
         translateStat(MachinesModule.INTERACT_WITH_WOODCUTTER, translationBuilder);
         translateStat(MachinesModule.INTERACT_WITH_SMITING_ANVIL, translationBuilder);
+		translateStat(MachinesModule.INTERACT_WITH_TAILORING_TABLE, translationBuilder);
+		translateStat(MachinesModule.INTERACT_WITH_SMITHING_VICE, translationBuilder);
 	}
 
 	private void translateStat(ResourceLocation stat, FabricLanguageProvider.TranslationBuilder builder)

@@ -1,6 +1,7 @@
 {
   "dyeable": false,
   "material": "alloygery:alloygery_material/emerald",
+  "merge": false,
   "properties": [
     {
       "apply_when_broken": false,

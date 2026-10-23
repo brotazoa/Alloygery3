@@ -211,13 +211,17 @@ public class DynamicGearDescriptionHelper
 		if(PropertyOperation.isAddition(property.getOperation()) && property.getValue() == 0.0f)
 			return;
 
-		MutableComponent propertyComponent = property.getOperation() == PropertyOperation.BASE || property.getOperation() == PropertyOperation.MULTIPLY_BASE
-				? Component.translatable(propertyTypeLocation.toLanguageKey("property", "base"))
-				: property.getOperation() == PropertyOperation.MULTIPLY_PART
-						? Component.translatable(propertyTypeLocation.toLanguageKey("property", "part"))
-						: Component.translatable(propertyTypeLocation.toLanguageKey("property", "total"));
+		MutableComponent propertyComponent = switch(property.getOperation())
+		{
+			case BASE, MULTIPLY_BASE -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "base"));
+			case MAX -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "max"));
+			case MIN -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "min"));
+			case MULTIPLY_PART -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "part"));
+			case ADDITION, MULTIPLY_TOTAL -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "total"));
+		};
 
-		MutableComponent tooltipComponent = Component.literal("  ").append(propertyComponent).append(PropertyOperation.isMultiplication(property.getOperation()) ? " x " : " + ").withStyle(ChatFormatting.GRAY);
+		MutableComponent tooltipComponent = Component.literal("  ").append(propertyComponent).append(PropertyOperation.isMultiplication(property.getOperation()) ? " x " : PropertyOperation.isCap(property.getOperation()) ? ": " : " + ").withStyle(ChatFormatting.GRAY);
+
 
 		final float value = property.getValue();
 		ChatFormatting valueStyle = value < (PropertyOperation.isMultiplication(property.getOperation()) ? 1.0f : 0.0f) ? invertValueColors(property) ? ChatFormatting.DARK_GREEN : ChatFormatting.DARK_RED : invertValueColors(property) ? ChatFormatting.DARK_RED : ChatFormatting.DARK_GREEN;
@@ -238,13 +242,16 @@ public class DynamicGearDescriptionHelper
 		if(PropertyOperation.isAddition(property.getOperation()) && property.getValue() == 0.0f)
 			return;
 
-		MutableComponent propertyComponent = property.getOperation() == PropertyOperation.BASE || property.getOperation() == PropertyOperation.MULTIPLY_BASE
-				? Component.translatable(propertyTypeLocation.toLanguageKey("property", "base"))
-				: property.getOperation() == PropertyOperation.MULTIPLY_PART
-				? Component.translatable(propertyTypeLocation.toLanguageKey("property", "part"))
-						: Component.translatable(propertyTypeLocation.toLanguageKey("property", "total"));
+		MutableComponent propertyComponent = switch(property.getOperation())
+		{
+			case BASE, MULTIPLY_BASE -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "base"));
+			case MAX -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "max"));
+			case MIN -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "min"));
+			case MULTIPLY_PART -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "part"));
+			case ADDITION, MULTIPLY_TOTAL -> Component.translatable(propertyTypeLocation.toLanguageKey("property", "total"));
+		};
 
-		MutableComponent tooltipComponent = Component.literal("  ").append(propertyComponent).append(PropertyOperation.isMultiplication(property.getOperation()) ? " x " : " + ").withStyle(ChatFormatting.GRAY);
+		MutableComponent tooltipComponent = Component.literal("  ").append(propertyComponent).append(PropertyOperation.isMultiplication(property.getOperation()) ? " x " : PropertyOperation.isCap(property.getOperation()) ? ": " : " + ").withStyle(ChatFormatting.GRAY);
 
 		final float value = PropertyOperation.isAddition(property.getOperation()) ? property.getValue() * SlotMultipliers.getSlotMultiplier(gearStack) : property.getValue();
 		ChatFormatting valueStyle = value < (PropertyOperation.isMultiplication(property.getOperation()) ? 1.0f : 0.0f) ? invertValueColors(property) ? ChatFormatting.DARK_GREEN : ChatFormatting.DARK_RED : invertValueColors(property) ? ChatFormatting.DARK_RED : ChatFormatting.DARK_GREEN;
@@ -508,13 +515,16 @@ public class DynamicGearDescriptionHelper
 			if(PropertyOperation.isAddition(property.getOperation()) && property.getValue() == 0.0f)
 				return;
 
-			MutableComponent propertyComponent = property.getOperation() == PropertyOperation.BASE || property.getOperation() == PropertyOperation.MULTIPLY_BASE
-					? Component.translatable("property.alloygery.generic_attribute.base").append(Component.translatable(((AttributeProperty) property).getTargetAttribute().getDescriptionId()))
-					: property.getOperation() == PropertyOperation.MULTIPLY_PART
-					? Component.translatable(((AttributeProperty) property).getTargetAttribute().getDescriptionId()).append(Component.translatable("property.alloygery.generic_attribute.part"))
-							: Component.translatable("property.alloygery.generic_attribute.total").append(Component.translatable(((AttributeProperty) property).getTargetAttribute().getDescriptionId()));
+			MutableComponent propertyComponent = switch (property.getOperation())
+			{
+				case BASE, MULTIPLY_BASE -> Component.translatable("property.alloygery.generic_attribute.base").append(Component.translatable(((AttributeProperty) property).getTargetAttribute().getDescriptionId()));
+				case MIN -> Component.translatable(((AttributeProperty) property).getTargetAttribute().getDescriptionId()).append(Component.translatable("property.alloygery.generic_attribute.min"));
+				case MAX -> Component.translatable(((AttributeProperty) property).getTargetAttribute().getDescriptionId()).append(Component.translatable("property.alloygery.generic_attribute.max"));
+				case MULTIPLY_PART -> Component.translatable(((AttributeProperty) property).getTargetAttribute().getDescriptionId()).append(Component.translatable("property.alloygery.generic_attribute.part"));
+				case ADDITION, MULTIPLY_TOTAL -> Component.translatable("property.alloygery.generic_attribute.total").append(Component.translatable(((AttributeProperty) property).getTargetAttribute().getDescriptionId()));
+			};
 
-			MutableComponent tooltipComponent = Component.literal("  ").append(propertyComponent).append(PropertyOperation.isMultiplication(property.getOperation()) ? " x ": " + ").withStyle(ChatFormatting.GRAY);
+			MutableComponent tooltipComponent = Component.literal("  ").append(propertyComponent).append(PropertyOperation.isMultiplication(property.getOperation()) ? " x " : PropertyOperation.isCap(property.getOperation()) ? ": " : " + ").withStyle(ChatFormatting.GRAY);
 
 			final float value = PropertyOperation.isAddition(property.getOperation()) ? property.getValue() * SlotMultipliers.getSlotMultiplier(gearStack) : property.getValue();
 			ChatFormatting valueStyle = value < (PropertyOperation.isMultiplication(property.getOperation()) ? 1.0f : 0.0f) ? invertValueColors(property) ? ChatFormatting.DARK_GREEN : ChatFormatting.DARK_RED : invertValueColors(property) ? ChatFormatting.DARK_RED : ChatFormatting.DARK_GREEN;
@@ -523,32 +533,33 @@ public class DynamicGearDescriptionHelper
 			tooltip.add(tooltipComponent.append(valueComponent));
 		});
 
-		register(PropertyType.DURABILITY, (gearStack, tooltip, property, isAdvanced) -> {
-			ResourceLocation propertyTypeLocation = PropertyType.REGISTRY.getKey(property.getPropertyType());
-			if(propertyTypeLocation == null)
-				return;
+//		register(PropertyType.DURABILITY, (gearStack, tooltip, property, isAdvanced) -> {
+//			ResourceLocation propertyTypeLocation = PropertyType.REGISTRY.getKey(property.getPropertyType());
+//			if(propertyTypeLocation == null)
+//				return;
+//
+//			if(PropertyOperation.isMultiplication(property.getOperation()) && property.getValue() == 1.0f)
+//				return;
+//
+//			if(PropertyOperation.isAddition(property.getOperation()) && property.getValue() == 0.0f)
+//				return;
+//
+//			MutableComponent propertyComponent = property.getOperation() == PropertyOperation.BASE || property.getOperation() == PropertyOperation.MULTIPLY_BASE
+//					? Component.translatable(propertyTypeLocation.toLanguageKey("property", "base"))
+//					: property.getOperation() == PropertyOperation.MULTIPLY_PART
+//							? Component.translatable(propertyTypeLocation.toLanguageKey("property", "part"))
+//							: Component.translatable(propertyTypeLocation.toLanguageKey("property", "total"));
+//
+//			MutableComponent tooltipComponent = Component.literal("  ").append(propertyComponent).append(PropertyOperation.isMultiplication(property.getOperation()) ? " x " : " + ").withStyle(ChatFormatting.GRAY);
+//
+//			final float value = PropertyOperation.isAddition(property.getOperation()) ? property.getValue() * SlotMultipliers.getDurabilitySlotMultiplier(gearStack) : property.getValue();
+//			ChatFormatting valueStyle = value < (PropertyOperation.isMultiplication(property.getOperation()) ? 1.0f : 0.0f) ? ChatFormatting.DARK_RED : ChatFormatting.DARK_GREEN;
+//			Component valueComponent = Component.literal(String.format("%.2f", value)).withStyle(valueStyle);
+//
+//			tooltip.add(tooltipComponent.append(valueComponent));
+//		});
 
-			if(PropertyOperation.isMultiplication(property.getOperation()) && property.getValue() == 1.0f)
-				return;
-
-			if(PropertyOperation.isAddition(property.getOperation()) && property.getValue() == 0.0f)
-				return;
-
-			MutableComponent propertyComponent = property.getOperation() == PropertyOperation.BASE || property.getOperation() == PropertyOperation.MULTIPLY_BASE
-					? Component.translatable(propertyTypeLocation.toLanguageKey("property", "base"))
-					: property.getOperation() == PropertyOperation.MULTIPLY_PART
-							? Component.translatable(propertyTypeLocation.toLanguageKey("property", "part"))
-							: Component.translatable(propertyTypeLocation.toLanguageKey("property", "total"));
-
-			MutableComponent tooltipComponent = Component.literal("  ").append(propertyComponent).append(PropertyOperation.isMultiplication(property.getOperation()) ? " x " : " + ").withStyle(ChatFormatting.GRAY);
-
-			final float value = PropertyOperation.isAddition(property.getOperation()) ? property.getValue() * SlotMultipliers.getDurabilitySlotMultiplier(gearStack) : property.getValue();
-			ChatFormatting valueStyle = value < (PropertyOperation.isMultiplication(property.getOperation()) ? 1.0f : 0.0f) ? ChatFormatting.DARK_RED : ChatFormatting.DARK_GREEN;
-			Component valueComponent = Component.literal(String.format("%.2f", value)).withStyle(valueStyle);
-
-			tooltip.add(tooltipComponent.append(valueComponent));
-		});
-
+		register(PropertyType.DURABILITY, DynamicGearDescriptionHelper::default_part_property_writer_with_slot_multiplier);
 		register(PropertyType.ENCUMBRANCE, DynamicGearDescriptionHelper::default_part_property_writer_with_slot_multiplier);
 		register(PropertyType.MOBILITY, DynamicGearDescriptionHelper::default_part_property_writer_with_slot_multiplier);
     }

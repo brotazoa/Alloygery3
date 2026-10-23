@@ -124,6 +124,35 @@ public class SingleIngredientRecipeBuilder implements RecipeBuilder
                 .save(exporter, RecipeBuilder.getDefaultRecipeId(result).withSuffix(suffix == null || suffix.isEmpty() ? "_from_tailoring" : "_from_tailoring_" + suffix));
     }
 
+    public static SingleIngredientRecipeBuilder smithingVice(RecipeCategory category, ItemLike result, Ingredient ingredient, int cost, int count)
+    {
+        return new SingleIngredientRecipeBuilder(category, MachinesModule.SMITHING_VICE_RECIPE_SERIALIZER, result, count, ingredient, cost);
+    }
+
+    public static void smithingVice(ItemLike result, TagKey<Item> ingredient, Consumer<FinishedRecipe> exporter)
+    {
+        smithingVice(result, ingredient, 1, 1, null, exporter);
+    }
+
+    public static void smithingVice(ItemLike result, Item ingredient, Consumer<FinishedRecipe> exporter)
+    {
+        smithingVice(result, ingredient, 1, 1, null, exporter);
+    }
+
+    public static void smithingVice(ItemLike result, TagKey<Item> ingredient, int cost, int count, String suffix, Consumer<FinishedRecipe> exporter)
+    {
+        smithingVice(RecipeCategory.MISC, result, Ingredient.of(ingredient), cost, count)
+                .unlockedBy("has_ingredient", RecipeProvider.has(ingredient))
+                .save(exporter, RecipeBuilder.getDefaultRecipeId(result).withSuffix(suffix == null || suffix.isEmpty() ? "_from_smithing_vice" : "_from_smithing_vicing_" + suffix));
+    }
+
+    public static void smithingVice(ItemLike result, Item ingredient, int cost, int count, String suffix, Consumer<FinishedRecipe> exporter)
+    {
+        smithingVice(RecipeCategory.MISC, result, Ingredient.of(ingredient), cost, count)
+                .unlockedBy("has_ingredient", RecipeProvider.has(ingredient))
+                .save(exporter, RecipeBuilder.getDefaultRecipeId(result).withSuffix(suffix == null || suffix.isEmpty() ? "_from_smithing_vice" : "_from_smithing_vicing_" + suffix));
+    }
+
     public SingleIngredientRecipeBuilder(RecipeCategory category, RecipeSerializer<?> type, ItemLike result, int count, Ingredient ingredient, int cost)
     {
         this.category = category;

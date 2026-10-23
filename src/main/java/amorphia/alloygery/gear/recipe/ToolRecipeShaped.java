@@ -5,6 +5,7 @@ import amorphia.alloygery.gear.item.GearPartItem;
 import amorphia.alloygery.gear.item.IDynamicTool;
 import amorphia.alloygery.gear.item.PartTypes;
 import amorphia.alloygery.gear.item.ToolHeadPartItem;
+import amorphia.alloygery.gear.item.part.DyeableToolBinding;
 import amorphia.alloygery.gear.item.part.HandGuard;
 import amorphia.alloygery.gear.item.part.ToolBinding;
 import amorphia.alloygery.gear.item.part.ToolHandle;
@@ -67,11 +68,15 @@ public class ToolRecipeShaped extends ShapedRecipe
         {
             if (bindingStack.getItem() instanceof GearPartItem gearPartItem)
             {
+                CompoundTag bindingTag = NBTHelper.createPartTag(bindingStack, gearPartItem.getPartType(), gearPartItem.getPartMaterial());
+                if(gearPartItem instanceof DyeableToolBinding dyeableToolBinding)
+                    bindingTag.putInt(AlloygeryNBTKeys.DYE_COLOR, dyeableToolBinding.getColor(bindingStack));
+
                 toolStack.getOrCreateTag().put(AlloygeryNBTKeys.NBT, NBTHelper.createAlloygeryDataTag(
                         toolStack.getItem(),
                         NBTHelper.createPartsListTag(new PartTypes[] { PartTypes.TOOL_HEAD, PartTypes.TOOL_BINDING, PartTypes.TOOL_HANDLE }),
                         NBTHelper.createPartTag(headItem),
-                        NBTHelper.createPartTag(bindingStack, gearPartItem.getPartType(), gearPartItem.getPartMaterial()),
+                        bindingTag,
                         NBTHelper.createPartTag(toolHandle)
                 ));
             }
@@ -90,7 +95,7 @@ public class ToolRecipeShaped extends ShapedRecipe
 
             final float damage = headStack.getMaxDamage() - headStack.getDamageValue();
             final float damageAsPercentOfMax = (damage/headStack.getMaxDamage());
-            final float toolDamage = (toolStack.getMaxDamage() * damageAsPercentOfMax) - toolStack.getMaxDamage();
+            final float toolDamage = toolStack.getMaxDamage() - (toolStack.getMaxDamage() * damageAsPercentOfMax);
             toolStack.setDamageValue(Math.round(toolDamage));
 
             NBTHelper.setNBTProperties(toolStack, properties);

@@ -99,7 +99,7 @@ public class AlloygeryDefaultMaterials
 				.standardToolBindingProperties(0, 0, 0, 0, 0, 0)
 				.standardToolHandleProperties(0.6f, 0.6f, 0.8f, 0.4f, 1, 1)
 
-				.property(DurabilityProperty.of(TOOL_IMPROVEMENT, ADDITION, 50))
+				.property(DurabilityProperty.of(TOOL_IMPROVEMENT, ADDITION, 25))
 
 				.standardArmorPlateProperties(5, 0, 2, 0, 0)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
@@ -158,6 +158,7 @@ public class AlloygeryDefaultMaterials
 				.standardToolHandleProperties(0.5f, 1.5f, 0.8f, 0.3f, 1, 1)
                 .property(LovedByPiglinsProperty.of(TOOL_HEAD, BASE, 3))
 				.property(LovedByPiglinsProperty.of(TOOL_BINDING, ADDITION, 1))
+				.property(DurabilityProperty.of(TOOL_BINDING, MAX, 175))
 				.property(LovedByPiglinsProperty.of(TOOL_HANDLE, ADDITION, 1))
 
 				.property(LovedByPiglinsProperty.of(TOOL_IMPROVEMENT, ADDITION, 3))
@@ -183,7 +184,7 @@ public class AlloygeryDefaultMaterials
 				.property(DurabilityProperty.of(TOOL_IMPROVEMENT, ADDITION, 100))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.DROPPED_EXPERIENCE, TOOL_IMPROVEMENT, ADDITION, 4))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.COLLECTION_RANGE, TOOL_IMPROVEMENT, ADDITION, 1))
-				.property(MiningSpeedProperty.of(TOOL_IMPROVEMENT, ADDITION, 4))
+				.property(MiningSpeedProperty.of(TOOL_IMPROVEMENT, MULTIPLY_TOTAL, 1.15f))
 				.property(LovedByPiglinsProperty.of(TOOL_IMPROVEMENT, ADDITION, 1))
 
 				.standardArmorPlateProperties(20, 10, 6, 0, 0)
@@ -222,10 +223,10 @@ public class AlloygeryDefaultMaterials
 				.property(AttributeProperty.of(AdditionalEntityAttributes.CRITICAL_BONUS_DAMAGE, TOOL_IMPROVEMENT, MULTIPLY_TOTAL, 1.2f))
 				.property(AttributeProperty.of(Attributes.ATTACK_DAMAGE, TOOL_IMPROVEMENT, ADDITION, 1))
 
-				.property(DurabilityProperty.of(TOOL_UPGRADE, MULTIPLY_TOTAL, 1.1f))
+				.property(DurabilityProperty.of(TOOL_UPGRADE, MULTIPLY_TOTAL, 1.25f))
 				.property(FireproofProperty.of(TOOL_UPGRADE, ADDITION, 3))
-				.property(AttributeProperty.of(AdditionalEntityAttributes.CRITICAL_BONUS_DAMAGE, TOOL_UPGRADE, MULTIPLY_TOTAL, 1.2f))
-				.property(AttributeProperty.of(Attributes.ATTACK_DAMAGE, TOOL_UPGRADE, ADDITION, 1))
+				.property(AttributeProperty.of(AdditionalEntityAttributes.CRITICAL_BONUS_DAMAGE, TOOL_UPGRADE, MULTIPLY_TOTAL, 1.5f))
+				.property(AttributeProperty.of(Attributes.ATTACK_DAMAGE, TOOL_UPGRADE, ADDITION, 2))
 
 				.standardArmorPlateProperties(40, 10, 12, 8, 80)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
@@ -317,7 +318,7 @@ public class AlloygeryDefaultMaterials
 
 				.property(DurabilityProperty.of(TOOL_IMPROVEMENT, ADDITION, 25))
 				.property(LovedByPiglinsProperty.of(TOOL_IMPROVEMENT, ADDITION, 1))
-				.property(MiningSpeedProperty.of(TOOL_IMPROVEMENT, ADDITION, 2))
+				.property(MiningSpeedProperty.of(TOOL_IMPROVEMENT, MULTIPLY_TOTAL, 1.25f))
 
 				.standardArmorPlateProperties(28, 12, 10, 0, 0)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
@@ -366,6 +367,8 @@ public class AlloygeryDefaultMaterials
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 
 				.property(MiningLevelProperty.of(TOOL_IMPROVEMENT, ADDITION, 1))
+				.property(MiningLevelProperty.of(TOOL_IMPROVEMENT, MIN, 3))
+				.property(DurabilityProperty.of(TOOL_IMPROVEMENT, ADDITION, 500))
                 .build());
 
         FLINT = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("flint"))

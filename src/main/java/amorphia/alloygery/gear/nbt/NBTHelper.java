@@ -160,7 +160,9 @@ public class NBTHelper
 
     public static CompoundTag getAlloygeryDataTag(ItemStack itemStack)
     {
-        return itemStack == null ? new CompoundTag() : getAlloygeryDataTag(itemStack.getTag());
+        return itemStack == null ? new CompoundTag() :
+                hasAlloygeryTag(itemStack) ? getAlloygeryDataTag(itemStack.getTag()) :
+                getAlloygeryDataTag(itemStack.getItem().getDefaultInstance().getTag());
     }
 
     public static ResourceLocation getItemIdentifierFromTag(CompoundTag tag)

@@ -9,6 +9,8 @@ public enum PropertyOperation
 {
     BASE,
     ADDITION,
+	MIN,
+	MAX,
     MULTIPLY_BASE,
     MULTIPLY_TOTAL,
 	MULTIPLY_PART,
@@ -36,5 +38,10 @@ public enum PropertyOperation
 	public static boolean isAddition(PropertyOperation operation)
 	{
 		return operation == BASE || operation == ADDITION;
+	}
+
+	public static boolean isCap(PropertyOperation operation)
+	{
+		return operation == MIN || operation == MAX;
 	}
 }

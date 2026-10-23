@@ -28,8 +28,8 @@ public abstract class AbstractSingleIngredientMenu<R extends AbstractSingleIngre
 
     protected SoundEvent uiItemTakeSoundEvent = SoundEvents.UI_STONECUTTER_TAKE_RESULT;
 
-    private List<R> recipes;
-    private ItemStack input;
+    protected List<R> recipes;
+    protected ItemStack input;
 
     long lastSoundTime;
     final Slot inputSlot;
@@ -93,7 +93,6 @@ public abstract class AbstractSingleIngredientMenu<R extends AbstractSingleIngre
                     long l = level1.getGameTime();
                     if(AbstractSingleIngredientMenu.this.lastSoundTime != l)
                     {
-                        // TODO: Replace with custom sound event
                         level1.playSound(null, blockPos, AbstractSingleIngredientMenu.this.uiItemTakeSoundEvent, SoundSource.BLOCKS, 1.0f, 1.0f);
                         AbstractSingleIngredientMenu.this.lastSoundTime = l;
                     }
@@ -151,7 +150,7 @@ public abstract class AbstractSingleIngredientMenu<R extends AbstractSingleIngre
                 }
             }
             // inventory to input slot
-            else if (this.level.getRecipeManager().getRecipeFor(recipeType, new SimpleContainer(slotStack), this.level).isPresent())
+            else if (this.hasRecipesForInput(slotStack))
             {
                 if (!this.moveItemStackTo(slotStack, INPUT_SLOT, INPUT_SLOT + 1, false))
                 {
@@ -274,6 +273,11 @@ public abstract class AbstractSingleIngredientMenu<R extends AbstractSingleIngre
     {
         if(!isValidRecipeIndex(this.selectedRecipeIndex.get())) return -1;
         return getRecipes().get(this.selectedRecipeIndex.get()).getMaterialCost();
+    }
+
+    protected boolean hasRecipesForInput(ItemStack stack)
+    {
+        return this.level.getRecipeManager().getRecipeFor(recipeType, new SimpleContainer(stack), this.level).isPresent();
     }
 
     protected void setupRecipeList(Container container, ItemStack stack)

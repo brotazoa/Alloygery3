@@ -32,11 +32,13 @@ public class AlloygeryMaterial
 
     public static final Codec<AlloygeryMaterial> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             ResourceLocation.CODEC.fieldOf("material").forGetter(AlloygeryMaterial::getMaterialIdentifier),
+            Codec.BOOL.fieldOf("merge").forGetter(AlloygeryMaterial::shouldMergeOnApply),
             INGREDIENT_CODEC.fieldOf("repair_ingredient").forGetter(AlloygeryMaterial::getRepairIngredient),
             Codec.BOOL.fieldOf("dyeable").forGetter(AlloygeryMaterial::isDyeable),
             Property.CODEC.listOf().fieldOf("properties").forGetter(AlloygeryMaterial::getProperties)
-    ).apply(instance, (resourceLocation, ingredient, dyeable, properties) -> {
+    ).apply(instance, (resourceLocation, mergeFlag, ingredient, dyeable, properties) -> {
         MaterialHelper.MaterialBuilder builder = new MaterialHelper.MaterialBuilder(resourceLocation);
+        builder.setMergeFlag(mergeFlag);
         builder.repairIngredientFromIngredient(ingredient);
         builder.dyeable(dyeable);
         for(Property p : properties)
@@ -50,6 +52,7 @@ public class AlloygeryMaterial
     static final List<Property> EMPTY = List.of();
 
     ResourceLocation materialIdentifier;
+    boolean mergeFlag = false;
 
     final List<Property> materialProperties = Lists.newArrayList();
     final Map<PartTypes, List<Property>> materialPropertiesByPartType = Maps.newHashMap();
@@ -104,5 +107,10 @@ public class AlloygeryMaterial
     public boolean isDyeable()
     {
         return dyeable;
+    }
+
+    public boolean shouldMergeOnApply()
+    {
+        return this.mergeFlag;
     }
 }

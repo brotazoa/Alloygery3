@@ -71,7 +71,7 @@ public class CraftingMaterialRecipeProvider implements AlloygeryRecipeProvider.I
 				Ingredient.of(TagKey.create(Registries.ITEM, Alloygery.asCommonResource("gold_sources"))),
 				Ingredient.of(Items.NETHERITE_SCRAP),
 				Ingredient.of(Items.NETHERITE_SCRAP)
-		), true, exporter);
+		), true, 1, exporter);
 
         // nickel recipes
         makeRawOreRecipesFromMaterial(CraftingMaterials.NICKEL, exporter);
@@ -246,6 +246,11 @@ public class CraftingMaterialRecipeProvider implements AlloygeryRecipeProvider.I
 
     private void makeAlloyingRecipe(Item result, List<Ingredient> ingredients, boolean advanced, Consumer<FinishedRecipe> exporter)
     {
+        makeAlloyingRecipe(result, ingredients, advanced, ingredients.size(), exporter);
+    }
+
+    private void makeAlloyingRecipe(Item result, List<Ingredient> ingredients, boolean advanced, int count, Consumer<FinishedRecipe> exporter)
+    {
         final int ingredientCount = ingredients.size();
         final float experience = 0.7f * ingredientCount;
         final int time = 200 * ingredientCount;
@@ -254,7 +259,7 @@ public class CraftingMaterialRecipeProvider implements AlloygeryRecipeProvider.I
         {
             AlloyingRecipeBuilder.simple(RecipeCategory.MISC, result)
                     .ingredient(ingredients)
-                    .count(ingredientCount)
+                    .count(count)
                     .experience(experience)
                     .smeltingTime(time)
                     .unlockedBy("has_item", RecipeProvider.has(result))
@@ -263,7 +268,7 @@ public class CraftingMaterialRecipeProvider implements AlloygeryRecipeProvider.I
 
         AlloyingRecipeBuilder.advanced(RecipeCategory.MISC, result)
                 .ingredient(ingredients)
-                .count(ingredientCount)
+                .count(count)
                 .experience(experience)
                 .smeltingTime(time)
                 .unlockedBy("has_item", RecipeProvider.has(result))

@@ -2,6 +2,7 @@ package amorphia.alloygery.gear.datagen.recipe;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.craftingMaterials.CraftingMaterialModule;
+import amorphia.alloygery.datagen.AlloygeryEnglishLanguageProvider;
 import amorphia.alloygery.datagen.AlloygeryRecipeProvider;
 import amorphia.alloygery.gear.GearModule;
 import amorphia.alloygery.gear.item.PartTypes;
@@ -49,6 +50,7 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
         makeWoodcutterRecipes(exporter);
         makeSmithingAnvilRecipes(exporter);
         makeTailoringRecipes(exporter);
+		makeSmithingViceRecipes(exporter);
 
 		SmithingUpgradeRecipeBuilder.netheriteUpgrade().unlocks("has_netherite", RecipeProvider.has(Items.NETHERITE_INGOT)).save(exporter, Alloygery.asResource("netherite_smithing_upgrade"));
 
@@ -109,11 +111,11 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
         makePartSmithingAnvilRecipes(AlloygeryDefaultMaterials.ANTANIUM, CraftingMaterialModule.ITEMS.get("antanium_ingot"), EnumSet.of(TOOL_BINDING, TOOL_HANDLE, ARMOR_PLATE), exporter);
         makeToolHeadSmithingAnvilRecipes(AlloygeryDefaultMaterials.ANTANIUM, CraftingMaterialModule.ITEMS.get("antanium_ingot"), ALL_MINING_TOOLS, exporter);
 
-		makeToolHeadSmithingAnvilRecipes(AlloygeryDefaultMaterials.AMETHYST, Items.AMETHYST_SHARD, ALL_MINING_TOOLS, exporter);
-
-		makeToolHeadSmithingAnvilRecipes(AlloygeryDefaultMaterials.EMERALD, Items.EMERALD, ALL_MINING_TOOLS, exporter);
-
-		makeToolHeadSmithingAnvilRecipes(AlloygeryDefaultMaterials.DIAMOND, Items.DIAMOND, ALL_MINING_TOOLS, exporter);
+//		makeToolHeadSmithingAnvilRecipes(AlloygeryDefaultMaterials.AMETHYST, Items.AMETHYST_SHARD, ALL_MINING_TOOLS, exporter);
+//
+//		makeToolHeadSmithingAnvilRecipes(AlloygeryDefaultMaterials.EMERALD, Items.EMERALD, ALL_MINING_TOOLS, exporter);
+//
+//		makeToolHeadSmithingAnvilRecipes(AlloygeryDefaultMaterials.DIAMOND, Items.DIAMOND, ALL_MINING_TOOLS, exporter);
 
         makePartSmithingAnvilRecipes(AlloygeryDefaultMaterials.STEEL, CraftingMaterialModule.ITEMS.get("steel_ingot"), EnumSet.of(TOOL_BINDING, TOOL_HANDLE, ARMOR_PLATE), exporter);
         makeToolHeadSmithingAnvilRecipes(AlloygeryDefaultMaterials.STEEL, CraftingMaterialModule.ITEMS.get("steel_ingot"), ALL_MINING_TOOLS, exporter);
@@ -286,6 +288,63 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
 		SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("bone_handle"), Items.BONE, 2, 1, null, exporter);
 		SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("stick_handle"), Items.STICK, 2, 1, null, exporter);
     }
+
+	private void makeSmithingViceRecipes(Consumer<FinishedRecipe> exporter)
+	{
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("stone_axe_head"), Items.STONE_AXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("stone_hoe_head"), Items.STONE_HOE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("stone_pickaxe_head"), Items.STONE_PICKAXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("stone_shovel_head"), Items.STONE_SHOVEL, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("stone_sword_blade"), Items.STONE_SWORD, exporter);
+
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("iron_axe_head"), Items.IRON_AXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("iron_hoe_head"), Items.IRON_HOE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("iron_pickaxe_head"), Items.IRON_PICKAXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("iron_shovel_head"), Items.IRON_SHOVEL, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("iron_sword_blade"), Items.IRON_SWORD, exporter);
+
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("iron_plate_armor_part"), Items.IRON_BOOTS, Items.IRON_CHESTPLATE, Items.IRON_HELMET, Items.IRON_LEGGINGS);
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("iron_heavy_plate_armor_part"), Items.IRON_BOOTS, Items.IRON_CHESTPLATE, Items.IRON_HELMET, Items.IRON_LEGGINGS);
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("iron_scale_armor_part"), Items.IRON_BOOTS, Items.IRON_CHESTPLATE, Items.IRON_HELMET, Items.IRON_LEGGINGS);
+
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("gold_axe_head"), Items.GOLDEN_AXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("gold_hoe_head"), Items.GOLDEN_HOE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("gold_pickaxe_head"), Items.GOLDEN_PICKAXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("gold_shovel_head"), Items.GOLDEN_SHOVEL, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("gold_sword_blade"), Items.GOLDEN_SWORD, exporter);
+
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("gold_plate_armor_part"), Items.GOLDEN_BOOTS, Items.GOLDEN_CHESTPLATE, Items.GOLDEN_HELMET, Items.GOLDEN_LEGGINGS);
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("gold_heavy_plate_armor_part"), Items.GOLDEN_BOOTS, Items.GOLDEN_CHESTPLATE, Items.GOLDEN_HELMET, Items.GOLDEN_LEGGINGS);
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("gold_scale_armor_part"), Items.GOLDEN_BOOTS, Items.GOLDEN_CHESTPLATE, Items.GOLDEN_HELMET, Items.GOLDEN_LEGGINGS);
+
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("diamond_axe_head"), Items.DIAMOND_AXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("diamond_hoe_head"), Items.DIAMOND_HOE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("diamond_pickaxe_head"), Items.DIAMOND_PICKAXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("diamond_shovel_head"), Items.DIAMOND_SHOVEL, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("diamond_sword_blade"), Items.DIAMOND_SWORD, exporter);
+
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("diamond_plate_armor_part"), Items.DIAMOND_BOOTS, Items.DIAMOND_CHESTPLATE, Items.DIAMOND_HELMET, Items.DIAMOND_LEGGINGS);
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("diamond_heavy_plate_armor_part"), Items.DIAMOND_BOOTS, Items.DIAMOND_CHESTPLATE, Items.DIAMOND_HELMET, Items.DIAMOND_LEGGINGS);
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("diamond_scale_armor_part"), Items.DIAMOND_BOOTS, Items.DIAMOND_CHESTPLATE, Items.DIAMOND_HELMET, Items.DIAMOND_LEGGINGS);
+
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("netherite_axe_head"), Items.NETHERITE_AXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("netherite_hoe_head"), Items.NETHERITE_HOE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("netherite_pickaxe_head"), Items.NETHERITE_PICKAXE, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("netherite_shovel_head"), Items.NETHERITE_SHOVEL, exporter);
+		SingleIngredientRecipeBuilder.smithingVice(GearModule.ITEMS.get("netherite_sword_blade"), Items.NETHERITE_SWORD, exporter);
+
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("netherite_plate_armor_part"), Items.NETHERITE_BOOTS, Items.NETHERITE_CHESTPLATE, Items.NETHERITE_HELMET, Items.NETHERITE_LEGGINGS);
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("netherite_heavy_plate_armor_part"), Items.NETHERITE_BOOTS, Items.NETHERITE_CHESTPLATE, Items.NETHERITE_HELMET, Items.NETHERITE_LEGGINGS);
+		makeSmithingViceRecipesForOutputItem(exporter, GearModule.ITEMS.get("netherite_scale_armor_part"), Items.NETHERITE_BOOTS, Items.NETHERITE_CHESTPLATE, Items.NETHERITE_HELMET, Items.NETHERITE_LEGGINGS);
+	}
+
+	private void makeSmithingViceRecipesForOutputItem(Consumer<FinishedRecipe> exporter, Item resultItem, Item... inputItems)
+	{
+		for(Item input : inputItems)
+		{
+			SingleIngredientRecipeBuilder.smithingVice(resultItem, input, 1, 1, BuiltInRegistries.ITEM.getKey(input).getPath(), exporter);
+		}
+	}
 
 	public static void generateArmorPlatingRecipe(Item result, Ingredient plate, Consumer<FinishedRecipe> exporter)
 	{

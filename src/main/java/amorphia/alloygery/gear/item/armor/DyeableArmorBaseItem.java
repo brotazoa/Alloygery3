@@ -3,8 +3,6 @@ package amorphia.alloygery.gear.item.armor;
 import amorphia.alloygery.gear.client.AlloygeryMaterialColors;
 import amorphia.alloygery.gear.item.PartTypes;
 import amorphia.alloygery.gear.material.MaterialHelper;
-import amorphia.alloygery.gear.nbt.AlloygeryNBTKeys;
-import amorphia.alloygery.gear.nbt.NBTHelper;
 import net.minecraft.world.item.DyeableLeatherItem;
 import net.minecraft.world.item.ItemStack;
 
@@ -22,16 +20,8 @@ public class DyeableArmorBaseItem extends ArmorBaseItem implements DyeableLeathe
 	}
 
 	@Override
-	public void setColor(ItemStack stack, int color)
+	public int getMaterialColor(ItemStack stack, int tintIndex)
 	{
-		DyeableLeatherItem.super.setColor(stack, color);
-		NBTHelper.getPartTagFromItemStack(stack, PartTypes.ARMOR_BASE).putInt(AlloygeryNBTKeys.DYE_COLOR, color);
-	}
-
-	@Override
-	public void clearColor(ItemStack stack)
-	{
-		DyeableLeatherItem.super.clearColor(stack);
-		NBTHelper.getPartTagFromItemStack(stack, PartTypes.ARMOR_BASE).remove(AlloygeryNBTKeys.DYE_COLOR);
+		return tintIndex == 1 ? getColor(stack) : super.getMaterialColor(stack, tintIndex);
 	}
 }

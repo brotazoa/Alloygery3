@@ -30,6 +30,7 @@
     "alloygery:furnace_with_heat_exchanger",
     "alloygery:kiln_with_heat_exchanger",
     "alloygery:smoker_with_heat_exchanger",
-    "alloygery:smithing_anvil"
+    "alloygery:smithing_anvil",
+    "alloygery:smithing_vice"
   ]
 }

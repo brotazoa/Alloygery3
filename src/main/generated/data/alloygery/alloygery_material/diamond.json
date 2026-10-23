@@ -1,6 +1,7 @@
 {
   "dyeable": false,
   "material": "alloygery:alloygery_material/diamond",
+  "merge": false,
   "properties": [
     {
       "apply_when_broken": false,
@@ -98,6 +99,20 @@
       "part_type": "tool_improvement",
       "property_type": "alloygery:mining_level",
       "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "min",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:mining_level",
+      "value": 3.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_improvement",
+      "property_type": "alloygery:durability",
+      "value": 500.0
     }
   ],
   "repair_ingredient": {

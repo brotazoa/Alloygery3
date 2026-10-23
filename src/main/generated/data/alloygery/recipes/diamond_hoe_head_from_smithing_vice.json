@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_vice",
+  "ingredient": {
+    "item": "minecraft:diamond_hoe"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:diamond_hoe_head"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "dyeable": false,
   "material": "alloygery:alloygery_material/hidden",
+  "merge": false,
   "properties": [],
   "repair_ingredient": []
 }

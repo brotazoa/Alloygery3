@@ -6,6 +6,7 @@ import amorphia.alloygery.gear.material.AlloygeryDefaultMaterials;
 import amorphia.alloygery.gear.nbt.AlloygeryNBTKeys;
 import amorphia.alloygery.gear.nbt.NBTHelper;
 import amorphia.alloygery.gear.item.PartTypes;
+import amorphia.alloygery.gear.property.PrimitiveProperty;
 import com.google.common.collect.Maps;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -113,7 +115,10 @@ public class VanillaItemConverter
 
             Item alloygeryItem = BuiltInRegistries.ITEM.get(Alloygery.asResource(name));
 
-            return alloygeryItem == Items.AIR ? stack : mergeNbt(alloygeryItem.getDefaultInstance(), stack);
+			stack = alloygeryItem == Items.AIR ? stack : mergeNbt(alloygeryItem.getDefaultInstance(), stack);
+			NBTHelper.setNBTProperties(stack, List.of(PrimitiveProperty.of()));
+
+            return stack;
         }
         else return stack;
     }

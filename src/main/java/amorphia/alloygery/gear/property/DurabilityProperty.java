@@ -11,6 +11,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.EnumMap;
+import java.util.List;
 
 public class DurabilityProperty extends Property
 {
@@ -40,9 +41,11 @@ public class DurabilityProperty extends Property
 
     public static int compute(ItemStack stack)
     {
-        final float durability = PropertyHelper.computePropertyValue(PropertyHelper.getPropertiesOfTypeFromItemStack(DurabilityProperty.class, stack));
+        final List<DurabilityProperty> properties = PropertyHelper.getPropertiesOfTypeFromItemStack(DurabilityProperty.class, stack);
+        final float durability = PropertyHelper.computePropertyValue(properties);
         final float durability_by_slot = durability * SlotMultipliers.getDurabilitySlotMultiplier(stack);
-        final int durability_rounded = Math.max(0, Math.round(durability_by_slot));
+        final float durability_min_max = PropertyHelper.computePropertyMinMax(properties, durability_by_slot);
+        final int durability_rounded = Math.max(0, Math.round(durability_min_max));
 
         return durability_rounded;
     }

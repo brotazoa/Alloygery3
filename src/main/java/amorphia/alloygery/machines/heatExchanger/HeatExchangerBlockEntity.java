@@ -125,7 +125,7 @@ public class HeatExchangerBlockEntity extends BaseContainerBlockEntity implement
 		ItemStack fuelStack = this.inventory.get(FUEL_SLOT);
 		if(fuelStack.isEmpty()) return;
 
-		this.burningTimeRemaining = AbstractFurnaceBlockEntity.getFuel().getOrDefault(fuelStack.getItem(), 0);
+		this.burningTimeRemaining = AbstractFurnaceBlockEntity.getFuel().getOrDefault(fuelStack.getItem(), 0) * 2;
 		this.totalBurningTime = this.burningTimeRemaining;
 
 		if (totalBurningTime > 0)

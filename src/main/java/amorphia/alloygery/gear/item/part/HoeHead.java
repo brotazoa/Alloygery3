@@ -3,9 +3,11 @@ package amorphia.alloygery.gear.item.part;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.datagen.AlloygeryItemTagProvider;
 import amorphia.alloygery.gear.datagen.GearItemTagProvider;
+import amorphia.alloygery.gear.item.PartTypes;
 import amorphia.alloygery.gear.item.ToolHeadPartItem;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
 import amorphia.alloygery.gear.item.ToolTypes;
+import amorphia.alloygery.gear.property.PropertyHelper;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
@@ -15,7 +17,7 @@ public class HoeHead extends ToolHeadPartItem implements GearItemTagProvider.IIt
 {
     public HoeHead(AlloygeryMaterial material)
     {
-        this(new Properties(), material);
+        this(new Properties().defaultDurability(PropertyHelper.computeIntegerPropertyValueRoundDown(material.getPropertiesByPart(PartTypes.TOOL_HEAD), 1, Integer.MAX_VALUE)), material);
     }
 
     public HoeHead(Properties properties, AlloygeryMaterial material)

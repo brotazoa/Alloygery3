@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:smithing_vice",
+  "ingredient": {
+    "item": "minecraft:diamond_helmet"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:diamond_heavy_plate_armor_part"
+  }
+}

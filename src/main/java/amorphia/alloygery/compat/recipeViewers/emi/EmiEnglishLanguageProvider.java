@@ -14,6 +14,7 @@ public class EmiEnglishLanguageProvider implements AlloygeryEnglishLanguageProvi
 		translationBuilder.add("emi.category.alloygery.emi_tailoring", "Tailoring");
 		translationBuilder.add("emi.category.alloygery.emi_woodcutting", "Woodcutting");
 		translationBuilder.add("emi.category.alloygery.emi_firing", "Firing");
+		translationBuilder.add("emi.category.alloygery.emi_smithing_vice", "Smithing Vice");
 		translationBuilder.add("emi.category.alloygery.emi_heat_exchanger_smelting", "Advanced Smelting");
 		translationBuilder.add("emi.category.alloygery.emi_heat_exchanger_blasting", "Advanced Blasting");
 		translationBuilder.add("emi.category.alloygery.emi_heat_exchanger_smoking", "Advanced Smoking");

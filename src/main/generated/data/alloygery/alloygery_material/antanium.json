@@ -1,6 +1,7 @@
 {
   "dyeable": false,
   "material": "alloygery:alloygery_material/antanium",
+  "merge": false,
   "properties": [
     {
       "apply_when_broken": false,
@@ -230,10 +231,10 @@
     },
     {
       "apply_when_broken": false,
-      "operation": "addition",
+      "operation": "multiply_total",
       "part_type": "tool_improvement",
       "property_type": "alloygery:mining_speed",
-      "value": 4.0
+      "value": 1.15
     },
     {
       "apply_when_broken": false,
