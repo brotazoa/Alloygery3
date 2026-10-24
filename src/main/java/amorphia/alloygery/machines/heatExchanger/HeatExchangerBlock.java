@@ -21,7 +21,6 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
@@ -181,8 +180,7 @@ public class HeatExchangerBlock extends BaseEntityBlock implements MachinesModel
 			double z = pos.getZ() + 0.5;
 			if (random.nextDouble() < 0.1)
 			{
-				//TODO: Replace Sound Event
-				level.playLocalSound(x, y, z, SoundEvents.FURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1.0f, 1.0f, false);
+				level.playLocalSound(x, y, z, MachinesModule.HEAT_EXCHANGER_FIRE_CRACKLE, SoundSource.BLOCKS, 1.0f, 1.0f, false);
 			}
 
 			Direction facing = state.getValue(FACING);

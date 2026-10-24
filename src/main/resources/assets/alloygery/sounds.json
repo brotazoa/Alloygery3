@@ -1,0 +1,110 @@
+{
+  "kiln_fire_crackle": {
+    "subtitle": "sound.alloygery.kiln_fire_crackle",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.furnace.fire_crackle"
+      }
+    ]
+  },
+  "alloy_kiln_fire_crackle": {
+    "subtitle": "sound.alloygery.alloy_kiln_fire_crackle",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.furnace.fire_crackle"
+      }
+    ]
+  },
+  "heat_exchanger_fire_crackle": {
+    "subtitle": "sound.alloygery.heat_exchanger_fire_crackle",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.furnace.fire_crackle"
+      }
+    ]
+  },
+  "alloy_kiln_with_heat_exchanger_fire_crackle": {
+    "subtitle": "sound.alloygery.alloy_kiln_with_heat_exchanger_fire_crackle",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.furnace.fire_crackle"
+      }
+    ]
+  },
+  "kiln_with_heat_exchanger_fire_crackle": {
+    "subtitle": "sound.alloygery.kiln_with_heat_exchanger_fire_crackle",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.furnace.fire_crackle"
+      }
+    ]
+  },
+  "blast_furnace_with_heat_exchanger_fire_crackle": {
+    "subtitle": "sound.alloygery.blast_furnace_with_heat_exchanger_fire_crackle",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.blastfurnace.fire_crackle"
+      }
+    ]
+  },
+  "furnace_with_heat_exchanger_fire_crackle": {
+    "subtitle": "sound.alloygery.furnace_with_heat_exchanger_fire_crackle",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.furnace.fire_crackle"
+      }
+    ]
+  },
+  "smoker_with_heat_exchanger_fire_crackle": {
+    "subtitle": "sound.alloygery.smoker_with_heat_exchanger_fire_crackle",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.smoker.smoke"
+      }
+    ]
+  },
+  "smithing_vice_take_item": {
+    "subtitle": "sound.alloygery.smithing_vice_take_item",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:entity.item.break"
+      }
+    ]
+  },
+  "smithing_anvil_take_item": {
+    "subtitle": "sound.alloygery.smithing_anvil_take_item",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.smithing_table.use"
+      }
+    ]
+  },
+  "tailoring_table_take_item": {
+    "subtitle": "sound.alloygery.tailoring_table_take_item",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:ui.loom.take_result"
+      }
+    ]
+  },
+  "woodcutter_take_item": {
+    "subtitle": "sound.alloygery.woodcutter_take_item",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:entity.boat.paddle_land"
+      }
+    ]
+  }
+}

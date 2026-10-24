@@ -16,7 +16,6 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.model.TexturedModel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
@@ -73,8 +72,7 @@ public class KilnWithHeatExchangerBlock extends AbstractSmelterWithHeatExchanger
 			double z = pos.getZ() + 0.5;
 			if (random.nextDouble() < 0.1)
 			{
-				//TODO: Replace Sound Event
-				level.playLocalSound(x, y, z, SoundEvents.FURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1.0f, 1.0f, false);
+				level.playLocalSound(x, y, z, MachinesModule.KILN_WITH_HEAT_EXCHANGER_FIRE_CRACKLE, SoundSource.BLOCKS, 1.0f, 1.0f, false);
 			}
 
 			Direction facing = state.getValue(FACING);

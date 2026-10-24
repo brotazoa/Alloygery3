@@ -7,7 +7,6 @@ import amorphia.alloygery.gear.nbt.NBTHelper;
 import amorphia.alloygery.machines.AbstractSingleIngredientMenu;
 import amorphia.alloygery.machines.MachinesModule;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -22,13 +21,13 @@ public class SmithingViceMenu extends AbstractSingleIngredientMenu<SmithingViceR
 	public SmithingViceMenu(int containerId, Inventory playerInventory)
 	{
 		super(MachinesModule.SMITHING_VICE_MENU_TYPE, containerId, playerInventory, SmithingViceRecipe.Type.INSTANCE);
-		this.uiItemTakeSoundEvent = SoundEvents.ITEM_BREAK;
+		this.uiItemTakeSoundEvent = MachinesModule.SMITHING_VICE_TAKE_ITEM;
 	}
 
 	public SmithingViceMenu(int containerId, Inventory playerInventory, final ContainerLevelAccess access)
 	{
 		super(MachinesModule.SMITHING_VICE_MENU_TYPE, containerId, playerInventory, SmithingViceRecipe.Type.INSTANCE, access);
-		this.uiItemTakeSoundEvent = SoundEvents.ITEM_BREAK;
+		this.uiItemTakeSoundEvent = MachinesModule.SMITHING_VICE_TAKE_ITEM;
 	}
 
 	@Override
@@ -52,7 +51,7 @@ public class SmithingViceMenu extends AbstractSingleIngredientMenu<SmithingViceR
 		{
 			for (PartTypes partType : NBTHelper.getPartTypesListFromItemStack(NBTHelper.hasAlloygeryTag(stack) ? stack : stack.getItem().getDefaultInstance()))
 			{
-				Item partItem = BuiltInRegistries.ITEM.get(NBTHelper.getItemIdentifierFromTag(NBTHelper.getPartTagFromItemStack(stack, partType)));
+				Item partItem = BuiltInRegistries.ITEM.get(NBTHelper.getItemIdentifierFromTag(NBTHelper.getPartTagFromItemStack(NBTHelper.hasAlloygeryTag(stack) ? stack : stack.getItem().getDefaultInstance(), partType)));
 				if(partItem != Items.AIR)
 				{
 					this.recipes.add(new SmithingViceRecipe(Alloygery.asResource(partType.getName() + "_from_smithing_vice"), partItem.getDefaultInstance(), Ingredient.of(stack.getItem()), 1));

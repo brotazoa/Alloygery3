@@ -14,12 +14,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.model.ModelLocationUtils;
-import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.models.model.TexturedModel;
 import net.minecraft.data.recipes.*;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
@@ -32,7 +29,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -150,8 +146,7 @@ public class AlloyKilnBlock extends BaseEntityBlock implements MachinesRecipePro
 			double z = pos.getZ() + 0.5;
 			if (random.nextDouble() < 0.1)
 			{
-				//TODO: Replace Sound Event
-				level.playLocalSound(x, y, z, SoundEvents.FURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 1.0f, 1.0f, false);
+				level.playLocalSound(x, y, z, MachinesModule.ALLOY_KILN_FIRE_CRACKLE, SoundSource.BLOCKS, 1.0f, 1.0f, false);
 			}
 
 			Direction facing = state.getValue(FACING);

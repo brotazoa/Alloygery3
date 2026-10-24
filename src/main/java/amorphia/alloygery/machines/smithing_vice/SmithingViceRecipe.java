@@ -53,25 +53,25 @@ public class SmithingViceRecipe extends AbstractSingleIngredientRecipe
 
 			if(partStack.getItem() instanceof DyeableToolBinding dyeableToolBinding)
 			{
-				final int color = NBTHelper.getPartDyeColorFromStack(inputStack, PartTypes.TOOL_BINDING);
+				final int color = NBTHelper.getPartDyeColorFromStack(NBTHelper.hasAlloygeryTag(inputStack) ? inputStack : inputStack.getItem().getDefaultInstance(), PartTypes.TOOL_BINDING);
 				dyeableToolBinding.setColor(partStack, color);
 			}
 
 			if (partStack.getItem() instanceof DyeableArmorBaseItem dyeableArmorBaseItem)
 			{
-				final int color = NBTHelper.getPartDyeColorFromStack(inputStack, PartTypes.ARMOR_BASE);
+				final int color = NBTHelper.getPartDyeColorFromStack(NBTHelper.hasAlloygeryTag(inputStack) ? inputStack : inputStack.getItem().getDefaultInstance(), PartTypes.ARMOR_BASE);
 				dyeableArmorBaseItem.setColor(partStack, color);
 			}
 
 			if (partStack.getItem() instanceof DyeableArmorPart dyeableArmorPart)
 			{
-				final int color = NBTHelper.getPartDyeColorFromStack(inputStack, PartTypes.ARMOR_PLATE);
+				final int color = NBTHelper.getPartDyeColorFromStack(NBTHelper.hasAlloygeryTag(inputStack) ? inputStack : inputStack.getItem().getDefaultInstance(), PartTypes.ARMOR_PLATE);
 				dyeableArmorPart.setColor(partStack, color);
 			}
 
 			if (partStack.getItem() instanceof DyeablePanelItem dyeablePanelItem)
 			{
-				final int color = NBTHelper.getPartDyeColorFromStack(inputStack, inputStack.getItem() instanceof IDynamicTool ? PartTypes.TOOL_IMPROVEMENT : PartTypes.ARMOR_IMPROVEMENT);
+				final int color = NBTHelper.getPartDyeColorFromStack(NBTHelper.hasAlloygeryTag(inputStack) ? inputStack : inputStack.getItem().getDefaultInstance(), inputStack.getItem() instanceof IDynamicTool ? PartTypes.TOOL_IMPROVEMENT : PartTypes.ARMOR_IMPROVEMENT);
 				dyeablePanelItem.setColor(partStack, color);
 			}
 		}

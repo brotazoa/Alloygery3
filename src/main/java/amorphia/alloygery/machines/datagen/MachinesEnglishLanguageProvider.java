@@ -52,6 +52,20 @@ public class MachinesEnglishLanguageProvider implements AlloygeryEnglishLanguage
         translateStat(MachinesModule.INTERACT_WITH_SMITING_ANVIL, translationBuilder);
 		translateStat(MachinesModule.INTERACT_WITH_TAILORING_TABLE, translationBuilder);
 		translateStat(MachinesModule.INTERACT_WITH_SMITHING_VICE, translationBuilder);
+
+		// subtitles
+		translationBuilder.add("sound.alloygery.kiln_fire_crackle", "Kiln crackles");
+		translationBuilder.add("sound.alloygery.alloyg_kiln_fire_crackle", "Alloy Kiln crackles");
+		translationBuilder.add("sound.alloygery.heat_exchanger_fire_crackle", "Heat Exchanger crackles");
+		translationBuilder.add("sound.alloygery.kiln_with_heat_exchanger_fire_crackle", "Kiln crackles");
+		translationBuilder.add("sound.alloygery.alloy_kiln_with_heat_exchanger_fire_crackle", "Alloy Kiln crackles");
+		translationBuilder.add("sound.alloygery.furnace_with_heat_exchanger_fire_crackle", "Furnace crackles");
+		translationBuilder.add("sound.alloygery.blast_furnace_with_heat_exchanger_fire_crackle", "Blast Furnace crackles");
+		translationBuilder.add("sound.alloygery.smoker_with_heat_exchanger_fire_crackle", "Smoker crackles");
+		translationBuilder.add("sound.alloygery.smithing_anvil_take_item", "Smithing Anvil used");
+		translationBuilder.add("sound.alloygery.smithing_vice_take_item", "Smithing Vice used");
+		translationBuilder.add("sound.alloygery.tailoring_table_take_item", "Tailoring Table used");
+		translationBuilder.add("sound.alloygery.woodcutter_take_item", "Woodcutter used");
 	}
 
 	private void translateStat(ResourceLocation stat, FabricLanguageProvider.TranslationBuilder builder)

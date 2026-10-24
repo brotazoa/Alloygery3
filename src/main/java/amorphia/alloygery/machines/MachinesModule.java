@@ -58,6 +58,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.flag.FeatureFlags;
@@ -142,6 +143,20 @@ public class MachinesModule
     public static final ResourceLocation INTERACT_WITH_TAILORING_TABLE = Alloygery.asResource("interact_with_tailoring_table");
 	public static final ResourceLocation INTERACT_WITH_SMITHING_VICE = Alloygery.asResource("interact_with_smithing_vice");
 
+	// sounds
+	public static final SoundEvent KILN_FIRE_CRACKLE = registerSoundEvent(Alloygery.asResource("kiln_fire_crackle"));
+	public static final SoundEvent ALLOY_KILN_FIRE_CRACKLE = registerSoundEvent(Alloygery.asResource("alloy_kiln_fire_crackle"));
+	public static final SoundEvent HEAT_EXCHANGER_FIRE_CRACKLE = registerSoundEvent(Alloygery.asResource("heat_exchanger_fire_crackle"));
+	public static final SoundEvent ALLOY_KILN_WITH_HEAT_EXCHANGER_FIRE_CRACKLE = registerSoundEvent(Alloygery.asResource("alloy_kiln_with_heat_exchanger_fire_crackle"));
+	public static final SoundEvent KILN_WITH_HEAT_EXCHANGER_FIRE_CRACKLE = registerSoundEvent(Alloygery.asResource("kiln_with_heat_exchanger_fire_crackle"));
+	public static final SoundEvent FURNACE_WITH_HEAT_EXCHANGER_FIRE_CRACKLE = registerSoundEvent(Alloygery.asResource("furnace_with_heat_exchanger_fire_crackle"));
+	public static final SoundEvent BLAST_FURNACE_WITH_HEAT_EXCHANGER_FIRE_CRACKLE = registerSoundEvent(Alloygery.asResource("blast_furnace_with_heat_exchanger_fire_crackle"));
+	public static final SoundEvent SMOKER_WITH_HEAT_EXCHANGER_FIRE_CRACKLE = registerSoundEvent(Alloygery.asResource("smoker_with_heat_exchanger_fire_crackle"));
+	public static final SoundEvent SMITHING_ANVIL_TAKE_ITEM = registerSoundEvent(Alloygery.asResource("smithing_anvil_take_item"));
+	public static final SoundEvent SMITHING_VICE_TAKE_ITEM = registerSoundEvent(Alloygery.asResource("smithing_vice_take_item"));
+	public static final SoundEvent TAILORING_TABLE_TAKE_ITEM = registerSoundEvent(Alloygery.asResource("tailoring_table_take_item"));
+	public static final SoundEvent WOODCUTTER_TAKE_ITEM = registerSoundEvent(Alloygery.asResource("woodcutter_take_item"));
+
 	private static void registerBlock(String path, Block block)
 	{
 		Registry.register(BuiltInRegistries.BLOCK, Alloygery.asResource(path), block);
@@ -158,6 +173,11 @@ public class MachinesModule
 	{
 		Registry.register(BuiltInRegistries.CUSTOM_STAT, stat.getPath(), stat);
 		Stats.CUSTOM.get(stat, StatFormatter.DEFAULT);
+	}
+
+	private static SoundEvent registerSoundEvent(ResourceLocation sound)
+	{
+		return Registry.register(BuiltInRegistries.SOUND_EVENT, sound, SoundEvent.createVariableRangeEvent(sound));
 	}
 
 	public static void initialize()
