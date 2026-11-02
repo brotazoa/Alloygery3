@@ -1,7 +1,7 @@
 package amorphia.alloygery.gear.client;
 
 import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.gear.item.ArmorStyles;
+import amorphia.alloygery.gear.armorStyle.ArmorStyle;
 import amorphia.alloygery.gear.item.IDynamicArmor;
 import amorphia.alloygery.gear.item.ImprovementTypes;
 import amorphia.alloygery.gear.item.PartTypes;
@@ -39,9 +39,9 @@ public class DynamicArmorHumanoidArmorLayerRenderer
         if (NBTHelper.hasPartTag(armorStack, PartTypes.ARMOR_BASE))
         {
 			final AlloygeryMaterial baseMaterial = MaterialHelper.getMaterialForPartType(PartTypes.ARMOR_BASE, armorStack);
-			final ArmorStyles baseStyle = NBTHelper.getArmorStyleFromStack(armorStack, PartTypes.ARMOR_BASE);
+			final ArmorStyle baseStyle = NBTHelper.getArmorStyleFromStack(armorStack, PartTypes.ARMOR_BASE);
 			final ResourceLocation textureLocation = Alloygery.asResource(
-					"models/armor/base_" + getArmorTypeFromEquipmentSlot(slot).getName() + "_" + baseStyle.getName() + "_" + MaterialHelper.getSimpleName(baseMaterial)
+					"models/armor/base_" + getArmorTypeFromEquipmentSlot(slot).getName() + "_" + baseStyle.getSimpleName() + "_" + MaterialHelper.getSimpleName(baseMaterial)
 			);
 			DynamicArmorHumanoidArmorLayerRenderer.renderModelPartWithTexture(model, armorStack, PartTypes.ARMOR_BASE, textureLocation, atlas, poseStack, buffer, packedLight);
         }
@@ -58,9 +58,9 @@ public class DynamicArmorHumanoidArmorLayerRenderer
         if (NBTHelper.hasPartTag(armorStack, PartTypes.ARMOR_PLATE))
         {
 			final AlloygeryMaterial plateMaterial = MaterialHelper.getMaterialForPartType(PartTypes.ARMOR_PLATE, armorStack);
-			final ArmorStyles plateStyle = NBTHelper.getArmorStyleFromStack(armorStack, PartTypes.ARMOR_PLATE);
+			final ArmorStyle plateStyle = NBTHelper.getArmorStyleFromStack(armorStack, PartTypes.ARMOR_PLATE);
 			final ResourceLocation textureLocation = Alloygery.asResource(
-					"models/armor/plate_" + getArmorTypeFromEquipmentSlot(slot).getName() + "_" + plateStyle.getName() + "_" + MaterialHelper.getSimpleName(plateMaterial)
+					"models/armor/plate_" + getArmorTypeFromEquipmentSlot(slot).getName() + "_" + plateStyle.getSimpleName() + "_" + MaterialHelper.getSimpleName(plateMaterial)
 			);
 			DynamicArmorHumanoidArmorLayerRenderer.renderModelPartWithTexture(model, armorStack, PartTypes.ARMOR_PLATE, textureLocation, atlas, poseStack, buffer, packedLight);
         }

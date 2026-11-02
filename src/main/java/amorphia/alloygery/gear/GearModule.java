@@ -6,18 +6,20 @@ import amorphia.alloygery.IAlloygeryCreativeTab;
 import amorphia.alloygery.datagen.*;
 import amorphia.alloygery.datagen.loot.AlloygeryChestLootTableProvider;
 import amorphia.alloygery.datagen.loot.AlloygeryGlobalLootModifierDataProvider;
+import amorphia.alloygery.gear.armorStyle.AlloygeryDefaultArmorStyles;
+import amorphia.alloygery.gear.armorStyle.ArmorStyle;
 import amorphia.alloygery.gear.client.AlloygeryMaterialColors;
 import amorphia.alloygery.gear.client.DynamicGearClientReloadListener;
 import amorphia.alloygery.gear.client.DynamicGearItemModelPredicateProvider;
 import amorphia.alloygery.gear.data.AlloygeryMaterialDataReloadListener;
 import amorphia.alloygery.gear.data.AlloygeryMaterialNetworkPackets;
+import amorphia.alloygery.gear.data.ArmorStyleNetworkPackets;
 import amorphia.alloygery.gear.datagen.*;
 import amorphia.alloygery.gear.datagen.convert.ConvertItemTagProvider;
 import amorphia.alloygery.gear.datagen.convert.ConvertModelProvider;
 import amorphia.alloygery.gear.datagen.convert.ConvertPackMetadataProvider;
 import amorphia.alloygery.gear.datagen.convert.ConvertRecipeProvider;
 import amorphia.alloygery.gear.datagen.recipe.GearRecipeProvider;
-import amorphia.alloygery.gear.item.ArmorStyles;
 import amorphia.alloygery.gear.item.SmithingImprovementItem;
 import amorphia.alloygery.gear.item.armor.ArmorBaseItem;
 import amorphia.alloygery.gear.item.armor.DyeableArmorBaseItem;
@@ -77,6 +79,7 @@ public class GearModule
 		Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, ConvertRecipeProvider.EmptyType.ID, ConvertRecipeProvider.EmptySerializer.INSTANCE);
 
 		AlloygeryMaterialNetworkPackets.initialize();
+		ArmorStyleNetworkPackets.initialize();
 
         makeItems();
     }
@@ -88,6 +91,7 @@ public class GearModule
         ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(DynamicGearClientReloadListener.INSTANCE);
 
 		AlloygeryMaterialNetworkPackets.initializeClient();
+		ArmorStyleNetworkPackets.initializeClient();
     }
 
     public static void initializeDataGen(FabricDataGenerator dataGenerator, FabricDataGenerator.Pack pack)
@@ -101,6 +105,7 @@ public class GearModule
 		AlloygeryGlobalLootModifierDataProvider.addProvider(new GearLootProvider.LootModifiers());
 
         pack.addProvider(GearAlloygeryMaterialProvider::new);
+		pack.addProvider(GearArmorStyleProvider::new);
 
         FabricDataGenerator.Pack convertVanillaGearPack = dataGenerator.createBuiltinResourcePack(Alloygery.asResource("convert_vanilla_gear_to_alloygery_gear"));
         convertVanillaGearPack.addProvider(ConvertModelProvider::new);
@@ -242,11 +247,11 @@ public class GearModule
 		return registerItem(name, item);
 	}
 
-	private static void makeBaseArmorItem(String path, AlloygeryMaterial alloygeryMaterial, ArmorItem.Type type, ArmorStyles style)
+	private static void makeBaseArmorItem(String path, AlloygeryMaterial alloygeryMaterial, ArmorItem.Type type, ArmorStyle style)
 	{
 		registerItem(
 				path,
-				style != ArmorStyles.CHAIN
+				style != AlloygeryDefaultArmorStyles.CHAIN
 						? new DyeableArmorBaseItem(type)  {
 							@Override
 							public @NotNull ItemStack getDefaultInstance()
@@ -286,9 +291,9 @@ public class GearModule
 					{
 						ItemStack stack = super.getDefaultInstance();
 						final ListTag partsTag = NBTHelper.createPartsListTag(new PartTypes[]{ARMOR_BASE, ARMOR_PLATE});
-						final CompoundTag baseTag = NBTHelper.createArmorPartTagWithStyle(GearModule.ITEMS.get("base_leather_" + type.getName()), ARMOR_BASE, ArmorStyles.LEATHER, LEATHER);
+						final CompoundTag baseTag = NBTHelper.createArmorPartTagWithStyle(GearModule.ITEMS.get("base_leather_" + type.getName()), ARMOR_BASE, AlloygeryDefaultArmorStyles.LEATHER, LEATHER);
 						baseTag.putInt(AlloygeryNBTKeys.DYE_COLOR, AlloygeryMaterialColors.get(LEATHER.getMaterialIdentifier()).color());
-						final CompoundTag plateTag = NBTHelper.createArmorPartTagWithStyle(armorPlatePart, ARMOR_PLATE, ArmorStyles.SCALE, alloygeryMaterial);
+						final CompoundTag plateTag = NBTHelper.createArmorPartTagWithStyle(armorPlatePart, ARMOR_PLATE, AlloygeryDefaultArmorStyles.SCALE, alloygeryMaterial);
 						if(alloygeryMaterial == LEATHER || alloygeryMaterial == RABBIT_HIDE)
 						{
 							plateTag.putInt(AlloygeryNBTKeys.DYE_COLOR, AlloygeryMaterialColors.get(alloygeryMaterial.getMaterialIdentifier()).color());
@@ -534,20 +539,20 @@ public class GearModule
 
         PART_MAKERS.put(ARMOR_BASE, alloygeryMaterial -> {
             final String materialName = MaterialHelper.getSimpleName(alloygeryMaterial);
-            final ArmorStyles style = materialName.equals("leather") || materialName.endsWith("hide") ? ArmorStyles.LEATHER : materialName.endsWith("wool") ? ArmorStyles.WOOL : ArmorStyles.CHAIN;
+            final ArmorStyle style = materialName.equals("leather") || materialName.endsWith("hide") ? AlloygeryDefaultArmorStyles.LEATHER : materialName.endsWith("wool") ? AlloygeryDefaultArmorStyles.WOOL : AlloygeryDefaultArmorStyles.CHAIN;
 
-			makeBaseArmorItem("base_" + MaterialHelper.getSimpleName(alloygeryMaterial) + (style == ArmorStyles.CHAIN ? "_chain_helmet" : "_helmet"), alloygeryMaterial, ArmorItem.Type.HELMET, style);
-			makeBaseArmorItem("base_" + MaterialHelper.getSimpleName(alloygeryMaterial) + (style == ArmorStyles.CHAIN ? "_chain_chestplate" : "_chestplate"), alloygeryMaterial, ArmorItem.Type.CHESTPLATE, style);
-			makeBaseArmorItem("base_" + MaterialHelper.getSimpleName(alloygeryMaterial) + (style == ArmorStyles.CHAIN ? "_chain_leggings" : "_leggings"), alloygeryMaterial, ArmorItem.Type.LEGGINGS, style);
-			makeBaseArmorItem("base_" + MaterialHelper.getSimpleName(alloygeryMaterial) + (style == ArmorStyles.CHAIN ? "_chain_boots" : "_boots"), alloygeryMaterial, ArmorItem.Type.BOOTS, style);
+			makeBaseArmorItem("base_" + MaterialHelper.getSimpleName(alloygeryMaterial) + (style == AlloygeryDefaultArmorStyles.CHAIN ? "_chain_helmet" : "_helmet"), alloygeryMaterial, ArmorItem.Type.HELMET, style);
+			makeBaseArmorItem("base_" + MaterialHelper.getSimpleName(alloygeryMaterial) + (style == AlloygeryDefaultArmorStyles.CHAIN ? "_chain_chestplate" : "_chestplate"), alloygeryMaterial, ArmorItem.Type.CHESTPLATE, style);
+			makeBaseArmorItem("base_" + MaterialHelper.getSimpleName(alloygeryMaterial) + (style == AlloygeryDefaultArmorStyles.CHAIN ? "_chain_leggings" : "_leggings"), alloygeryMaterial, ArmorItem.Type.LEGGINGS, style);
+			makeBaseArmorItem("base_" + MaterialHelper.getSimpleName(alloygeryMaterial) + (style == AlloygeryDefaultArmorStyles.CHAIN ? "_chain_boots" : "_boots"), alloygeryMaterial, ArmorItem.Type.BOOTS, style);
         });
 
         PART_MAKERS.put(ARMOR_PLATE, alloygeryMaterial -> {
             final String materialName = MaterialHelper.getSimpleName(alloygeryMaterial);
 
-			registerItem(materialName + "_plate_armor_part", alloygeryMaterial == LEATHER || alloygeryMaterial == RABBIT_HIDE ? new DyeableArmorPart(alloygeryMaterial, ArmorStyles.PLATE) : new ArmorPart(alloygeryMaterial, ArmorStyles.PLATE), AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS);
-			registerItem(materialName + "_heavy_plate_armor_part", alloygeryMaterial == LEATHER || alloygeryMaterial == RABBIT_HIDE ? new DyeableArmorPart(alloygeryMaterial, ArmorStyles.HEAVY_PLATE) : new ArmorPart(alloygeryMaterial, ArmorStyles.HEAVY_PLATE), AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS);
-			Item armorPlatePart = registerItem(materialName + "_scale_armor_part", alloygeryMaterial == LEATHER || alloygeryMaterial == RABBIT_HIDE ? new DyeableArmorPart(alloygeryMaterial, ArmorStyles.SCALE) : new ArmorPart(alloygeryMaterial, ArmorStyles.SCALE), AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS);
+			registerItem(materialName + "_plate_armor_part", alloygeryMaterial == LEATHER || alloygeryMaterial == RABBIT_HIDE ? new DyeableArmorPart(alloygeryMaterial, AlloygeryDefaultArmorStyles.PLATE) : new ArmorPart(alloygeryMaterial, AlloygeryDefaultArmorStyles.PLATE), AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS);
+			registerItem(materialName + "_heavy_plate_armor_part", alloygeryMaterial == LEATHER || alloygeryMaterial == RABBIT_HIDE ? new DyeableArmorPart(alloygeryMaterial, AlloygeryDefaultArmorStyles.HEAVY_PLATE) : new ArmorPart(alloygeryMaterial, AlloygeryDefaultArmorStyles.HEAVY_PLATE), AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS);
+			Item armorPlatePart = registerItem(materialName + "_scale_armor_part", alloygeryMaterial == LEATHER || alloygeryMaterial == RABBIT_HIDE ? new DyeableArmorPart(alloygeryMaterial, AlloygeryDefaultArmorStyles.SCALE) : new ArmorPart(alloygeryMaterial, AlloygeryDefaultArmorStyles.SCALE), AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS);
 
 			makePlatedArmorItem(materialName + "_helmet", alloygeryMaterial, ArmorItem.Type.HELMET, armorPlatePart);
 			makePlatedArmorItem(materialName + "_chestplate", alloygeryMaterial, ArmorItem.Type.CHESTPLATE, armorPlatePart);

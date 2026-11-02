@@ -1,0 +1,22 @@
+{
+  "type": 0.3,
+  "merge": false,
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "multiply_total",
+      "part_type": "armor_base",
+      "property_type": "alloygery:encumbrance",
+      "value": 0.2
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor",
+      "operation": "multiply_total",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.5
+    }
+  ],
+  "style": "alloygery:alloygery_armor_styles/wool"
+}

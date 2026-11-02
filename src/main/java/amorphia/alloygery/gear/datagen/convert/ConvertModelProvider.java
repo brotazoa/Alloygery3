@@ -1,9 +1,8 @@
 package amorphia.alloygery.gear.datagen.convert;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.gear.armorStyle.ArmorStyle;
 import amorphia.alloygery.gear.convert.VanillaItemConverter;
-import amorphia.alloygery.gear.item.ArmorStyles;
-import amorphia.alloygery.gear.item.IDynamicArmor;
 import amorphia.alloygery.gear.item.IDynamicTool;
 import amorphia.alloygery.gear.item.PartTypes;
 import amorphia.alloygery.gear.item.armor.ArmorBaseItem;
@@ -67,8 +66,8 @@ public class ConvertModelProvider extends FabricModelProvider
 			{
 				ArmorItem.Type armorType = armorItem.getType();
 				ResourceLocation typeTexture = Alloygery.asResource("template/render_part/armor/base_" + armorType.getName());
-				ArmorStyles baseStyle = NBTHelper.getArmorStyleFromStack(convert, PartTypes.ARMOR_BASE);
-				ResourceLocation baseTexture = Alloygery.asResource("template/render_part/armor/base_" + armorType.getName() + "_" + baseStyle.getName());
+				ArmorStyle baseStyle = NBTHelper.getArmorStyleFromStack(convert, PartTypes.ARMOR_BASE);
+				ResourceLocation baseTexture = Alloygery.asResource("template/render_part/armor/base_" + armorType.getName() + "_" + baseStyle.getSimpleName());
 
 				if(NBTHelper.hasPartTag(convert, PartTypes.ARMOR_PLATE))
 				{

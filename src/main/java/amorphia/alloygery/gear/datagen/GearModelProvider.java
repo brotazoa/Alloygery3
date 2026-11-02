@@ -3,6 +3,8 @@ package amorphia.alloygery.gear.datagen;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.datagen.AlloygeryModelProvider;
 import amorphia.alloygery.gear.GearModule;
+import amorphia.alloygery.gear.armorStyle.AlloygeryDefaultArmorStyles;
+import amorphia.alloygery.gear.armorStyle.ArmorStyle;
 import amorphia.alloygery.gear.client.DynamicGearItemModelPredicateProvider;
 import amorphia.alloygery.gear.item.*;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
@@ -21,6 +23,7 @@ import net.minecraft.world.item.ItemStack;
 import java.util.EnumSet;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModelProvider
 {
@@ -30,7 +33,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 
     public static final EnumSet<ImprovementTypes> TOOL_IMPROVEMENT_TYPES = EnumSet.of(ImprovementTypes.TIPPED, ImprovementTypes.PLATED, ImprovementTypes.WRAPPED);
     public static final EnumSet<ImprovementTypes> ARMOR_IMPROVEMENT_TYPES = EnumSet.of(ImprovementTypes.PADDED, ImprovementTypes.ENGRAVED, ImprovementTypes.REINFORCED);
-    public static final EnumSet<ArmorStyles> ARMOR_BASE_STYLES = EnumSet.of(ArmorStyles.CHAIN, ArmorStyles.LEATHER, ArmorStyles.WOOL);
+    public static final Set<ArmorStyle> ARMOR_BASE_STYLES = Set.of(AlloygeryDefaultArmorStyles.CHAIN, AlloygeryDefaultArmorStyles.LEATHER, AlloygeryDefaultArmorStyles.WOOL);
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators)
@@ -82,26 +85,26 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
                         (resourceLocation, map) -> GearModelProvider.makeDynamicArmorOverrides(resourceLocation, map, template,  ARMOR_BASE_STYLES, ARMOR_IMPROVEMENT_TYPES)
                 );
 
-                for(ArmorStyles style : ARMOR_BASE_STYLES)
+                for(ArmorStyle style : ARMOR_BASE_STYLES)
                 {
-                    final ResourceLocation baseStyleTexture = Alloygery.asResource("template/render_part/armor/base_" + armorType.getName() + "_" + style.getName());
+                    final ResourceLocation baseStyleTexture = Alloygery.asResource("template/render_part/armor/base_" + armorType.getName() + "_" + style.getSimpleName());
                     template.create(
-                            modelLocation.withSuffix("_" + style.getName()),
+                            modelLocation.withSuffix("_" + style.getSimpleName()),
                             new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, baseStyleTexture).putForced(TextureSlot.LAYER2, plateTexture),
                             itemModelGenerator.output
                     );
 					template.create(
-							modelLocation.withSuffix("_" + style.getName() + "_upgraded"),
+							modelLocation.withSuffix("_" + style.getSimpleName() + "_upgraded"),
 							new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, baseStyleTexture).putForced(TextureSlot.LAYER2, upgradeTexture).putForced(LAYER3, plateTexture),
 							itemModelGenerator.output
 					);
                     template.create(
-                            modelLocation.withSuffix("_" + style.getName() + "_trimmed"),
+                            modelLocation.withSuffix("_" + style.getSimpleName() + "_trimmed"),
                             new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, baseStyleTexture).putForced(TextureSlot.LAYER2, plateTexture).putForced(LAYER3, trimmedTexture),
                             itemModelGenerator.output
                     );
 					template.create(
-							modelLocation.withSuffix("_" + style.getName() + "_upgraded_trimmed"),
+							modelLocation.withSuffix("_" + style.getSimpleName() + "_upgraded_trimmed"),
 							new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, baseStyleTexture).putForced(TextureSlot.LAYER2, upgradeTexture).putForced(LAYER3, plateTexture).putForced(LAYER4, trimmedTexture),
 							itemModelGenerator.output
 					);
@@ -110,22 +113,22 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
                     {
                         final ResourceLocation improvementTexture = Alloygery.asResource("template/render_part/armor/improvement_" + armorType.getName() + "_" + improvement.getName());
                         template.create(
-                                modelLocation.withSuffix("_" + style.getName() + "_" + improvement.getName()),
+                                modelLocation.withSuffix("_" + style.getSimpleName() + "_" + improvement.getName()),
                                 new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, baseStyleTexture).putForced(TextureSlot.LAYER2, plateTexture).putForced(LAYER3, improvementTexture),
                                 itemModelGenerator.output
                         );
 						template.create(
-								modelLocation.withSuffix("_" + style.getName() + "_" + improvement.getName() + "_upgraded"),
+								modelLocation.withSuffix("_" + style.getSimpleName() + "_" + improvement.getName() + "_upgraded"),
 								new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, baseStyleTexture).putForced(TextureSlot.LAYER2, plateTexture).putForced(LAYER3, improvementTexture).putForced(LAYER4, upgradeTexture),
 								itemModelGenerator.output
 						);
                         template.create(
-                                modelLocation.withSuffix("_" + style.getName() + "_" + improvement.getName() + "_trimmed"),
+                                modelLocation.withSuffix("_" + style.getSimpleName() + "_" + improvement.getName() + "_trimmed"),
                                 new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, baseStyleTexture).putForced(TextureSlot.LAYER2, plateTexture).putForced(LAYER3, improvementTexture).putForced(LAYER4, trimmedTexture),
                                 itemModelGenerator.output
                         );
 						template.create(
-								modelLocation.withSuffix("_" + style.getName() + "_" + improvement.getName() + "_upgraded_trimmed"),
+								modelLocation.withSuffix("_" + style.getSimpleName() + "_" + improvement.getName() + "_upgraded_trimmed"),
 								new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, baseStyleTexture).putForced(TextureSlot.LAYER2, plateTexture).putForced(LAYER3, improvementTexture).putForced(LAYER4, upgradeTexture).putForced(LAYER5, trimmedTexture),
 								itemModelGenerator.output
 						);
@@ -134,13 +137,13 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
             }
             else
             {
-                final ArmorStyles baseStyle = NBTHelper.getArmorStyleFromStack(armorStack, PartTypes.ARMOR_BASE);
-                final ResourceLocation styleTexture = Alloygery.asResource("template/render_part/armor/base_" + armorType.getName() + "_" + baseStyle.getName());
+                final ArmorStyle baseStyle = NBTHelper.getArmorStyleFromStack(armorStack, PartTypes.ARMOR_BASE);
+                final ResourceLocation styleTexture = Alloygery.asResource("template/render_part/armor/base_" + armorType.getName() + "_" + baseStyle.getSimpleName());
                 template.create(
                         modelLocation,
                         new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, styleTexture),
                         itemModelGenerator.output,
-                        (resourceLocation, map) -> GearModelProvider.makeDynamicArmorOverrides(resourceLocation, map, template, EnumSet.noneOf(ArmorStyles.class), EnumSet.noneOf(ImprovementTypes.class))
+                        (resourceLocation, map) -> GearModelProvider.makeDynamicArmorOverrides(resourceLocation, map, template, Set.of(), EnumSet.noneOf(ImprovementTypes.class))
                 );
 
                 template.create(
@@ -162,7 +165,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
         }
     }
 
-    private static JsonObject makeDynamicArmorOverrides(ResourceLocation modelLocation, Map<TextureSlot, ResourceLocation> textureMap, ModelTemplate baseTemplate, EnumSet<ArmorStyles> baseStyles, EnumSet<ImprovementTypes> upgrades)
+    private static JsonObject makeDynamicArmorOverrides(ResourceLocation modelLocation, Map<TextureSlot, ResourceLocation> textureMap, ModelTemplate baseTemplate, Set<ArmorStyle> baseStyles, EnumSet<ImprovementTypes> upgrades)
     {
         JsonObject base = baseTemplate.createBaseTemplate(modelLocation, textureMap);
         JsonArray overridesArray = new JsonArray();
@@ -192,14 +195,14 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 		upgradedTrimmedOverrideObject.addProperty("model", modelLocation.withSuffix("_upgraded_trimmed").toString());
 		overridesArray.add(upgradedTrimmedOverrideObject);
 
-        for(ArmorStyles style : baseStyles)
+        for(ArmorStyle style : baseStyles)
         {
 			// style
             JsonObject styleOverrideObject = new JsonObject();
             JsonObject stylePredicateObject = new JsonObject();
             stylePredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanHaveArmorStyling.IDENTIFIER.toString(), style.getTypeFloat());
             styleOverrideObject.add("predicate", stylePredicateObject);
-            styleOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getName()).toString());
+            styleOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getSimpleName()).toString());
             overridesArray.add(styleOverrideObject);
 
 			// style and upgrade
@@ -208,7 +211,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 			upgradedStylePredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanHaveArmorStyling.IDENTIFIER.toString(), style.getTypeFloat());
 			upgradedStylePredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanBeUpgraded.IDENTIFIER.toString(), 1.0f);
 			upgradedStyleOverrideObject.add("predicate", upgradedStylePredicateObject);
-			upgradedStyleOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getName() + "_upgraded").toString());
+			upgradedStyleOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getSimpleName() + "_upgraded").toString());
 
 			// style and trim
             JsonObject trimmedStyleOverrideObject = new JsonObject();
@@ -216,7 +219,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
             trimmedStylePredicateObject.addProperty(Alloygery.asVanillaResource("trim_type").toString(), 0.1f);
             trimmedStylePredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanHaveArmorStyling.IDENTIFIER.toString(), style.getTypeFloat());
             trimmedStyleOverrideObject.add("predicate", trimmedStylePredicateObject);
-            trimmedStyleOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getName() + "_trimmed").toString());
+            trimmedStyleOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getSimpleName() + "_trimmed").toString());
             overridesArray.add(trimmedStyleOverrideObject);
 
 			// style, upgrade, and trim
@@ -226,7 +229,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 			upgradedTrimmedStylePredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanBeUpgraded.IDENTIFIER.toString(), 1.0f);
 			upgradedTrimmedStylePredicateObject.addProperty(Alloygery.asVanillaResource("trim_type").toString(), 0.1f);
 			upgradedTrimmedStyleOverrideObject.add("predicate", upgradedTrimmedStylePredicateObject);
-			upgradedTrimmedStyleOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getName() + "_upgraded_trimmed").toString());
+			upgradedTrimmedStyleOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getSimpleName() + "_upgraded_trimmed").toString());
 			overridesArray.add(upgradedTrimmedStyleOverrideObject);
 
             for(ImprovementTypes improvement : upgrades)
@@ -237,7 +240,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
                 improvementPredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanBeImproved.IDENTIFIER.toString(), improvement.getTypeFloat());
                 improvementPredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanHaveArmorStyling.IDENTIFIER.toString(), style.getTypeFloat());
                 improvementOverrideObject.add("predicate", improvementPredicateObject);
-                improvementOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getName() + "_" + improvement.getName()).toString());
+                improvementOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getSimpleName() + "_" + improvement.getName()).toString());
                 overridesArray.add(improvementOverrideObject);
 
 				// style, improvement, and trim
@@ -247,7 +250,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
                 trimmedImprovementPredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanHaveArmorStyling.IDENTIFIER.toString(), style.getTypeFloat());
                 trimmedImprovementPredicateObject.addProperty(Alloygery.asVanillaResource("trim_type").toString(), 0.1f);
                 trimmedImprovementOverrideObject.add("predicate", trimmedImprovementPredicateObject);
-                trimmedImprovementOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getName() + "_" + improvement.getName() + "_trimmed").toString());
+                trimmedImprovementOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getSimpleName() + "_" + improvement.getName() + "_trimmed").toString());
                 overridesArray.add(trimmedImprovementOverrideObject);
 
 				// style, upgrade, and improvement
@@ -257,7 +260,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 				upgradeImprovementPredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanBeUpgraded.IDENTIFIER.toString(), 1.0f);
 				upgradeImprovementPredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanBeImproved.IDENTIFIER.toString(), improvement.getTypeFloat());
 				upgradeImprovementOverrideObject.add("predicate", upgradeImprovementPredicateObject);
-				upgradeImprovementOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getName() + "_" + improvement.getName() + "_upgraded").toString());
+				upgradeImprovementOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getSimpleName() + "_" + improvement.getName() + "_upgraded").toString());
 				overridesArray.add(upgradeImprovementOverrideObject);
 
 				// style, upgrade, improvement, and trim
@@ -268,7 +271,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 				trimmedUpgradeImprovementPredicateObject.addProperty(DynamicGearItemModelPredicateProvider.ICanBeImproved.IDENTIFIER.toString(), improvement.getTypeFloat());
 				trimmedUpgradeImprovementPredicateObject.addProperty(Alloygery.asVanillaResource("trim_type").toString(), 0.1f);
 				trimmedUpgradeImprovementOverrideObject.add("predicate", trimmedUpgradeImprovementPredicateObject);
-				trimmedUpgradeImprovementOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getName() + "_" + improvement.getName() + "_upgraded_trimmed").toString());
+				trimmedUpgradeImprovementOverrideObject.addProperty("model", modelLocation.withSuffix("_" + style.getSimpleName() + "_" + improvement.getName() + "_upgraded_trimmed").toString());
 				overridesArray.add(trimmedUpgradeImprovementOverrideObject);
             }
         }

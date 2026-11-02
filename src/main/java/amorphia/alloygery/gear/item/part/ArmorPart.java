@@ -2,9 +2,9 @@ package amorphia.alloygery.gear.item.part;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.datagen.AlloygeryItemTagProvider;
+import amorphia.alloygery.gear.armorStyle.ArmorStyle;
 import amorphia.alloygery.gear.datagen.GearItemTagProvider;
 import amorphia.alloygery.gear.dynamicProviders.IDynamicMaxDamage;
-import amorphia.alloygery.gear.item.ArmorStyles;
 import amorphia.alloygery.gear.item.GearPartItem;
 import amorphia.alloygery.gear.item.PartTypes;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
@@ -26,20 +26,20 @@ import java.util.List;
 
 public class ArmorPart extends GearPartItem implements IDynamicMaxDamage, GearItemTagProvider.IItemTagGen
 {
-	private final ArmorStyles style;
+	private final ArmorStyle style;
 
-	public ArmorPart(AlloygeryMaterial material, ArmorStyles style)
+	public ArmorPart(AlloygeryMaterial material, ArmorStyle style)
 	{
 		this(new Properties(), material, style);
 	}
 
-	public ArmorPart(Properties properties, AlloygeryMaterial material, ArmorStyles style)
+	public ArmorPart(Properties properties, AlloygeryMaterial material, ArmorStyle style)
 	{
 		super(properties, material, PartTypes.ARMOR_PLATE);
 		this.style = style;
 	}
 
-	public ArmorStyles getStyle()
+	public ArmorStyle getStyle()
 	{
 		return style;
 	}
@@ -49,7 +49,7 @@ public class ArmorPart extends GearPartItem implements IDynamicMaxDamage, GearIt
 	{
 		List<Property> properties = Lists.newArrayList();
 		properties.addAll(super.getMaterialProperties());
-		getStyle().addStyleProperties(properties);
+		properties.addAll(style.getProperties());
 		return properties;
 	}
 
@@ -83,7 +83,7 @@ public class ArmorPart extends GearPartItem implements IDynamicMaxDamage, GearIt
 	public void generateItemModel(ItemModelGenerators itemModelGenerator)
 	{
 		ResourceLocation base = Alloygery.asResource("template/part/armor/base_armor_part");
-		ResourceLocation texture = Alloygery.asResource("template/part/armor/plate_" + style.getName() + "_armor_part_" + MaterialHelper.getSimpleName(getPartMaterial()));
+		ResourceLocation texture = Alloygery.asResource("template/part/armor/plate_" + style.getSimpleName() + "_armor_part_" + MaterialHelper.getSimpleName(getPartMaterial()));
 		ModelTemplates.TWO_LAYERED_ITEM.create(ModelLocationUtils.getModelLocation(this), TextureMapping.layered(base, texture), itemModelGenerator.output);
 	}
 

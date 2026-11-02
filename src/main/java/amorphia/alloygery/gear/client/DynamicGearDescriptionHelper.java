@@ -1,6 +1,7 @@
 package amorphia.alloygery.gear.client;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.gear.armorStyle.ArmorStyle;
 import amorphia.alloygery.gear.attribute.SlotMultipliers;
 import amorphia.alloygery.gear.dynamicProviders.IOccludeVibrations;
 import amorphia.alloygery.gear.item.*;
@@ -165,9 +166,9 @@ public class DynamicGearDescriptionHelper
 				}
 				if (NBTHelper.partHasArmorStyle(gearStack, part))
 				{
-					ArmorStyles style = NBTHelper.getArmorStyleFromStack(gearStack, part);
+					ArmorStyle style = NBTHelper.getArmorStyleFromStack(gearStack, part);
 					tooltip.add(Component.literal("  ")
-							.append(Component.translatable("tooltip.alloygery.armor_style").append(": ").append(Component.translatable("armor_style.alloygery." + style.getName() + ".tooltip"))));
+							.append(Component.translatable("tooltip.alloygery.armor_style").append(": ").append(Component.translatable("armor_style.alloygery." + style.getSimpleName() + ".tooltip"))));
 				}
                 List<Property> properties = PropertyHelper.getPropertiesByPartTypeFromItemStack(part, gearStack).stream().sorted(Comparator.comparing(Property::getOperation)).toList();
 				for(Property property : properties)

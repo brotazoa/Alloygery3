@@ -37,7 +37,7 @@ public class PropertyHelper
 			List<Property> materialProperties = MaterialHelper.getMaterialForPartType(type, stack).getPropertiesByPart(type);
 
 			if(NBTHelper.partHasArmorStyle(stack, type))
-				NBTHelper.getArmorStyleFromStack(stack, type).addStyleProperties(properties);
+				properties.addAll(NBTHelper.getArmorStyleFromStack(stack, type).getProperties());
 
 			if(PartTypes.isImprovement(type))
 			{

@@ -1,8 +1,8 @@
 package amorphia.alloygery.gear.recipe;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.gear.armorStyle.ArmorStyle;
 import amorphia.alloygery.gear.convert.VanillaItemConverter;
-import amorphia.alloygery.gear.item.ArmorStyles;
 import amorphia.alloygery.gear.item.PartTypes;
 import amorphia.alloygery.gear.item.armor.ArmorBaseItem;
 import amorphia.alloygery.gear.item.armor.DyeableArmorBaseItem;
@@ -86,9 +86,9 @@ public class ArmorPlatingRecipeShapeless extends ShapelessRecipe
 		if (armorStack.getItem() instanceof ArmorBaseItem armorItem && baseStack.getItem() instanceof ArmorBaseItem armorBaseItem && partStack.getItem() instanceof ArmorPart armorPart)
 		{
 			AlloygeryMaterial baseMaterial = MaterialHelper.getMaterialForPartType(PartTypes.ARMOR_BASE, baseStack);
-			ArmorStyles baseStyle = NBTHelper.getArmorStyleFromStack(baseStack, PartTypes.ARMOR_BASE);
+			ArmorStyle baseStyle = NBTHelper.getArmorStyleFromStack(baseStack, PartTypes.ARMOR_BASE);
 			AlloygeryMaterial plateMaterial = armorPart.getPartMaterial();
-			ArmorStyles plateStyle = armorPart.getStyle();
+			ArmorStyle plateStyle = armorPart.getStyle();
 
 			List<Property> nbtProperties = NBTHelper.getNBTPropertiesFromItemStack(baseStack);
 			ListTag partsListTag = NBTHelper.createPartsListTag(new PartTypes[] { PartTypes.ARMOR_BASE, PartTypes.ARMOR_PLATE });

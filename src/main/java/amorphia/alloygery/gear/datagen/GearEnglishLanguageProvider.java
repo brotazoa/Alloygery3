@@ -3,6 +3,8 @@ package amorphia.alloygery.gear.datagen;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.datagen.AlloygeryEnglishLanguageProvider;
 import amorphia.alloygery.gear.GearModule;
+import amorphia.alloygery.gear.armorStyle.AlloygeryDefaultArmorStyles;
+import amorphia.alloygery.gear.armorStyle.ArmorStyle;
 import amorphia.alloygery.gear.item.*;
 import amorphia.alloygery.gear.material.AlloygeryMaterialRegistry;
 import amorphia.alloygery.gear.material.MaterialHelper;
@@ -44,9 +46,9 @@ public class GearEnglishLanguageProvider implements AlloygeryEnglishLanguageProv
 			translationBuilder.add(Util.makeDescriptionId("improvement", Alloygery.asResource(improvement.getName())), AlloygeryEnglishLanguageProvider.englishNameFromPath(improvement.getName() + "_improvement"));
         }
 
-        for(ArmorStyles style : ArmorStyles.VALUES_CACHE)
+        for(ArmorStyle style : AlloygeryDefaultArmorStyles.ALL_DEFAULT_ARMOR_STYLES)
         {
-            translationBuilder.add("armor_style.alloygery." + style.getName() + ".tooltip", AlloygeryEnglishLanguageProvider.englishNameFromPath(style.getName()));
+            translationBuilder.add("armor_style.alloygery." + style.getSimpleName() + ".tooltip", AlloygeryEnglishLanguageProvider.englishNameFromPath(style.getSimpleName()));
         }
 
 		for(UpgradeTypes upgrade : UpgradeTypes.VALUES_CACHE)

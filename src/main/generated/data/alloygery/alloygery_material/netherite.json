@@ -319,6 +319,13 @@
     },
     {
       "apply_when_broken": false,
+      "operation": "multiply_total",
+      "part_type": "armor_upgrade",
+      "property_type": "alloygery:durability",
+      "value": 1.25
+    },
+    {
+      "apply_when_broken": false,
       "operation": "addition",
       "part_type": "armor_upgrade",
       "property_type": "alloygery:fireproof",
@@ -338,6 +345,22 @@
       "part_type": "armor_upgrade",
       "property_type": "alloygery:fire_protection",
       "value": 200.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor_toughness",
+      "operation": "multiply_total",
+      "part_type": "armor_upgrade",
+      "property_type": "alloygery:attribute",
+      "value": 1.1
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor",
+      "operation": "multiply_total",
+      "part_type": "armor_upgrade",
+      "property_type": "alloygery:attribute",
+      "value": 1.1
     }
   ],
   "repair_ingredient": {

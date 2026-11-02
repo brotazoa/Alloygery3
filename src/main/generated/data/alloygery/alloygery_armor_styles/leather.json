@@ -1,0 +1,22 @@
+{
+  "type": 0.2,
+  "merge": false,
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "multiply_total",
+      "part_type": "armor_base",
+      "property_type": "alloygery:encumbrance",
+      "value": 1.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.armor",
+      "operation": "multiply_total",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 1.0
+    }
+  ],
+  "style": "alloygery:alloygery_armor_styles/leather"
+}

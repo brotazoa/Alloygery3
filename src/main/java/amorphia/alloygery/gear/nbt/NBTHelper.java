@@ -1,6 +1,8 @@
 package amorphia.alloygery.gear.nbt;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.gear.armorStyle.ArmorStyle;
+import amorphia.alloygery.gear.armorStyle.ArmorStyleRegistry;
 import amorphia.alloygery.gear.dynamicProviders.IMadeFromParts;
 import amorphia.alloygery.gear.item.*;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
@@ -105,17 +107,17 @@ public class NBTHelper
         return partTag;
     }
 
-    public static CompoundTag createArmorPartTagWithStyle(PartTypes partType, ArmorStyles armorStyle, AlloygeryMaterial material)
+    public static CompoundTag createArmorPartTagWithStyle(PartTypes partType, ArmorStyle armorStyle, AlloygeryMaterial material)
     {
         CompoundTag partTag = createPartTag(partType, material);
-        partTag.putString(ARMOR_STYLE_IDENTIFIER, armorStyle.getName());
+        partTag.putString(ARMOR_STYLE_IDENTIFIER, armorStyle.getIdentifierString());
         return partTag;
     }
 
-	public static CompoundTag createArmorPartTagWithStyle(Item partStack, PartTypes partType, ArmorStyles armorStyle, AlloygeryMaterial material)
+	public static CompoundTag createArmorPartTagWithStyle(Item partStack, PartTypes partType, ArmorStyle armorStyle, AlloygeryMaterial material)
 	{
 		CompoundTag partTag = createPartTag(partStack, partType, material);
-		partTag.putString(ARMOR_STYLE_IDENTIFIER, armorStyle.getName());
+		partTag.putString(ARMOR_STYLE_IDENTIFIER, armorStyle.getIdentifierString());
 		return partTag;
 	}
 
@@ -277,14 +279,24 @@ public class NBTHelper
         return partHasDyeColor(stack, partType) ? getPartTagFromItemStack(stack, partType).getInt(DYE_COLOR) : -1;
     }
 
-    public static ArmorStyles getArmorStyleFromStack(ItemStack stack, PartTypes partType)
+    public static ArmorStyle getArmorStyleFromStack(ItemStack stack, PartTypes partType)
     {
         return getArmorStyleFromTag(getPartTagFromItemStack(stack, partType));
     }
 
-    public static ArmorStyles getArmorStyleFromTag(CompoundTag tag)
+    public static ArmorStyle getArmorStyleFromTag(CompoundTag tag)
     {
-        return ArmorStyles.getByName(tag.getString(ARMOR_STYLE_IDENTIFIER));
+        return ArmorStyleRegistry.get(getArmorStyleIdentifierFromTag(tag));
+    }
+
+    public static ResourceLocation getArmorStyleIdentifierFromTag(CompoundTag tag)
+    {
+        if(tag == null)
+            return ArmorStyleRegistry.getDefaultKey();
+
+        final ResourceLocation identifier = ResourceLocation.tryParse(tag.getString(ARMOR_STYLE_IDENTIFIER));
+
+        return identifier == null ? ArmorStyleRegistry.getDefaultKey() : identifier;
     }
 
     public static boolean hasAlloygeryTag(ItemStack stack)
