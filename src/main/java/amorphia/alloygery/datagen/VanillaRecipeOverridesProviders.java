@@ -2,15 +2,16 @@ package amorphia.alloygery.datagen;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.craftingMaterials.CraftingMaterialModule;
-import amorphia.alloygery.machines.MachinesModule;
+import amorphia.alloygery.datagen.loot.*;
+import amorphia.alloygery.gear.GearModule;
+import io.github.fabricators_of_create.porting_lib.loot.GlobalLootModifierProvider;
+import io.github.fabricators_of_create.porting_lib.loot.LootTableIdCondition;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.DetectedVersion;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.FrameType;
-import net.minecraft.advancements.critereon.ImpossibleTrigger;
-import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.metadata.PackMetadataGenerator;
@@ -19,11 +20,20 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class VanillaRecipeOverridesProviders
@@ -48,51 +58,6 @@ public class VanillaRecipeOverridesProviders
 		@Override
 		public void generateAdvancement(Consumer<Advancement> consumer)
 		{
-			Advancement root = Advancement.Builder.recipeAdvancement()
-					.display(
-							MachinesModule.ALLOY_KILN,
-							Component.translatable("advancements.alloygery.game_changes.title"),
-							Component.translatable("advancements.alloygery.game_changes.description"),
-							Alloygery.asResource("textures/gui/advancements/bricks.png"),
-							FrameType.TASK,
-							false,
-							false,
-							false
-					)
-					.addCriterion("alloygery_installed", PlayerTrigger.TriggerInstance.tick())
-					.build(Alloygery.asResource("game_changes/root"));
-
-			Advancement smithingRequiresSteel = Advancement.Builder.recipeAdvancement().parent(root)
-					.display(
-							Items.SMITHING_TABLE,
-							Component.translatable("advancements.alloygery.smithing_requires_steel.title"),
-							Component.translatable("advancements.alloygery.smithing_requires_steel.description"),
-							null,
-							FrameType.TASK,
-							false,
-							false,
-							false
-					)
-					.addCriterion("alloygery_installed", new ImpossibleTrigger.TriggerInstance())
-					.build(Alloygery.asResource("game_changes/smithing_requires_steel"));
-
-			Advancement anvilRequiresSteel = Advancement.Builder.recipeAdvancement().parent(root)
-					.display(
-							Items.ANVIL,
-							Component.translatable("advancements.alloygery.anvil_requires_steel.title"),
-							Component.translatable("advancements.alloygery.anvil_requires_steel.description"),
-							null,
-							FrameType.TASK,
-							false,
-							false,
-							false
-					)
-					.addCriterion("alloygery_installed", new ImpossibleTrigger.TriggerInstance())
-					.build(Alloygery.asResource("game_changes/anvil_requires_steel"));
-
-			consumer.accept(root);
-			consumer.accept(smithingRequiresSteel);
-			consumer.accept(anvilRequiresSteel);
 		}
 	}
 
@@ -107,23 +72,6 @@ public class VanillaRecipeOverridesProviders
 		public void buildRecipes(Consumer<FinishedRecipe> exporter)
 		{
 			final TagKey<Item> steel = TagKey.create(Registries.ITEM, Alloygery.asCommonResource("steel_ingots"));
-			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Items.SMITHING_TABLE)
-					.define('i', steel)
-					.define('p', ItemTags.PLANKS)
-					.pattern("ii")
-					.pattern("pp")
-					.pattern("pp")
-					.unlockedBy("has_steel", RecipeProvider.has(steel))
-					.save(exporter);
-
-			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Items.ANVIL)
-					.define('i', steel)
-					.define('b', TagKey.create(Registries.ITEM, Alloygery.asCommonResource("steel_blocks")))
-					.pattern("bbb")
-					.pattern(" i ")
-					.pattern("iii")
-					.unlockedBy("has_steel", RecipeProvider.has(steel))
-					.save(exporter);
 
 			ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Items.LODESTONE)
 					.define('s', Items.CHISELED_STONE_BRICKS)
@@ -188,6 +136,103 @@ public class VanillaRecipeOverridesProviders
 		protected ResourceLocation getRecipeIdentifier(ResourceLocation identifier)
 		{
 			return identifier;
+		}
+	}
+
+	public static class ChestLootProvider extends SimpleFabricLootTableProvider
+	{
+		public ChestLootProvider(FabricDataOutput output)
+		{
+			super(output, LootContextParamSets.CHEST);
+		}
+
+		@Override
+		public void generate(BiConsumer<ResourceLocation, LootTable.Builder> consumer)
+		{
+			consumer.accept(Alloygery.asResource("chests/igloo_loot"), LootTable.lootTable()
+					.withPool(LootPool.lootPool()
+							.setRolls(ConstantValue.exactly(1.0f))
+							.setBonusRolls(UniformGenerator.between(1.0f, 2.0f))
+							.add(EmptyLootItem.emptyItem().setWeight(20))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("base_wool_helmet")))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("base_wool_chestplate")))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("base_wool_leggings")))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("base_wool_boots")))
+					)
+			);
+
+			consumer.accept(Alloygery.asResource("chests/end_city_loot"), LootTable.lootTable()
+					.withPool(LootPool.lootPool()
+							.setRolls(UniformGenerator.between(2.0f, 4.0f))
+							.setBonusRolls(UniformGenerator.between(2.0f, 4.0f))
+							.add(EmptyLootItem.emptyItem().setWeight(20))
+							.add(LootItem.lootTableItem(CraftingMaterialModule.ITEMS.get("antanium_ingot")))
+							.add(LootItem.lootTableItem(CraftingMaterialModule.ITEMS.get("steel_ingot")))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("amethyst_axe_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("emerald_axe_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("diamond_axe_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("amethyst_hoe_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("emerald_hoe_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("diamond_hoe_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("amethyst_pickaxe_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("emerald_pickaxe_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("diamond_pickaxe_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("amethyst_shovel_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("emerald_shovel_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("diamond_shovel_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("amethyst_sword_blade")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("emerald_sword_blade")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("diamond_sword_blade")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("amethyst_hammer_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("emerald_hammer_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("diamond_hammer_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("amethyst_excavator_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("emerald_excavator_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("diamond_excavator_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("amethyst_knife_blade")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("emerald_knife_blade")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("diamond_knife_blade")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("amethyst_hatchet_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("emerald_hatchet_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+							.add(LootItem.lootTableItem(GearModule.ITEMS.get("diamond_hatchet_head")).apply(EnchantRandomlyFunction.randomApplicableEnchantment()))
+					)
+			);
+		}
+	}
+
+	public static class EntityLootProvider extends SimpleFabricLootTableProvider
+	{
+		public EntityLootProvider(FabricDataOutput output)
+		{
+			super(output, LootContextParamSets.ENTITY);
+		}
+
+		@Override
+		public void generate(BiConsumer<ResourceLocation, LootTable.Builder> consumer)
+		{
+
+		}
+	}
+
+	public static class LootModifiers extends GlobalLootModifierProvider
+	{
+		public LootModifiers(FabricDataOutput output)
+		{
+			super(output, Alloygery.MODID);
+		}
+
+		@Override
+		public void start()
+		{
+			this.add("add_igloo_loot", new AddLootTableLootModifier(
+					new LootItemCondition[] { LootTableIdCondition.builder(Alloygery.asVanillaResource("chests/igloo")).build() },
+					Alloygery.asResource("chests/igloo_loot")
+			));
+
+			this.add("add_end_city_loot", new AddLootTableLootModifier(
+					new LootItemCondition[] { LootTableIdCondition.builder(Alloygery.asVanillaResource("chests/end_city")).build() },
+					Alloygery.asResource("chests/end_city_loot")
+			));
 		}
 	}
 }

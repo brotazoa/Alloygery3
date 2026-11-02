@@ -13,6 +13,7 @@ import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.function.BiConsumer;
 
@@ -71,10 +72,29 @@ public class GearLootProvider
 					Alloygery.asResource("chests/alloygery_simple_dungeon_loot")
 			));
 
+			provider.add("add_buried_treasure_loot", new AddLootTableLootModifier(
+					new LootItemCondition[] { LootTableIdCondition.builder(Alloygery.asVanillaResource("chests/buried_treasure")).build() },
+					Alloygery.asResource("chests/alloygery_simple_dungeon_loot")
+			));
+
 			provider.add("husk_drops_tin", new ReplaceItemLootModifier(
 					new LootItemCondition[] { LootTableIdCondition.builder(Alloygery.asVanillaResource("entity/husk")).build() },
 					Items.IRON_INGOT,
 					CraftingMaterialModule.ITEMS.get("tin_ingot"),
+					1
+			));
+
+			provider.add("bonus_chest_replace_wooden_axe", new ReplaceItemLootModifier(
+					new LootItemCondition[] { LootTableIdCondition.builder(Alloygery.asVanillaResource("chests/spawn_bonus_chest")).build() },
+					Items.WOODEN_AXE,
+					GearModule.ITEMS.get("flint_hatchet"),
+					1
+			));
+
+			provider.add("bonus_chest_replace_wooden_pickaxe", new ReplaceItemLootModifier(
+					new LootItemCondition[] { LootTableIdCondition.builder(Alloygery.asVanillaResource("chests/spawn_bonus_chest")).build() },
+					Items.WOODEN_PICKAXE,
+					GearModule.ITEMS.get("flint_pickaxe"),
 					1
 			));
 		}

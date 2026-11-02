@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class AdvancementModule
 {
-	public static final WrongToolForDropsTrigger WRONG_TOOL_FOR_DROPS_TRIGGER = CriteriaTriggers.register(new WrongToolForDropsTrigger());
+	public static final BlockBrokenTrigger BLOCK_BROKEN_TRIGGER = CriteriaTriggers.register(new BlockBrokenTrigger());
 	public static final BlockConvertedTrigger BLOCK_CONVERTED_TRIGGER = CriteriaTriggers.register(new BlockConvertedTrigger());
 
 	public static void initialize()
@@ -19,10 +19,7 @@ public class AdvancementModule
 			if(player instanceof ServerPlayer serverPlayer && level instanceof ServerLevel serverLevel)
 			{
 				ItemStack mainHandStack = player.getMainHandItem();
-				if(!mainHandStack.isCorrectToolForDrops(blockState))
-				{
-					WRONG_TOOL_FOR_DROPS_TRIGGER.trigger(serverPlayer, serverLevel, blockPos);
-				}
+				BLOCK_BROKEN_TRIGGER.trigger(serverPlayer, serverLevel, blockPos, mainHandStack.isCorrectToolForDrops(blockState));
 			}
 			return true;
 		}));

@@ -1,5 +1,6 @@
 package amorphia.alloygery.datagen;
 
+import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.gear.GearModule;
 import amorphia.alloygery.gear.datagen.recipe.BaseArmorRecipeShapedBuilder;
 import amorphia.alloygery.gear.property.PrimitiveProperty;
@@ -7,6 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.DetectedVersion;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.metadata.PackMetadataGenerator;
 import net.minecraft.data.recipes.*;
@@ -14,6 +16,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
@@ -40,15 +43,27 @@ public class EasyStartRecipesProviders
 		@Override
 		public void buildRecipes(Consumer<FinishedRecipe> exporter)
 		{
+			// sticks from saplings
 			ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.STICK)
 					.requires(ItemTags.SAPLINGS)
 					.unlockedBy("has_sapling", RecipeProvider.has(ItemTags.SAPLINGS))
 					.save(exporter, RecipeBuilder.getDefaultRecipeId(Items.STICK).withSuffix("_from_saplings"));
 
+			// flint from gravel
 			ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.FLINT)
 					.requires(Items.GRAVEL)
 					.unlockedBy("has_gravel", RecipeProvider.has(Items.GRAVEL))
 					.save(exporter, RecipeBuilder.getDefaultRecipeId(Items.FLINT).withSuffix("_from_gravel"));
+
+			// coal free camp fire
+			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Items.CAMPFIRE)
+					.define('s', Items.STICK)
+					.define('p', ItemTags.LOGS)
+					.pattern(" s ")
+					.pattern("sss")
+					.pattern("ppp")
+					.unlockedBy("has_logs", RecipeProvider.has(ItemTags.LOGS))
+					.save(exporter, RecipeBuilder.getDefaultRecipeId(Items.CAMPFIRE).withSuffix("_without_coal"));
 
 			// leather
 			BaseArmorRecipeShapedBuilder.shaped(RecipeCategory.COMBAT, GearModule.ITEMS.get("base_leather_helmet"))
@@ -122,37 +137,37 @@ public class EasyStartRecipesProviders
 
 			// wool
 			BaseArmorRecipeShapedBuilder.shaped(RecipeCategory.COMBAT, GearModule.ITEMS.get("base_wool_helmet"))
-					.define('w', Items.WHITE_WOOL)
+					.define('w', ItemTags.WOOL)
 					.pattern("www")
 					.pattern("w w")
 					.property(PrimitiveProperty.of())
-					.unlockedBy("has_wool", RecipeProvider.has(Items.WHITE_WOOL))
+					.unlockedBy("has_wool", RecipeProvider.has(ItemTags.WOOL))
 					.save(exporter);
 
 			BaseArmorRecipeShapedBuilder.shaped(RecipeCategory.COMBAT, GearModule.ITEMS.get("base_wool_chestplate"))
-					.define('w', Items.WHITE_WOOL)
+					.define('w', ItemTags.WOOL)
 					.pattern("w w")
 					.pattern("www")
 					.pattern("www")
 					.property(PrimitiveProperty.of())
-					.unlockedBy("has_wool", RecipeProvider.has(Items.WHITE_WOOL))
+					.unlockedBy("has_wool", RecipeProvider.has(ItemTags.WOOL))
 					.save(exporter);
 
 			BaseArmorRecipeShapedBuilder.shaped(RecipeCategory.COMBAT, GearModule.ITEMS.get("base_wool_leggings"))
-					.define('w', Items.WHITE_WOOL)
+					.define('w', ItemTags.WOOL)
 					.pattern("www")
 					.pattern("w w")
 					.pattern("w w")
 					.property(PrimitiveProperty.of())
-					.unlockedBy("has_wool", RecipeProvider.has(Items.WHITE_WOOL))
+					.unlockedBy("has_wool", RecipeProvider.has(ItemTags.WOOL))
 					.save(exporter);
 
 			BaseArmorRecipeShapedBuilder.shaped(RecipeCategory.COMBAT, GearModule.ITEMS.get("base_wool_boots"))
-					.define('w', Items.WHITE_WOOL)
+					.define('w', ItemTags.WOOL)
 					.pattern("w w")
 					.pattern("w w")
 					.property(PrimitiveProperty.of())
-					.unlockedBy("has_wool", RecipeProvider.has(Items.WHITE_WOOL))
+					.unlockedBy("has_wool", RecipeProvider.has(ItemTags.WOOL))
 					.save(exporter);
 		}
 	}

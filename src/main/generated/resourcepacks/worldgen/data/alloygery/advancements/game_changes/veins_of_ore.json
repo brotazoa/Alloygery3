@@ -1,0 +1,42 @@
+{
+  "parent": "alloygery:game_changes/root",
+  "criteria": {
+    "mine_any_ore_vein": {
+      "conditions": {
+        "block_predicate": {
+          "blocks": [
+            "alloygery:aurorum",
+            "alloygery:cuproline",
+            "alloygery:feronyte",
+            "alloygery:nickeline",
+            "alloygery:teallite",
+            "alloygery:titanite"
+          ]
+        },
+        "needs_correct_tool": true
+      },
+      "trigger": "alloygery:block_broken"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.game_changes.veins_of_ore.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:cuproline"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.game_changes.veins_of_ore.title"
+    }
+  },
+  "requirements": [
+    [
+      "mine_any_ore_vein"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

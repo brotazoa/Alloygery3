@@ -1,0 +1,38 @@
+{
+  "parent": "alloygery:game_changes/alloying",
+  "criteria": {
+    "has_titanium_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:titanium_gold_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.game_changes.titanium_gold.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:titanium_gold_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.game_changes.titanium_gold.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_titanium_gold"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

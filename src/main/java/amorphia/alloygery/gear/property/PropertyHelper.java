@@ -143,7 +143,8 @@ public class PropertyHelper
 		for(P property : properties.stream().filter(p -> p.operation.equals(PropertyOperation.MAX)).toList())
 			max = Math.min(property.value, max);
 
-		return Math.clamp(propertyBaseValue, Math.min(min, max), Math.max(max, min));
+		return Math.min(max, Math.max(min, propertyBaseValue));
+		//return Math.clamp(propertyBaseValue, Math.min(min, max), Math.max(max, min));
 	}
 
 	public static <P extends Property> float computePropertyValueWithMinMax(List<P> properties)

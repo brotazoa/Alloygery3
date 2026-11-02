@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:story/mine_diamond",
+  "criteria": {
+    "has_tipped_pickaxe": {
+      "conditions": {
+        "ingredients": [
+          {
+            "items": [
+              "alloygery:tipped_template"
+            ]
+          },
+          {
+            "items": [
+              "minecraft:diamond"
+            ]
+          },
+          {
+            "tag": "alloygery:dynamic_pickaxe_items"
+          }
+        ],
+        "recipe_id": "alloygery:diamond_tipped_improvement"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.diamond_tipped.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:tipped_template"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.diamond_tipped.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_tipped_pickaxe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -90,6 +90,7 @@ public class WorldGenModule
 
 		FabricDataGenerator.Pack worldgenPack = fabricDataGenerator.createBuiltinResourcePack(Alloygery.asResource("worldgen"));
 		worldgenPack.addProvider(WorldGenDataProvider::new);
+		worldgenPack.addProvider(WorldGenAdvancementsProvider::new);
 		worldgenPack.addProvider((FabricDataGenerator.Pack.Factory<WorldgenPackMetadataProvider>) WorldgenPackMetadataProvider::new);
 	}
 }

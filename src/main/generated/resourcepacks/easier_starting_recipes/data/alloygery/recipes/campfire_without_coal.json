@@ -2,20 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "b": {
-      "tag": "c:steel_blocks"
+    "p": {
+      "tag": "minecraft:logs"
     },
-    "i": {
-      "tag": "c:steel_ingots"
+    "s": {
+      "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "bbb",
-    " i ",
-    "iii"
+    " s ",
+    "sss",
+    "ppp"
   ],
   "result": {
-    "item": "minecraft:anvil"
+    "item": "minecraft:campfire"
   },
   "show_notification": true
 }

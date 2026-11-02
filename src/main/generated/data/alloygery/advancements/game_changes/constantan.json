@@ -1,0 +1,38 @@
+{
+  "parent": "alloygery:game_changes/alloying",
+  "criteria": {
+    "has_constantan": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:constantan_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.game_changes.constantan.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:constantan_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.game_changes.constantan.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_constantan"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

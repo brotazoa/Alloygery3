@@ -1,6 +1,5 @@
 package amorphia.alloygery.gear.recipe;
 
-import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.gear.GearModule;
 import amorphia.alloygery.gear.convert.VanillaItemConverter;
 import amorphia.alloygery.gear.item.*;

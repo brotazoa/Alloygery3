@@ -1,0 +1,38 @@
+{
+  "parent": "alloygery:game_changes/alloying",
+  "criteria": {
+    "has_nitinol": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:nitinol_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.game_changes.nitinol.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:nitinol_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.game_changes.nitinol.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_nitinol"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

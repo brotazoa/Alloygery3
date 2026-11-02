@@ -1,5 +1,7 @@
 package amorphia.alloygery.datagen.loot;
 
+import amorphia.alloygery.gear.item.IDynamicGear;
+import amorphia.alloygery.gear.nbt.NBTHelper;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import io.github.fabricators_of_create.porting_lib.loot.IGlobalLootModifier;
@@ -34,7 +36,8 @@ public class AddItemLootModifier extends LootModifier
 	@Override
 	protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext lootContext)
 	{
-		ItemStack addedStack = new ItemStack(addedItem, count);
+		ItemStack addedStack = addedItem.getDefaultInstance();
+		addedStack.setCount(count);
 		if(addedStack.getCount() < addedStack.getMaxStackSize())
 		{
 			generatedLoot.add(addedStack);

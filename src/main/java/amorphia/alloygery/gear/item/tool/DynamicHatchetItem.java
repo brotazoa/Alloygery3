@@ -66,8 +66,8 @@ public class DynamicHatchetItem extends DiggerItem implements IDynamicTool, Gear
     {
         properties.add(AttributeProperty.of(Attributes.ATTACK_DAMAGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, 3.0f));
         properties.add(AttributeProperty.of(Attributes.ATTACK_SPEED, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -2.6f));
-        properties.add(AttributeProperty.of(ReachEntityAttributes.ATTACK_RANGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -2.0f, true));
-        properties.add(AttributeProperty.of(ReachEntityAttributes.REACH, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -2.0f, true));
+        properties.add(AttributeProperty.of(ReachEntityAttributes.ATTACK_RANGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -1.0f, true));
+        properties.add(AttributeProperty.of(ReachEntityAttributes.REACH, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -1.0f, true));
     }
 
     @Override

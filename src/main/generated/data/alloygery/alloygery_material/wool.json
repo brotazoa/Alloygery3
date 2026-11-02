@@ -77,6 +77,13 @@
       "part_type": "armor_base",
       "property_type": "alloygery:occlude_vibrations",
       "value": 3.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:mobility",
+      "value": 14.0
     }
   ],
   "repair_ingredient": []

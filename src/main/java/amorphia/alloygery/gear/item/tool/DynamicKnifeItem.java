@@ -69,8 +69,8 @@ public class DynamicKnifeItem extends DiggerItem implements IDynamicTool, GearMo
     {
         properties.add(AttributeProperty.of(Attributes.ATTACK_DAMAGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, 1.0f));
         properties.add(AttributeProperty.of(Attributes.ATTACK_SPEED, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -0.4f));
-        properties.add(AttributeProperty.of(ReachEntityAttributes.ATTACK_RANGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -2.0f, true));
-        properties.add(AttributeProperty.of(ReachEntityAttributes.REACH, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -2.0f, true));
+        properties.add(AttributeProperty.of(ReachEntityAttributes.ATTACK_RANGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -1.0f, true));
+        properties.add(AttributeProperty.of(ReachEntityAttributes.REACH, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -1.0f, true));
         properties.add(AttributeProperty.of(AdditionalEntityAttributes.BONUS_RARE_LOOT_ROLLS, PartTypes.TOOL_TYPE, PropertyOperation.BASE, 2.0f));
     }
 

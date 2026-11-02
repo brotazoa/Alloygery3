@@ -112,6 +112,9 @@ public class Alloygery implements ModInitializer, ClientModInitializer, DataGene
 		FabricDataGenerator.Pack vanillaOverridesPack = fabricDataGenerator.createBuiltinResourcePack(asResource("vanilla_recipe_overrides"));
 		vanillaOverridesPack.addProvider(VanillaRecipeOverridesProviders.RecipeProvider::new);
 		vanillaOverridesPack.addProvider(VanillaRecipeOverridesProviders.AdvancementsProvider::new);
+		vanillaOverridesPack.addProvider(VanillaRecipeOverridesProviders.ChestLootProvider::new);
+		vanillaOverridesPack.addProvider(VanillaRecipeOverridesProviders.EntityLootProvider::new);
+		vanillaOverridesPack.addProvider(VanillaRecipeOverridesProviders.LootModifiers::new);
 		vanillaOverridesPack.addProvider((FabricDataGenerator.Pack.Factory<VanillaRecipeOverridesProviders.PackMetadataProvider>) VanillaRecipeOverridesProviders.PackMetadataProvider::new);
 	}
 

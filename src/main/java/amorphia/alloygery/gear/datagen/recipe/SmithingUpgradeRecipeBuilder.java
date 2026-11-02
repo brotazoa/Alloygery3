@@ -2,6 +2,7 @@ package amorphia.alloygery.gear.datagen.recipe;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.gear.item.IDynamicGear;
+import amorphia.alloygery.gear.item.UpgradeTypes;
 import amorphia.alloygery.gear.material.AlloygeryDefaultMaterials;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
 import amorphia.alloygery.gear.recipe.SmithingUpgradeRecipe;
@@ -31,6 +32,7 @@ public class SmithingUpgradeRecipeBuilder
 	private final Ingredient base;
 	private final Ingredient addition;
 	private final AlloygeryMaterial upgradeMaterial;
+	private final UpgradeTypes upgradeType;
 	private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
 
 	public static SmithingUpgradeRecipeBuilder netheriteUpgrade()
@@ -40,17 +42,19 @@ public class SmithingUpgradeRecipeBuilder
 				Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
 				Ingredient.of(IDynamicGear.UPGRADEABLE_EQUIPMENT),
 				Ingredient.of(Items.NETHERITE_INGOT),
-				AlloygeryDefaultMaterials.NETHERITE
+				AlloygeryDefaultMaterials.NETHERITE,
+				UpgradeTypes.NETHERITE
 		);
 	}
 
-	public SmithingUpgradeRecipeBuilder(RecipeCategory category, Ingredient template, Ingredient base, Ingredient addition, AlloygeryMaterial upgradeMaterial)
+	public SmithingUpgradeRecipeBuilder(RecipeCategory category, Ingredient template, Ingredient base, Ingredient addition, AlloygeryMaterial upgradeMaterial, UpgradeTypes upgradeType)
 	{
 		this.category = category;
 		this.template = template;
 		this.base = base;
 		this.addition = addition;
 		this.upgradeMaterial = upgradeMaterial;
+		this.upgradeType = upgradeType;
 	}
 
 	public SmithingUpgradeRecipeBuilder unlocks(String key, CriterionTriggerInstance criterion)
@@ -63,7 +67,7 @@ public class SmithingUpgradeRecipeBuilder
 	{
 		this.ensureValid(recipeId);
 		this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId)).rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(RequirementsStrategy.OR);
-		exporter.accept(new Result(recipeId, this.template, this.base, this.addition, this.advancement, recipeId.withPrefix("recipes/" + this.category.getFolderName() + "/"), this.upgradeMaterial));
+		exporter.accept(new Result(recipeId, this.template, this.base, this.addition, this.advancement, recipeId.withPrefix("recipes/" + this.category.getFolderName() + "/"), this.upgradeMaterial, upgradeType));
 	}
 
 	private void ensureValid(ResourceLocation recipeId)
@@ -72,7 +76,7 @@ public class SmithingUpgradeRecipeBuilder
 			throw new IllegalStateException("No way of obtaining recipe " + recipeId);
 	}
 
-	public record Result(ResourceLocation id, Ingredient template, Ingredient base, Ingredient addition, Advancement.Builder advancement, ResourceLocation advancementId, AlloygeryMaterial upgradeMaterial) implements FinishedRecipe
+	public record Result(ResourceLocation id, Ingredient template, Ingredient base, Ingredient addition, Advancement.Builder advancement, ResourceLocation advancementId, AlloygeryMaterial upgradeMaterial, UpgradeTypes upgradeType) implements FinishedRecipe
 	{
 		@Override
 		public void serializeRecipeData(JsonObject json)
@@ -81,6 +85,7 @@ public class SmithingUpgradeRecipeBuilder
 			json.add("base", this.base.toJson());
 			json.add("addition", this.addition.toJson());
 			json.addProperty("upgrade_material", upgradeMaterial.getMaterialIdentifier().toString());
+			json.addProperty("upgrade_type", upgradeType.getName());
 		}
 
 		@Override

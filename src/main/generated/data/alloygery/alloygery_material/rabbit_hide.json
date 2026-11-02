@@ -117,6 +117,13 @@
     },
     {
       "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:mobility",
+      "value": 5.0
+    },
+    {
+      "apply_when_broken": false,
       "operation": "addition",
       "part_type": "armor_plate",
       "property_type": "alloygery:durability",

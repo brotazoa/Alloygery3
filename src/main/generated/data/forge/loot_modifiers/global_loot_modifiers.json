@@ -1,8 +1,11 @@
 {
   "entries": [
     "alloygery:husk_drops_tin",
+    "alloygery:bonus_chest_replace_wooden_axe",
     "alloygery:add_simple_dungeon_loot",
-    "alloygery:add_abandoned_mineshaft_loot"
+    "alloygery:add_abandoned_mineshaft_loot",
+    "alloygery:add_buried_treasure_loot",
+    "alloygery:bonus_chest_replace_wooden_pickaxe"
   ],
   "replace": false
 }

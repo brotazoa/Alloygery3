@@ -135,8 +135,8 @@ public class AlloygeryDefaultMaterials
 				.property(AttributeProperty.of(AdditionalEntityAttributes.DROPPED_EXPERIENCE, ARMOR_PLATE, ADDITION, 8))
                 .build());
 
-        IRON = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("iron"))
-                .repairIngredientFromTag(TagKey.create(Registries.ITEM, Alloygery.asCommonResource("iron_ingots")))
+		IRON = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("iron"))
+				.repairIngredientFromTag(TagKey.create(Registries.ITEM, Alloygery.asCommonResource("iron_ingots")))
 				.standardToolProperties(700, 2, 14, 6.0f, 0.0f, 2.0f)
 				.standardToolBindingProperties(100, 0, 5, 1, 0, 0)
 				.standardToolHandleProperties(1.1f, 1.0f, 1.1f, 0.9f, 1.2f, 1.0f)
@@ -148,8 +148,9 @@ public class AlloygeryDefaultMaterials
 				.standardBaseArmorProperties(15, 10, 10, 0, 0)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MOB_DETECTION_RANGE, ARMOR_BASE, BASE, 20))
+				.property(EncumbranceProperty.of(ARMOR_BASE, BASE, 14))
 				.standardArmorPlateProperties(15, 14, 5, 0, 0)
-                .build());
+				.build());
 
         GOLD = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("gold"))
                 .repairIngredientFromTag(TagKey.create(Registries.ITEM, Alloygery.asCommonResource("gold_ingots")))
@@ -235,9 +236,12 @@ public class AlloygeryDefaultMaterials
 				.property(FireProtectionProperty.of(ARMOR_PLATE, ADDITION, 200))
 				.property(FireproofProperty.of(ARMOR_PLATE, ADDITION, 2))
 
+				.property(DurabilityProperty.of(ARMOR_UPGRADE, MULTIPLY_TOTAL, 1.25f))
 				.property(FireproofProperty.of(ARMOR_UPGRADE, ADDITION, 3))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MAGIC_PROTECTION, ARMOR_UPGRADE, ADDITION, 10))
 				.property(FireProtectionProperty.of(ARMOR_UPGRADE, ADDITION, 200))
+				.property(AttributeProperty.of(Attributes.ARMOR_TOUGHNESS, ARMOR_UPGRADE, MULTIPLY_TOTAL, 1.1f))
+				.property(AttributeProperty.of(Attributes.ARMOR, ARMOR_UPGRADE, MULTIPLY_TOTAL, 1.1f))
 				.build());
 
         NICKEL = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("nickel"))
@@ -485,6 +489,7 @@ public class AlloygeryDefaultMaterials
 				.standardBaseArmorProperties(5, 15, 5, 0, 0)
 				.property(FreezeProtectionProperty.of(ARMOR_BASE, BASE, 100))
 				.property(WalkOnPowderedSnowProperty.of(ARMOR_BASE, BASE, 3))
+				.property(MobilityProperty.of(ARMOR_BASE, BASE, 5))
 				.standardArmorPlateProperties(5, 15, 5, 0, 0)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.JUMP_HEIGHT, ARMOR_BASE, BASE, 20))
@@ -505,6 +510,7 @@ public class AlloygeryDefaultMaterials
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MOB_DETECTION_RANGE, ARMOR_BASE, BASE, -20))
 				.property(FreezeProtectionProperty.of(ARMOR_BASE, BASE, 200))
 				.property(OccludeVibrationsProperty.of(ARMOR_BASE, BASE, 3))
+				.property(MobilityProperty.of(ARMOR_BASE, BASE, 14))
 				.build());
 
         // misc

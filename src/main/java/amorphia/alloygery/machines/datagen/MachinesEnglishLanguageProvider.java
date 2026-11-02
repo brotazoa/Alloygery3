@@ -55,7 +55,7 @@ public class MachinesEnglishLanguageProvider implements AlloygeryEnglishLanguage
 
 		// subtitles
 		translationBuilder.add("sound.alloygery.kiln_fire_crackle", "Kiln crackles");
-		translationBuilder.add("sound.alloygery.alloyg_kiln_fire_crackle", "Alloy Kiln crackles");
+		translationBuilder.add("sound.alloygery.alloy_kiln_fire_crackle", "Alloy Kiln crackles");
 		translationBuilder.add("sound.alloygery.heat_exchanger_fire_crackle", "Heat Exchanger crackles");
 		translationBuilder.add("sound.alloygery.kiln_with_heat_exchanger_fire_crackle", "Kiln crackles");
 		translationBuilder.add("sound.alloygery.alloy_kiln_with_heat_exchanger_fire_crackle", "Alloy Kiln crackles");

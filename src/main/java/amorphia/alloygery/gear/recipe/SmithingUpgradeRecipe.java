@@ -5,6 +5,7 @@ import amorphia.alloygery.gear.convert.VanillaItemConverter;
 import amorphia.alloygery.gear.item.IDynamicArmor;
 import amorphia.alloygery.gear.item.IDynamicTool;
 import amorphia.alloygery.gear.item.PartTypes;
+import amorphia.alloygery.gear.item.UpgradeTypes;
 import amorphia.alloygery.gear.material.MaterialHelper;
 import amorphia.alloygery.gear.nbt.AlloygeryNBTKeys;
 import amorphia.alloygery.gear.nbt.NBTHelper;
@@ -16,6 +17,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
+import net.minecraft.world.inventory.SmithingMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
@@ -29,14 +31,16 @@ public class SmithingUpgradeRecipe implements SmithingRecipe
 	final Ingredient base;
 	final Ingredient addition;
 	final ResourceLocation upgradeMaterial;
+	final UpgradeTypes upgradeType;
 
-	public SmithingUpgradeRecipe(ResourceLocation id, Ingredient template, Ingredient base, Ingredient addition, ResourceLocation upgradeMaterial)
+	public SmithingUpgradeRecipe(ResourceLocation id, Ingredient template, Ingredient base, Ingredient addition, ResourceLocation upgradeMaterial, UpgradeTypes upgradeTyp)
 	{
 		this.id = id;
 		this.template = template;
 		this.base = base;
 		this.addition = addition;
 		this.upgradeMaterial = upgradeMaterial;
+		this.upgradeType = upgradeTyp;
 	}
 
 	@Override
@@ -81,7 +85,9 @@ public class SmithingUpgradeRecipe implements SmithingRecipe
 			itemStack = VanillaItemConverter.convert(itemStack);
 		}
 
-		if(this.base.test(itemStack) && !NBTHelper.isUpgraded(itemStack))
+		ItemStack additionStack = container.getItem(SmithingMenu.ADDITIONAL_SLOT);
+
+		if(this.base.test(itemStack) && !NBTHelper.isUpgraded(itemStack) && !additionStack.isEmpty())
 		{
 			ItemStack result = itemStack.copy();
 			result.setCount(1);
@@ -95,12 +101,12 @@ public class SmithingUpgradeRecipe implements SmithingRecipe
 			List<PartTypes> partsList = NBTHelper.getPartTypesListFromItemStack(result);
 			if (result.getItem() instanceof IDynamicTool)
 			{
-				alloygeryTag.put(PartTypes.TOOL_UPGRADE.getName(), NBTHelper.createToolUpgradePartTag(MaterialHelper.getMaterialFromIdentifier(upgradeMaterial)));
+				alloygeryTag.put(PartTypes.TOOL_UPGRADE.getName(), NBTHelper.createUpgradePartTag(additionStack, PartTypes.TOOL_UPGRADE, upgradeType, MaterialHelper.getMaterialFromIdentifier(upgradeMaterial)));
 				partsList.add(PartTypes.TOOL_UPGRADE);
 			}
 			else if(result.getItem() instanceof IDynamicArmor)
 			{
-				alloygeryTag.put(PartTypes.ARMOR_UPGRADE.getName(), NBTHelper.createArmorUpgradePartTag(MaterialHelper.getMaterialFromIdentifier(upgradeMaterial)));
+				alloygeryTag.put(PartTypes.ARMOR_UPGRADE.getName(), NBTHelper.createUpgradePartTag(additionStack, PartTypes.ARMOR_UPGRADE, upgradeType, MaterialHelper.getMaterialFromIdentifier(upgradeMaterial)));
 				partsList.add(PartTypes.ARMOR_UPGRADE);
 			}
 			ListTag partsListTag = NBTHelper.createPartsListTag(partsList);
@@ -145,7 +151,8 @@ public class SmithingUpgradeRecipe implements SmithingRecipe
 			Ingredient base = Ingredient.fromJson(GsonHelper.getNonNull(json, "base"));
 			Ingredient addition = Ingredient.fromJson(GsonHelper.getNonNull(json, "addition"));
 			ResourceLocation upgradeMaterial = ResourceLocation.tryParse(json.get("upgrade_material").getAsString());
-			return new SmithingUpgradeRecipe(recipeId, template, base, addition, upgradeMaterial);
+			UpgradeTypes upgradeType = UpgradeTypes.getByName(GsonHelper.getNonNull(json, "upgrade_type").getAsString());
+			return new SmithingUpgradeRecipe(recipeId, template, base, addition, upgradeMaterial, upgradeType);
 		}
 
 		@Override
@@ -155,7 +162,8 @@ public class SmithingUpgradeRecipe implements SmithingRecipe
 			Ingredient base = Ingredient.fromNetwork(buffer);
 			Ingredient addition = Ingredient.fromNetwork(buffer);
 			ResourceLocation upgradeMaterial = buffer.readResourceLocation();
-			return new SmithingUpgradeRecipe(recipeId, template, base, addition, upgradeMaterial);
+			UpgradeTypes upgradeType = UpgradeTypes.getByName(buffer.readUtf());
+			return new SmithingUpgradeRecipe(recipeId, template, base, addition, upgradeMaterial, upgradeType);
 		}
 
 		@Override
@@ -165,6 +173,7 @@ public class SmithingUpgradeRecipe implements SmithingRecipe
 			recipe.base.toNetwork(buffer);
 			recipe.addition.toNetwork(buffer);
 			buffer.writeResourceLocation(recipe.upgradeMaterial);
+			buffer.writeUtf(recipe.upgradeType.getName());
 		}
 	}
 }

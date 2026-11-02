@@ -3,7 +3,6 @@ package amorphia.alloygery.gear.nbt;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.gear.dynamicProviders.IMadeFromParts;
 import amorphia.alloygery.gear.item.*;
-import amorphia.alloygery.gear.item.armor.ArmorBaseItem;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
 import amorphia.alloygery.gear.material.AlloygeryMaterialRegistry;
 import amorphia.alloygery.gear.property.Property;
@@ -122,34 +121,15 @@ public class NBTHelper
 
     public static CompoundTag createImprovementPartTag(ItemStack improvementItem, PartTypes partType, ImprovementTypes improvementType, AlloygeryMaterial material)
     {
-        CompoundTag partTag = createImprovementPartTag(partType, improvementType, material);
-        if (improvementItem.getItem() instanceof DyeableLeatherItem dyeableLeatherItem)
-        {
-            partTag.putInt(DYE_COLOR, dyeableLeatherItem.getColor(improvementItem));
-        }
-        return partTag;
-    }
-
-    public static CompoundTag createImprovementPartTag(PartTypes partType, ImprovementTypes improvementType, AlloygeryMaterial material)
-    {
-        CompoundTag partTag = createPartTag(partType, material);
+        CompoundTag partTag = createPartTag(improvementItem, partType, material);
         partTag.putString(IMPROVEMENT_TYPE_IDENTIFIER, improvementType.getName());
         return partTag;
     }
 
-    public static CompoundTag createToolUpgradePartTag(AlloygeryMaterial material)
+    public static CompoundTag createUpgradePartTag(ItemStack upgradeItem, PartTypes partType, UpgradeTypes upgradeType, AlloygeryMaterial material)
     {
-        CompoundTag partTag = createPartTag(PartTypes.TOOL_UPGRADE, material);
-        // TODO: hard coded netherite upgrade type
-        partTag.putString(UPGRADE_TYPE_IDENTIFIER, UpgradeTypes.NETHERITE.getName());
-		return partTag;
-    }
-
-    public static CompoundTag createArmorUpgradePartTag(AlloygeryMaterial material)
-    {
-        CompoundTag partTag = createPartTag(PartTypes.ARMOR_UPGRADE, material);
-        // TODO: hard coded netherite upgrade type
-        partTag.putString(UPGRADE_TYPE_IDENTIFIER, UpgradeTypes.NETHERITE.getName());
+        CompoundTag partTag = createPartTag(upgradeItem, partType, material);
+        partTag.putString(UPGRADE_TYPE_IDENTIFIER, upgradeType.getName());
         return partTag;
     }
 

@@ -3,6 +3,7 @@ package amorphia.alloygery.advancement;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.craftingMaterials.CraftingMaterialModule;
 import amorphia.alloygery.gear.GearModule;
+import amorphia.alloygery.gear.item.tool.DynamicPickaxeItem;
 import amorphia.alloygery.machines.MachinesModule;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
@@ -22,6 +23,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 public class ModifyVanillaAdvancementsProviders
@@ -313,6 +315,25 @@ public class ModifyVanillaAdvancementsProviders
 					))
 					.build(Alloygery.asVanillaResource("story/shiny_gear"));
 
+			Advancement diamondTipped = Advancement.Builder.advancement().parent(storyDiamonds)
+					.display(
+							GearModule.ITEMS.get("tipped_template"),
+							Component.translatable("advancements.alloygery.diamond_tipped.title"),
+							Component.translatable("advancements.alloygery.diamond_tipped.description"),
+							null,
+							FrameType.GOAL,
+							true,
+							false,
+							false
+					).addCriterion("has_tipped_pickaxe", RecipeCraftedTrigger.TriggerInstance.craftedItem(
+							Alloygery.asResource("diamond_tipped_improvement"),
+							List.of(
+									ItemPredicate.Builder.item().of(GearModule.ITEMS.get("tipped_template")).build(),
+									ItemPredicate.Builder.item().of(Items.DIAMOND).build(),
+									ItemPredicate.Builder.item().of(DynamicPickaxeItem.DYNAMIC_PICKAXE_ITEMS_TAG).build()
+							)
+					)).build(Alloygery.asResource("story/diamond_tipped"));
+
 			// story
 			consumer.accept(storyRoot);
 			consumer.accept(flintAge);
@@ -331,6 +352,7 @@ public class ModifyVanillaAdvancementsProviders
 			consumer.accept(plateUp);
 			consumer.accept(storyDiamonds);
 			consumer.accept(storyShinyGear);
+			consumer.accept(diamondTipped);
 
 			Advancement netherRoot = Advancement.Builder.advancement()
 					.display(

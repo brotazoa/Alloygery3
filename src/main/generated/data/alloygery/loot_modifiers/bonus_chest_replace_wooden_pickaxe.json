@@ -1,0 +1,11 @@
+{
+  "type": "alloygery:replace_item",
+  "added_item": "alloygery:flint_pickaxe",
+  "conditions": [
+    {
+      "condition": "porting_lib:loot_table_id",
+      "loot_table_id": "minecraft:chests/spawn_bonus_chest"
+    }
+  ],
+  "removed_item": "minecraft:wooden_pickaxe"
+}

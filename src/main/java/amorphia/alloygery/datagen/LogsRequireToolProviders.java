@@ -1,7 +1,7 @@
 package amorphia.alloygery.datagen;
 
 import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.advancement.WrongToolForDropsTrigger;
+import amorphia.alloygery.advancement.BlockBrokenTrigger;
 import amorphia.alloygery.machines.MachinesModule;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
@@ -21,7 +21,6 @@ import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
@@ -122,16 +121,17 @@ public class LogsRequireToolProviders
 			Advancement logsRequireTool = Advancement.Builder.recipeAdvancement().parent(root)
 					.display(
 							Items.OAK_LOG,
-							Component.translatable("advancements.alloygery.logs_require_tool.title"),
-							Component.translatable("advancements.alloygery.logs_require_tool.description"),
+							Component.translatable("advancements.alloygery.game_changes.logs_require_tool.title"),
+							Component.translatable("advancements.alloygery.game_changes.logs_require_tool.description"),
 							null,
 							FrameType.TASK,
 							true,
 							false,
 							false
 					)
-					.addCriterion("wrong_tool", WrongToolForDropsTrigger.Conditions.wrongToolForDrops(
-							BlockPredicate.Builder.block().of(LogsRequireToolTagProvider.LOG_BLOCKS)
+					.addCriterion("wrong_tool", BlockBrokenTrigger.Conditions.blockBroken(
+							BlockPredicate.Builder.block().of(LogsRequireToolTagProvider.LOG_BLOCKS),
+							false
 					))
 					.build(Alloygery.asResource("game_changes/logs_require_tool"));
 

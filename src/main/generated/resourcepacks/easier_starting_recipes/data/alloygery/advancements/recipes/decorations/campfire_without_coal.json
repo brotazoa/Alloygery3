@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_steel": {
+    "has_logs": {
       "conditions": {
         "items": [
           {
-            "tag": "c:steel_ingots"
+            "tag": "minecraft:logs"
           }
         ]
       },
@@ -13,20 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "alloygery:powered_rail"
+        "recipe": "minecraft:campfire_without_coal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_steel",
+      "has_logs",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "alloygery:powered_rail"
+      "minecraft:campfire_without_coal"
     ]
   },
   "sends_telemetry_event": false

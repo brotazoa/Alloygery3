@@ -1,6 +1,8 @@
 package amorphia.alloygery.datagen.loot;
 
 import amorphia.alloygery.accessor.LootContextAccessor;
+import amorphia.alloygery.gear.item.IDynamicGear;
+import amorphia.alloygery.gear.nbt.NBTHelper;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import io.github.fabricators_of_create.porting_lib.loot.IGlobalLootModifier;
@@ -32,7 +34,13 @@ public class AddLootTableLootModifier extends LootModifier
 	{
 		LootTable addTable = lootContext.getResolver().getLootTable(this.lootTable);
 		LootContext newContext = new LootContext.Builder(((LootContextAccessor)lootContext).getParams()).create(this.lootTable);
-		addTable.getRandomItemsRaw(newContext, LootTable.createStackSplitter(lootContext.getLevel(), generatedLoot::add));
+		addTable.getRandomItemsRaw(newContext, LootTable.createStackSplitter(lootContext.getLevel(), lootItem -> {
+			if(lootItem.getItem() instanceof IDynamicGear && !NBTHelper.hasAlloygeryTag(lootItem))
+			{
+				generatedLoot.add(lootItem.getItem().getDefaultInstance());
+			}
+			else generatedLoot.add(lootItem);
+		}));
 		return generatedLoot;
 	}
 

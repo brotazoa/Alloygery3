@@ -5,15 +5,16 @@
       "conditions": {
         "block_predicate": {
           "tag": "alloygery:log_blocks_require_tool"
-        }
+        },
+        "needs_correct_tool": false
       },
-      "trigger": "alloygery:wrong_tool_for_drops"
+      "trigger": "alloygery:block_broken"
     }
   },
   "display": {
     "announce_to_chat": false,
     "description": {
-      "translate": "advancements.alloygery.logs_require_tool.description"
+      "translate": "advancements.alloygery.game_changes.logs_require_tool.description"
     },
     "frame": "task",
     "hidden": false,
@@ -22,7 +23,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.alloygery.logs_require_tool.title"
+      "translate": "advancements.alloygery.game_changes.logs_require_tool.title"
     }
   },
   "requirements": [

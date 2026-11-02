@@ -1,0 +1,38 @@
+{
+  "parent": "alloygery:game_changes/alloying",
+  "criteria": {
+    "has_invar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:invar_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.alloygery.game_changes.invar.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "alloygery:invar_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.alloygery.game_changes.invar.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_invar"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
