@@ -15,6 +15,9 @@ import amorphia.alloygery.gear.property.AttributeProperty;
 import amorphia.alloygery.gear.property.EnchantabilityProperty;
 import amorphia.alloygery.gear.property.Property;
 import amorphia.alloygery.gear.property.PropertyOperation;
+import amorphia.alloygery.gear.toolType.AlloygeryDefaultToolTypes;
+import amorphia.alloygery.gear.toolType.ToolType;
+import amorphia.alloygery.gear.toolType.ToolTypeRegistry;
 import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
 import de.dafuqs.additionalentityattributes.AdditionalEntityAttributes;
 import net.minecraft.core.HolderLookup;
@@ -67,17 +70,13 @@ public class DynamicKnifeItem extends DiggerItem implements IDynamicTool, GearMo
     @Override
     public void addBaseToolProperties(List<Property> properties)
     {
-        properties.add(AttributeProperty.of(Attributes.ATTACK_DAMAGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, 1.0f));
-        properties.add(AttributeProperty.of(Attributes.ATTACK_SPEED, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -0.4f));
-        properties.add(AttributeProperty.of(ReachEntityAttributes.ATTACK_RANGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -1.0f, true));
-        properties.add(AttributeProperty.of(ReachEntityAttributes.REACH, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -1.0f, true));
-        properties.add(AttributeProperty.of(AdditionalEntityAttributes.BONUS_RARE_LOOT_ROLLS, PartTypes.TOOL_TYPE, PropertyOperation.BASE, 2.0f));
+        properties.addAll(ToolTypeRegistry.get(AlloygeryDefaultToolTypes.KNIFE.getIdentifier()).getProperties());
     }
 
     @Override
-    public ToolTypes getToolType()
+    public ToolType getToolType()
     {
-        return ToolTypes.KNIFE;
+        return AlloygeryDefaultToolTypes.KNIFE;
     }
 
     @Override

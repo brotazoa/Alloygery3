@@ -2,11 +2,9 @@ package amorphia.alloygery.gear.datagen.recipe;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.craftingMaterials.CraftingMaterialModule;
-import amorphia.alloygery.datagen.AlloygeryEnglishLanguageProvider;
 import amorphia.alloygery.datagen.AlloygeryRecipeProvider;
 import amorphia.alloygery.gear.GearModule;
 import amorphia.alloygery.gear.item.PartTypes;
-import amorphia.alloygery.gear.item.ToolTypes;
 import amorphia.alloygery.gear.item.armor.ArmorBaseItem;
 import amorphia.alloygery.gear.item.part.HandGuard;
 import amorphia.alloygery.gear.item.part.ToolBinding;
@@ -16,6 +14,7 @@ import amorphia.alloygery.gear.material.AlloygeryMaterial;
 import amorphia.alloygery.gear.material.MaterialHelper;
 import amorphia.alloygery.gear.nbt.NBTHelper;
 import amorphia.alloygery.gear.property.PrimitiveProperty;
+import amorphia.alloygery.gear.toolType.ToolType;
 import amorphia.alloygery.machines.datagen.recipe.SingleIngredientRecipeBuilder;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,10 +27,11 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.EnumSet;
+import java.util.Set;
 import java.util.function.Consumer;
 
 import static amorphia.alloygery.gear.item.PartTypes.*;
-import static amorphia.alloygery.gear.item.ToolTypes.*;
+import static amorphia.alloygery.gear.toolType.AlloygeryDefaultToolTypes.*;
 
 public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRecipeProvider
 {
@@ -92,7 +92,7 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
 
     private void makeSmithingAnvilRecipes(Consumer<FinishedRecipe> exporter)
     {
-        EnumSet<ToolTypes> ALL_MINING_TOOLS = EnumSet.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD, SCYTHE, HAMMER, EXCAVATOR);
+        Set<ToolType> ALL_MINING_TOOLS = Set.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD, HAMMER, EXCAVATOR);
 
         makePartSmithingAnvilRecipes(AlloygeryDefaultMaterials.TIN, CraftingMaterialModule.ITEMS.get("tin_ingot"), EnumSet.of(TOOL_BINDING, TOOL_HANDLE, ARMOR_PLATE), exporter);
 
@@ -142,7 +142,7 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
         makeToolHeadSmithingAnvilRecipes(AlloygeryDefaultMaterials.NITINOL, CraftingMaterialModule.ITEMS.get("nitinol_ingot"), ALL_MINING_TOOLS, exporter);
     }
 
-    private void makeToolHeadSmithingAnvilRecipes(AlloygeryMaterial material, Item ingredient, EnumSet<ToolTypes> toolTypes, Consumer<FinishedRecipe> exporter)
+    private void makeToolHeadSmithingAnvilRecipes(AlloygeryMaterial material, Item ingredient, Set<ToolType> toolTypes, Consumer<FinishedRecipe> exporter)
     {
         if(toolTypes.contains(HATCHET))
             SingleIngredientRecipeBuilder.smithingAnvil(GearModule.ITEMS.get(MaterialHelper.getSimpleName(material) + "_hatchet_head"), ingredient, exporter);

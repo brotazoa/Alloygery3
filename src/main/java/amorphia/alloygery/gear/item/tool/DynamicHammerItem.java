@@ -13,6 +13,9 @@ import amorphia.alloygery.gear.property.AttributeProperty;
 import amorphia.alloygery.gear.property.EnchantabilityProperty;
 import amorphia.alloygery.gear.property.Property;
 import amorphia.alloygery.gear.property.PropertyOperation;
+import amorphia.alloygery.gear.toolType.AlloygeryDefaultToolTypes;
+import amorphia.alloygery.gear.toolType.ToolType;
+import amorphia.alloygery.gear.toolType.ToolTypeRegistry;
 import dev.draylar.magna.api.MagnaTool;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -71,14 +74,13 @@ public class DynamicHammerItem extends PickaxeItem implements IDynamicTool, Magn
     @Override
     public void addBaseToolProperties(List<Property> properties)
     {
-        properties.add(AttributeProperty.of(Attributes.ATTACK_DAMAGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, 2.0f));
-        properties.add(AttributeProperty.of(Attributes.ATTACK_SPEED, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -3.0f));
+        properties.addAll(ToolTypeRegistry.get(AlloygeryDefaultToolTypes.HAMMER.getIdentifier()).getProperties());
     }
 
     @Override
-    public ToolTypes getToolType()
+    public ToolType getToolType()
     {
-        return ToolTypes.HAMMER;
+        return AlloygeryDefaultToolTypes.HAMMER;
     }
 
     @Override

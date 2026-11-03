@@ -15,6 +15,9 @@ import amorphia.alloygery.gear.property.AttributeProperty;
 import amorphia.alloygery.gear.property.EnchantabilityProperty;
 import amorphia.alloygery.gear.property.Property;
 import amorphia.alloygery.gear.property.PropertyOperation;
+import amorphia.alloygery.gear.toolType.AlloygeryDefaultToolTypes;
+import amorphia.alloygery.gear.toolType.ToolType;
+import amorphia.alloygery.gear.toolType.ToolTypeRegistry;
 import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -64,16 +67,13 @@ public class DynamicHatchetItem extends DiggerItem implements IDynamicTool, Gear
     @Override
     public void addBaseToolProperties(List<Property> properties)
     {
-        properties.add(AttributeProperty.of(Attributes.ATTACK_DAMAGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, 3.0f));
-        properties.add(AttributeProperty.of(Attributes.ATTACK_SPEED, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -2.6f));
-        properties.add(AttributeProperty.of(ReachEntityAttributes.ATTACK_RANGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -1.0f, true));
-        properties.add(AttributeProperty.of(ReachEntityAttributes.REACH, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -1.0f, true));
+        properties.addAll(ToolTypeRegistry.get(AlloygeryDefaultToolTypes.HATCHET.getIdentifier()).getProperties());
     }
 
     @Override
-    public ToolTypes getToolType()
+    public ToolType getToolType()
     {
-        return ToolTypes.HATCHET;
+        return AlloygeryDefaultToolTypes.HATCHET;
     }
 
     @Override

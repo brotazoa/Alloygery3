@@ -6,8 +6,8 @@ import amorphia.alloygery.gear.datagen.GearItemTagProvider;
 import amorphia.alloygery.gear.item.PartTypes;
 import amorphia.alloygery.gear.item.ToolHeadPartItem;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
-import amorphia.alloygery.gear.item.ToolTypes;
 import amorphia.alloygery.gear.property.PropertyHelper;
+import amorphia.alloygery.gear.toolType.AlloygeryDefaultToolTypes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
@@ -22,7 +22,7 @@ public class AxeHead extends ToolHeadPartItem implements GearItemTagProvider.IIt
 
     public AxeHead(Properties properties, AlloygeryMaterial material)
     {
-        super(properties, material, ToolTypes.AXE);
+        super(properties, material, AlloygeryDefaultToolTypes.AXE);
     }
 
     public static final TagKey<Item> AXE_HEAD_ITEMS_TAG = TagKey.create(Registries.ITEM, Alloygery.asResource("axe_head_items"));

@@ -7,6 +7,7 @@ import amorphia.alloygery.gear.material.MaterialHelper;
 import amorphia.alloygery.gear.property.DurabilityProperty;
 import amorphia.alloygery.gear.property.Property;
 import amorphia.alloygery.gear.property.PropertyHelper;
+import amorphia.alloygery.gear.toolType.ToolType;
 import net.minecraft.data.models.ItemModelGenerators;
 import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.data.models.model.ModelTemplates;
@@ -18,20 +19,20 @@ import org.jetbrains.annotations.NotNull;
 
 public abstract class ToolHeadPartItem extends GearPartItem implements IDynamicMaxDamage
 {
-    private final ToolTypes toolType;
+    private final ToolType toolType;
 
-    public ToolHeadPartItem(Properties properties, AlloygeryMaterial material, ToolTypes toolType)
+    public ToolHeadPartItem(Properties properties, AlloygeryMaterial material, ToolType toolType)
     {
         super(properties, material, PartTypes.TOOL_HEAD);
         this.toolType = toolType;
     }
 
-    public ToolHeadPartItem(AlloygeryMaterial material, ToolTypes toolType)
+    public ToolHeadPartItem(AlloygeryMaterial material, ToolType toolType)
     {
         this(new Properties(), material, toolType);
     }
 
-    public ToolTypes getToolType()
+    public ToolType getToolType()
     {
         return toolType;
     }
@@ -39,7 +40,7 @@ public abstract class ToolHeadPartItem extends GearPartItem implements IDynamicM
     @Override
     public void generateItemModel(ItemModelGenerators itemModelGenerator)
     {
-        ResourceLocation textureTemplate = Alloygery.asResource("template/part/tool_head/" + toolType.getName() + "_template_" + MaterialHelper.getSimpleName(getPartMaterial()));
+        ResourceLocation textureTemplate = Alloygery.asResource("template/part/tool_head/" + toolType.getSimpleName() + "_template_" + MaterialHelper.getSimpleName(getPartMaterial()));
         ModelTemplates.FLAT_ITEM.create(ModelLocationUtils.getModelLocation(this), TextureMapping.layer0(textureTemplate), itemModelGenerator.output);
     }
 

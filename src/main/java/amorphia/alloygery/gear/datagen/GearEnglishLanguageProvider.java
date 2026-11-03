@@ -9,6 +9,8 @@ import amorphia.alloygery.gear.item.*;
 import amorphia.alloygery.gear.material.AlloygeryMaterialRegistry;
 import amorphia.alloygery.gear.material.MaterialHelper;
 import amorphia.alloygery.gear.property.PropertyType;
+import amorphia.alloygery.gear.toolType.AlloygeryDefaultToolTypes;
+import amorphia.alloygery.gear.toolType.ToolType;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.Util;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -35,9 +37,9 @@ public class GearEnglishLanguageProvider implements AlloygeryEnglishLanguageProv
             translationBuilder.add("part_type.alloygery." + type.getName() + ".tooltip", AlloygeryEnglishLanguageProvider.englishNameFromPath(type.getName()));
         }
 
-        for(ToolTypes type : ToolTypes.VALUES_CACHE)
+        for(ToolType type : AlloygeryDefaultToolTypes.ALL_DEFAULT_TOOL_TYPES)
         {
-            translationBuilder.add("tool_type.alloygery." + type.getName() + ".tooltip", AlloygeryEnglishLanguageProvider.englishNameFromPath(type.getName()));
+            translationBuilder.add("tool_type.alloygery." + type.getSimpleName() + ".tooltip", AlloygeryEnglishLanguageProvider.englishNameFromPath(type.getSimpleName()));
         }
 
         for(ImprovementTypes improvement : ImprovementTypes.VALUES_CACHE)

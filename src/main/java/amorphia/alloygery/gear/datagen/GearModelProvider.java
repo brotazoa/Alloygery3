@@ -285,11 +285,11 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
         if (toolStack.getItem() instanceof IDynamicTool dynamicTool)
         {
             AlloygeryMaterial headMaterial = MaterialHelper.getMaterialForPartType(PartTypes.TOOL_HEAD, toolStack);
-            ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
+            ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getSimpleName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
 //            ResourceLocation brokenHeadTexture = Alloygery.asResource("template/render_part/tool_head/broken_" + dynamicTool.getToolType().getName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
-            ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getName() + "_handle_template");
-            ResourceLocation bindingTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getName() + "_binding_template");
-            ResourceLocation upgradeTexture = Alloygery.asResource("template/render_part/tool_upgrade/upgrade_" + dynamicTool.getToolType().getName());
+            ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getSimpleName() + "_handle_template");
+            ResourceLocation bindingTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getSimpleName() + "_binding_template");
+            ResourceLocation upgradeTexture = Alloygery.asResource("template/render_part/tool_upgrade/upgrade_" + dynamicTool.getToolType().getSimpleName());
             ModelTemplate template = new ModelTemplate(Optional.of(new ResourceLocation("minecraft", "item/handheld")), Optional.empty());
             ResourceLocation modelLocation = ModelLocationUtils.getModelLocation(toolStack.getItem());
 
@@ -326,7 +326,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 
             for(ImprovementTypes improvement : TOOL_IMPROVEMENT_TYPES)
             {
-                ResourceLocation improvementTexture = Alloygery.asResource("template/render_part/tool_improvement/" + improvement.getName() + "_" + dynamicTool.getToolType().getName() + "_template");
+                ResourceLocation improvementTexture = Alloygery.asResource("template/render_part/tool_improvement/" + improvement.getName() + "_" + dynamicTool.getToolType().getSimpleName() + "_template");
                 template.create(
                         modelLocation.withSuffix("_" + improvement.getName()),
                         new TextureMapping().putForced(TextureSlot.LAYER0, handleTexture).putForced(TextureSlot.LAYER1, headTexture).putForced(TextureSlot.LAYER2, bindingTexture).putForced(LAYER3, improvementTexture),
@@ -347,10 +347,10 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
         if (swordStack.getItem() instanceof IDynamicTool dynamicTool)
         {
             AlloygeryMaterial headMaterial = MaterialHelper.getMaterialForPartType(PartTypes.TOOL_HEAD, swordStack);
-            ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
-            ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getName() + "_handle_template");
-            ResourceLocation bindingTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getName() + "_guard_template");
-            ResourceLocation upgradeTexture = Alloygery.asResource("template/render_part/tool_upgrade/upgrade_" + dynamicTool.getToolType().getName());
+            ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getSimpleName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
+            ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getSimpleName() + "_handle_template");
+            ResourceLocation bindingTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getSimpleName() + "_guard_template");
+            ResourceLocation upgradeTexture = Alloygery.asResource("template/render_part/tool_upgrade/upgrade_" + dynamicTool.getToolType().getSimpleName());
             ModelTemplate template = new ModelTemplate(Optional.of(new ResourceLocation("minecraft", "item/handheld")), Optional.empty());
             ResourceLocation modelLocation = ModelLocationUtils.getModelLocation(swordStack.getItem());
 
@@ -369,7 +369,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 
             for(ImprovementTypes improvement : TOOL_IMPROVEMENT_TYPES)
             {
-                ResourceLocation improvementTexture = Alloygery.asResource("template/render_part/tool_improvement/" + improvement.getName() + "_" + dynamicTool.getToolType().getName() + "_template");
+                ResourceLocation improvementTexture = Alloygery.asResource("template/render_part/tool_improvement/" + improvement.getName() + "_" + dynamicTool.getToolType().getSimpleName() + "_template");
                 template.create(
                         modelLocation.withSuffix("_" + improvement.getName()),
                         new TextureMapping().putForced(TextureSlot.LAYER0, handleTexture).putForced(TextureSlot.LAYER1, headTexture).putForced(TextureSlot.LAYER2, bindingTexture).putForced(LAYER3, improvementTexture),
@@ -390,9 +390,9 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
         if (basicToolStack.getItem() instanceof IDynamicTool dynamicTool)
         {
             AlloygeryMaterial headMaterial = MaterialHelper.getMaterialForPartType(PartTypes.TOOL_HEAD, basicToolStack);
-            ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
-            ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getName() + "_handle_template");
-            ResourceLocation upgradeTexture = Alloygery.asResource("template/render_part/tool_upgrade/upgrade_" + dynamicTool.getToolType().getName());
+            ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getSimpleName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
+            ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getSimpleName() + "_handle_template");
+            ResourceLocation upgradeTexture = Alloygery.asResource("template/render_part/tool_upgrade/upgrade_" + dynamicTool.getToolType().getSimpleName());
             ModelTemplate template = new ModelTemplate(Optional.of(new ResourceLocation("minecraft", "item/handheld")), Optional.empty());
             ResourceLocation modelLocation = ModelLocationUtils.getModelLocation(basicToolStack.getItem());
 
@@ -411,7 +411,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 
             for(ImprovementTypes improvement : TOOL_IMPROVEMENT_TYPES)
             {
-                ResourceLocation improvementTexture = Alloygery.asResource("template/render_part/tool_improvement/" + improvement.getName() + "_" + dynamicTool.getToolType().getName() + "_template");
+                ResourceLocation improvementTexture = Alloygery.asResource("template/render_part/tool_improvement/" + improvement.getName() + "_" + dynamicTool.getToolType().getSimpleName() + "_template");
                 template.create(
                         modelLocation.withSuffix("_" + improvement.getName()),
                         new TextureMapping().putForced(TextureSlot.LAYER0, handleTexture).putForced(TextureSlot.LAYER1, headTexture).putForced(TextureSlot.LAYER2, improvementTexture),

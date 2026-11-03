@@ -105,8 +105,8 @@ public class ConvertModelProvider extends FabricModelProvider
             if (convert.getItem() instanceof IDynamicTool dynamicTool)
             {
                 AlloygeryMaterial headMaterial = MaterialHelper.getMaterialForPartType(PartTypes.TOOL_HEAD, convert);
-                ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
-                ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getName() + "_handle_template");
+                ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getSimpleName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
+                ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getSimpleName() + "_handle_template");
                 ModelTemplate template = new ModelTemplate(Optional.of(new ResourceLocation("minecraft", "item/handheld")), Optional.empty());
                 ResourceLocation modelLocation = ModelLocationUtils.getModelLocation(item);
 
@@ -127,9 +127,9 @@ public class ConvertModelProvider extends FabricModelProvider
             if (convert.getItem() instanceof IDynamicTool dynamicTool)
             {
                 AlloygeryMaterial headMaterial = MaterialHelper.getMaterialForPartType(PartTypes.TOOL_HEAD, convert);
-                ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
-                ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getName() + "_handle_template");
-                ResourceLocation bindingTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getName() + "_guard_template");
+                ResourceLocation headTexture = Alloygery.asResource("template/render_part/tool_head/" + dynamicTool.getToolType().getSimpleName() + "_template_" + MaterialHelper.getSimpleName(headMaterial));
+                ResourceLocation handleTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getSimpleName() + "_handle_template");
+                ResourceLocation bindingTexture = Alloygery.asResource("template/render_part/tool_part/" + dynamicTool.getToolType().getSimpleName() + "_guard_template");
                 ModelTemplate template = new ModelTemplate(Optional.of(new ResourceLocation("minecraft", "item/handheld")), Optional.empty());
                 ResourceLocation modelLocation = ModelLocationUtils.getModelLocation(item);
 

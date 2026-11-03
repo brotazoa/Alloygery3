@@ -14,6 +14,7 @@ import amorphia.alloygery.gear.client.DynamicGearItemModelPredicateProvider;
 import amorphia.alloygery.gear.data.AlloygeryMaterialDataReloadListener;
 import amorphia.alloygery.gear.data.AlloygeryMaterialNetworkPackets;
 import amorphia.alloygery.gear.data.ArmorStyleNetworkPackets;
+import amorphia.alloygery.gear.data.ToolTypeNetworkPackets;
 import amorphia.alloygery.gear.datagen.*;
 import amorphia.alloygery.gear.datagen.convert.ConvertItemTagProvider;
 import amorphia.alloygery.gear.datagen.convert.ConvertModelProvider;
@@ -28,10 +29,10 @@ import amorphia.alloygery.gear.item.tool.*;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
 import amorphia.alloygery.gear.material.MaterialHelper;
 import amorphia.alloygery.gear.item.PartTypes;
-import amorphia.alloygery.gear.item.ToolTypes;
 import amorphia.alloygery.gear.nbt.AlloygeryNBTKeys;
 import amorphia.alloygery.gear.nbt.NBTHelper;
 import amorphia.alloygery.gear.recipe.*;
+import amorphia.alloygery.gear.toolType.ToolType;
 import com.google.common.collect.Maps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -47,15 +48,16 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumSet;
 import java.util.Map;
+import java.util.Set;
 
 import static amorphia.alloygery.gear.material.AlloygeryDefaultMaterials.*;
 import static amorphia.alloygery.gear.item.PartTypes.*;
-import static amorphia.alloygery.gear.item.ToolTypes.*;
+import static amorphia.alloygery.gear.toolType.AlloygeryDefaultToolTypes.*;
 
 public class GearModule
 {
     private static final Map<PartTypes, GearItemMaker> PART_MAKERS = Maps.newHashMap();
-    private static final Map<ToolTypes, GearItemMaker> HEAD_PART_MAKERS = Maps.newHashMap();
+    private static final Map<ToolType, GearItemMaker> HEAD_PART_MAKERS = Maps.newHashMap();
 
     public static final Map<String, Item> ITEMS = Maps.newLinkedHashMap();
 
@@ -80,6 +82,7 @@ public class GearModule
 
 		AlloygeryMaterialNetworkPackets.initialize();
 		ArmorStyleNetworkPackets.initialize();
+		ToolTypeNetworkPackets.initialize();
 
         makeItems();
     }
@@ -92,6 +95,7 @@ public class GearModule
 
 		AlloygeryMaterialNetworkPackets.initializeClient();
 		ArmorStyleNetworkPackets.initializeClient();
+		ToolTypeNetworkPackets.initializeClient();
     }
 
     public static void initializeDataGen(FabricDataGenerator dataGenerator, FabricDataGenerator.Pack pack)
@@ -106,6 +110,7 @@ public class GearModule
 
         pack.addProvider(GearAlloygeryMaterialProvider::new);
 		pack.addProvider(GearArmorStyleProvider::new);
+		pack.addProvider(GearToolTypeProvider::new);
 
         FabricDataGenerator.Pack convertVanillaGearPack = dataGenerator.createBuiltinResourcePack(Alloygery.asResource("convert_vanilla_gear_to_alloygery_gear"));
         convertVanillaGearPack.addProvider(ConvertModelProvider::new);
@@ -116,10 +121,7 @@ public class GearModule
 
     private static void makeItems()
     {
-        EnumSet<ToolTypes> ALL_MINING_TOOLS = EnumSet.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD, SCYTHE, HAMMER, EXCAVATOR);
-        EnumSet<ToolTypes> VANILLA_TOOL_TYPES = EnumSet.of(AXE, HOE, PICKAXE, SHOVEL, SWORD);
-        EnumSet<ToolTypes> ALL_RANGED_WEAPONS = EnumSet.of(BOW, LONGBOW, RECURVE, CROSSBOW);
-        EnumSet<ToolTypes> EMPTY_TOOL_TYPES = EnumSet.noneOf(ToolTypes.class);
+        Set<ToolType> ALL_MINING_TOOLS = Set.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD, HAMMER, EXCAVATOR);
 
         EnumSet<PartTypes> STANDARD_TOOL_PART_TYPES = EnumSet.of(TOOL_HEAD, TOOL_BINDING, TOOL_HANDLE);
         EnumSet<PartTypes> RANGED_WEAPON_TOOL_PART_TYPES = EnumSet.of(BOW_LIMB, BOW_BINDING, BOW_STRING);
@@ -130,8 +132,8 @@ public class GearModule
         // ###### Tools and Tool Parts ######
 
         // primitive
-        makeGearItems(FLINT, TOOL_HEADS, EnumSet.of(HATCHET, KNIFE, PICKAXE));
-        makeGearItems(STONE, TOOL_HEADS, EnumSet.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD));
+        makeGearItems(FLINT, TOOL_HEADS, Set.of(HATCHET, KNIFE, PICKAXE));
+        makeGearItems(STONE, TOOL_HEADS, Set.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD));
 
         // metals
         makeGearItems(TIN, EnumSet.of(TOOL_BINDING, TOOL_HANDLE));
@@ -214,14 +216,14 @@ public class GearModule
 
     private static void makeGearItems(AlloygeryMaterial material, EnumSet<PartTypes> partTypes)
     {
-        makeGearItems(material, partTypes, EnumSet.noneOf(ToolTypes.class));
+        makeGearItems(material, partTypes, Set.of());
     }
 
-    private static void makeGearItems(AlloygeryMaterial material, EnumSet<PartTypes> partTypes, EnumSet<ToolTypes> headTypes)
+    private static void makeGearItems(AlloygeryMaterial material, EnumSet<PartTypes> partTypes, Set<ToolType> headTypes)
     {
         if (partTypes.contains(TOOL_HEAD))
         {
-            for(ToolTypes toolType : headTypes)
+            for(ToolType toolType : headTypes)
             {
                 if(HEAD_PART_MAKERS.containsKey(toolType))
                     HEAD_PART_MAKERS.get(toolType).makePartItem(material);

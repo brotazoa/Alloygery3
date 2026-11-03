@@ -1,0 +1,22 @@
+{
+  "type": "alloygery:alloygery_tool_types/hoe",
+  "merge": false,
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "base",
+      "part_type": "tool_type",
+      "property_type": "alloygery:attribute",
+      "value": -2.0
+    },
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "base",
+      "part_type": "tool_type",
+      "property_type": "alloygery:attribute",
+      "value": -2.8
+    }
+  ]
+}

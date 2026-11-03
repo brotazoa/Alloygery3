@@ -4,12 +4,12 @@ import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.gear.attribute.GearAttributeAppliers;
 import amorphia.alloygery.gear.client.DynamicGearItemModelPredicateProvider;
 import amorphia.alloygery.gear.dynamicProviders.IDynamicMiningTool;
-import amorphia.alloygery.gear.material.MaterialHelper;
 import amorphia.alloygery.gear.nbt.AlloygeryNBTKeys;
 import amorphia.alloygery.gear.nbt.NBTHelper;
 import amorphia.alloygery.gear.property.AttributeProperty;
 import amorphia.alloygery.gear.property.Property;
 import amorphia.alloygery.gear.property.PropertyHelper;
+import amorphia.alloygery.gear.toolType.ToolType;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
@@ -108,5 +108,5 @@ public interface IDynamicTool extends IDynamicGear, IDynamicMiningTool, DynamicG
 
 	void addBaseToolProperties(List<Property> properties);
 
-    ToolTypes getToolType();
+    ToolType getToolType();
 }

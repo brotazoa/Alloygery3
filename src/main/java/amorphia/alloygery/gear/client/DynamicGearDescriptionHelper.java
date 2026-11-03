@@ -129,7 +129,7 @@ public class DynamicGearDescriptionHelper
         {
             if (part == PartTypes.TOOL_TYPE && gearStack.getItem() instanceof IDynamicTool dynamicTool)
             {
-                tooltip.add(CommonComponents.space().append(Component.translatable("tool_type.alloygery." + dynamicTool.getToolType().getName() + ".tooltip")).withStyle(ChatFormatting.WHITE));
+                tooltip.add(CommonComponents.space().append(Component.translatable("tool_type.alloygery." + dynamicTool.getToolType().getSimpleName() + ".tooltip")).withStyle(ChatFormatting.WHITE));
             }
 			else if (PartTypes.isImprovement(part))
 			{

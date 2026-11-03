@@ -6,9 +6,8 @@ import amorphia.alloygery.gear.datagen.GearItemTagProvider;
 import amorphia.alloygery.gear.item.PartTypes;
 import amorphia.alloygery.gear.item.ToolHeadPartItem;
 import amorphia.alloygery.gear.material.AlloygeryMaterial;
-import amorphia.alloygery.gear.item.ToolTypes;
-import amorphia.alloygery.gear.property.DurabilityProperty;
 import amorphia.alloygery.gear.property.PropertyHelper;
+import amorphia.alloygery.gear.toolType.AlloygeryDefaultToolTypes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
@@ -23,7 +22,7 @@ public class PickaxeHead extends ToolHeadPartItem implements GearItemTagProvider
 
     public PickaxeHead(Properties properties, AlloygeryMaterial material)
     {
-        super(properties, material, ToolTypes.PICKAXE);
+        super(properties, material, AlloygeryDefaultToolTypes.PICKAXE);
     }
 
     public static final TagKey<Item> PICKAXE_HEAD_ITEMS_TAG = TagKey.create(Registries.ITEM, Alloygery.asResource("pickaxe_head_items"));

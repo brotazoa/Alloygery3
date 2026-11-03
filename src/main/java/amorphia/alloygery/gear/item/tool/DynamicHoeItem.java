@@ -13,6 +13,9 @@ import amorphia.alloygery.gear.property.AttributeProperty;
 import amorphia.alloygery.gear.property.EnchantabilityProperty;
 import amorphia.alloygery.gear.property.Property;
 import amorphia.alloygery.gear.property.PropertyOperation;
+import amorphia.alloygery.gear.toolType.AlloygeryDefaultToolTypes;
+import amorphia.alloygery.gear.toolType.ToolType;
+import amorphia.alloygery.gear.toolType.ToolTypeRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.models.ItemModelGenerators;
@@ -88,8 +91,7 @@ public class DynamicHoeItem extends HoeItem implements IDynamicTool, GearModelPr
     @Override
     public void addBaseToolProperties(List<Property> properties)
     {
-        properties.add(AttributeProperty.of(Attributes.ATTACK_DAMAGE, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -2.0f));
-        properties.add(AttributeProperty.of(Attributes.ATTACK_SPEED, PartTypes.TOOL_TYPE, PropertyOperation.BASE, -2.8f));
+        properties.addAll(ToolTypeRegistry.get(AlloygeryDefaultToolTypes.HOE.getIdentifier()).getProperties());
     }
 
     @Override
@@ -108,9 +110,9 @@ public class DynamicHoeItem extends HoeItem implements IDynamicTool, GearModelPr
     }
 
     @Override
-    public ToolTypes getToolType()
+    public ToolType getToolType()
     {
-        return ToolTypes.HOE;
+        return AlloygeryDefaultToolTypes.HOE;
     }
 
     @Override
