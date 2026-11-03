@@ -46,8 +46,6 @@ public class AlloygeryMaterialDataReloadListener implements SimpleSynchronousRes
 
             try (BufferedReader reader = resource.openAsReader())
             {
-                ResourceLocation trimmedLocation = new ResourceLocation(location.getNamespace(), location.getPath().substring(0, location.getPath().length() - ".json".length()));
-
                 JsonElement jsonElement = JsonParser.parseReader(reader);
                 if(!jsonElement.isJsonObject())
                 {
@@ -66,10 +64,11 @@ public class AlloygeryMaterialDataReloadListener implements SimpleSynchronousRes
 
                 DataResult<AlloygeryMaterial> dataResult = AlloygeryMaterial.CODEC.parse(JsonOps.INSTANCE, json);
                 AlloygeryMaterial material = dataResult.getOrThrow(false, Alloygery.LOGGER::error);
-				if(AlloygeryMaterialRegistry.contains(trimmedLocation))
+				ResourceLocation materialIdentifier = material.getMaterialIdentifier();
+				if(AlloygeryMaterialRegistry.contains(materialIdentifier))
 					numberModified.getAndIncrement();
 
-                AlloygeryMaterialRegistry.load(trimmedLocation, MaterialHelper.createMaterialDataFromMaterial(material));
+                AlloygeryMaterialRegistry.load(materialIdentifier, MaterialHelper.createMaterialDataFromMaterial(material));
             }
             catch (IOException thrown)
             {

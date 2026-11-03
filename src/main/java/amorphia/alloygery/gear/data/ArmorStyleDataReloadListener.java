@@ -43,8 +43,6 @@ public class ArmorStyleDataReloadListener implements SimpleSynchronousResourceRe
 
 			try (BufferedReader reader = resource.openAsReader())
 			{
-				ResourceLocation trimmedLocation = new ResourceLocation(location.getNamespace(), location.getPath().substring(0, location.getPath().length() - ".json".length()));
-
 				JsonElement jsonElement = JsonParser.parseReader(reader);
 				if (!jsonElement.isJsonObject())
 				{
@@ -63,10 +61,11 @@ public class ArmorStyleDataReloadListener implements SimpleSynchronousResourceRe
 
 				DataResult<ArmorStyle> dataResult = ArmorStyle.CODEC.parse(JsonOps.INSTANCE, json);
 				ArmorStyle style = dataResult.getOrThrow(false, Alloygery.LOGGER::error);
-				if (ArmorStyleRegistry.contains(style))
+				ResourceLocation armorStyleIdentifier = style.getIdentifier();
+				if (ArmorStyleRegistry.contains(armorStyleIdentifier))
 					numberModified.getAndIncrement();
 
-				ArmorStyleRegistry.load(trimmedLocation, ArmorStyle.createData(style));
+				ArmorStyleRegistry.load(armorStyleIdentifier, ArmorStyle.createData(style));
 			}
 			catch (IOException thrown)
 			{

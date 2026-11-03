@@ -43,8 +43,6 @@ public class ToolTypeDataReloadListener implements SimpleSynchronousResourceRelo
 
 			try (BufferedReader reader = resource.openAsReader())
 			{
-				ResourceLocation trimmedLocation = new ResourceLocation(location.getNamespace(), location.getPath().substring(0, location.getPath().length() - ".json".length()));
-
 				JsonElement jsonElement = JsonParser.parseReader(reader);
 				if (!jsonElement.isJsonObject())
 				{
@@ -63,10 +61,11 @@ public class ToolTypeDataReloadListener implements SimpleSynchronousResourceRelo
 
 				DataResult<ToolType> dataResult = ToolType.CODEC.parse(JsonOps.INSTANCE, json);
 				ToolType toolType = dataResult.getOrThrow(false, Alloygery.LOGGER::error);
-				if(ToolTypeRegistry.contains(toolType))
+				ResourceLocation toolTypeIdentifier = toolType.getIdentifier();
+				if(ToolTypeRegistry.contains(toolTypeIdentifier))
 					numberModified.getAndIncrement();
 
-				ToolTypeRegistry.load(trimmedLocation, ToolType.createData(toolType));
+				ToolTypeRegistry.load(toolTypeIdentifier, ToolType.createData(toolType));
 			}
 			catch (IOException thrown)
 			{

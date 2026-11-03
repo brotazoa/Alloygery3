@@ -11,10 +11,7 @@ import amorphia.alloygery.gear.armorStyle.ArmorStyle;
 import amorphia.alloygery.gear.client.AlloygeryMaterialColors;
 import amorphia.alloygery.gear.client.DynamicGearClientReloadListener;
 import amorphia.alloygery.gear.client.DynamicGearItemModelPredicateProvider;
-import amorphia.alloygery.gear.data.AlloygeryMaterialDataReloadListener;
-import amorphia.alloygery.gear.data.AlloygeryMaterialNetworkPackets;
-import amorphia.alloygery.gear.data.ArmorStyleNetworkPackets;
-import amorphia.alloygery.gear.data.ToolTypeNetworkPackets;
+import amorphia.alloygery.gear.data.*;
 import amorphia.alloygery.gear.datagen.*;
 import amorphia.alloygery.gear.datagen.convert.ConvertItemTagProvider;
 import amorphia.alloygery.gear.datagen.convert.ConvertModelProvider;
@@ -64,6 +61,8 @@ public class GearModule
     public static void initialize()
     {
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(AlloygeryMaterialDataReloadListener.INSTANCE);
+		ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(ArmorStyleDataReloadListener.INSTANCE);
+		ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(ToolTypeDataReloadListener.INSTANCE);
 
         Registry.register(BuiltInRegistries.RECIPE_TYPE, ToolRecipeShaped.Type.ID, ToolRecipeShaped.Type.INSTANCE);
         Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, ToolRecipeShaped.Type.ID, ToolRecipeShaped.Serializer.INSTANCE);
