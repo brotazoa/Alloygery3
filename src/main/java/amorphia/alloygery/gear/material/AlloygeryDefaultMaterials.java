@@ -148,7 +148,6 @@ public class AlloygeryDefaultMaterials
 				.standardBaseArmorProperties(15, 10, 10, 0, 0)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MOB_DETECTION_RANGE, ARMOR_BASE, BASE, 20))
-				.property(EncumbranceProperty.of(ARMOR_BASE, BASE, 14))
 				.standardArmorPlateProperties(15, 14, 5, 0, 0)
 				.build());
 
@@ -206,7 +205,6 @@ public class AlloygeryDefaultMaterials
 				.standardArmorPlateProperties(50, 8, 10, 4, 40)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MAGIC_PROTECTION, ARMOR_PLATE, ADDITION, 5))
-				.property(EncumbranceProperty.of(ARMOR_PLATE, ADDITION, 8))
                 .build());
 
 		NETHERITE = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("netherite"))
@@ -232,7 +230,6 @@ public class AlloygeryDefaultMaterials
 				.standardArmorPlateProperties(40, 10, 12, 8, 80)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MAGIC_PROTECTION, ARMOR_PLATE, ADDITION, 10))
-				.property(EncumbranceProperty.of(ARMOR_PLATE, ADDITION, 6))
 				.property(FireProtectionProperty.of(ARMOR_PLATE, ADDITION, 200))
 				.property(FireproofProperty.of(ARMOR_PLATE, ADDITION, 2))
 
@@ -257,7 +254,6 @@ public class AlloygeryDefaultMaterials
 				.standardArmorPlateProperties(37, 5, 8, 0, 0)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MAGIC_PROTECTION, ARMOR_PLATE, ADDITION, 8))
-				.property(EncumbranceProperty.of(ARMOR_PLATE, ADDITION, 4))
                 .build());
 
         INVAR = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("invar"))
@@ -275,7 +271,6 @@ public class AlloygeryDefaultMaterials
 				.standardArmorPlateProperties(45, 5, 12, 4, 10)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MAGIC_PROTECTION, ARMOR_PLATE, ADDITION, 10))
-				.property(EncumbranceProperty.of(ARMOR_PLATE, ADDITION, 8))
                 .build());
 
         CONSTANTAN = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("constantan"))
@@ -293,7 +288,6 @@ public class AlloygeryDefaultMaterials
 				.standardArmorPlateProperties(38, 8, 8, 0, 0)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MAGIC_PROTECTION, ARMOR_PLATE, ADDITION, 5))
-				.property(EncumbranceProperty.of(ARMOR_PLATE, ADDITION, 4))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.DROPPED_EXPERIENCE, ARMOR_PLATE, ADDITION, 5))
 				.property(FireProtectionProperty.of(ARMOR_PLATE, ADDITION, 100))
                 .build());
@@ -489,7 +483,6 @@ public class AlloygeryDefaultMaterials
 				.standardBaseArmorProperties(5, 15, 5, 0, 0)
 				.property(FreezeProtectionProperty.of(ARMOR_BASE, BASE, 100))
 				.property(WalkOnPowderedSnowProperty.of(ARMOR_BASE, BASE, 3))
-				.property(MobilityProperty.of(ARMOR_BASE, BASE, 5))
 				.standardArmorPlateProperties(5, 15, 5, 0, 0)
 				.property(AttributeProperty.of(Attributes.MOVEMENT_SPEED, ARMOR_BASE, BASE, 0))
 				.property(AttributeProperty.of(AdditionalEntityAttributes.JUMP_HEIGHT, ARMOR_BASE, BASE, 20))
@@ -510,7 +503,6 @@ public class AlloygeryDefaultMaterials
 				.property(AttributeProperty.of(AdditionalEntityAttributes.MOB_DETECTION_RANGE, ARMOR_BASE, BASE, -20))
 				.property(FreezeProtectionProperty.of(ARMOR_BASE, BASE, 200))
 				.property(OccludeVibrationsProperty.of(ARMOR_BASE, BASE, 3))
-				.property(MobilityProperty.of(ARMOR_BASE, BASE, 14))
 				.build());
 
         // misc

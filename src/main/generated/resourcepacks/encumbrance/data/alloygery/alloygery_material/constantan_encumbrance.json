@@ -1,0 +1,15 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/constantan",
+  "merge": true,
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_head",
+      "property_type": "alloygery:encumbrance",
+      "value": 3.0
+    }
+  ],
+  "repair_ingredient": []
+}

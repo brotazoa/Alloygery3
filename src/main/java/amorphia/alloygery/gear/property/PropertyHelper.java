@@ -112,7 +112,8 @@ public class PropertyHelper
 		// calc total
 		float baseTotal = base + addition + multiplyBase;
 		for(P property : properties.stream().filter(p -> p.operation.equals(PropertyOperation.MULTIPLY_TOTAL)).toList())
-			baseTotal = baseTotal == 0 ? property.value : baseTotal * property.value;
+			baseTotal *= property.value;
+			//baseTotal = baseTotal == 0 ? property.value : baseTotal * property.value;
 
 		return baseTotal;
 

@@ -1,0 +1,30 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/leather",
+  "merge": true,
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:encumbrance",
+      "value": 2.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "addition",
+      "part_type": "tool_binding",
+      "property_type": "alloygery:encumbrance",
+      "value": -3.0
+    }
+  ],
+  "repair_ingredient": []
+}

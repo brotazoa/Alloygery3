@@ -1,0 +1,23 @@
+{
+  "dyeable": false,
+  "material": "alloygery:alloygery_material/iron",
+  "merge": true,
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "armor_base",
+      "property_type": "alloygery:encumbrance",
+      "value": 5.0
+    }
+  ],
+  "repair_ingredient": []
+}

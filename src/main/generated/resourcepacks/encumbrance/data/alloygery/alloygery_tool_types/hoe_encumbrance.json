@@ -1,0 +1,21 @@
+{
+  "type": "alloygery:alloygery_tool_types/hoe",
+  "merge": true,
+  "properties": [
+    {
+      "apply_when_broken": false,
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "base",
+      "part_type": "tool_type",
+      "property_type": "alloygery:attribute",
+      "value": 0.0
+    },
+    {
+      "apply_when_broken": false,
+      "operation": "base",
+      "part_type": "tool_type",
+      "property_type": "alloygery:encumbrance",
+      "value": 3.0
+    }
+  ]
+}

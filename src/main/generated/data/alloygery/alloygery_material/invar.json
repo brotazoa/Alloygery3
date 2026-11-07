@@ -261,13 +261,6 @@
       "part_type": "armor_plate",
       "property_type": "alloygery:attribute",
       "value": 10.0
-    },
-    {
-      "apply_when_broken": false,
-      "operation": "addition",
-      "part_type": "armor_plate",
-      "property_type": "alloygery:encumbrance",
-      "value": 8.0
     }
   ],
   "repair_ingredient": {

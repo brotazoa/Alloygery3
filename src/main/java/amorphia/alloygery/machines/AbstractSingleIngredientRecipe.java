@@ -49,7 +49,9 @@ public abstract class AbstractSingleIngredientRecipe implements Recipe<Container
     @Override
     public ItemStack assemble(Container container, RegistryAccess registryAccess)
     {
-        return this.result.copy().getItem().getDefaultInstance();
+        ItemStack resultStack = this.result.copy().getItem().getDefaultInstance();
+        resultStack.setCount(this.result.getCount());
+        return resultStack;
     }
 
     @Override

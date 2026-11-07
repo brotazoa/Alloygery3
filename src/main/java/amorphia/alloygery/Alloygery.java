@@ -26,6 +26,8 @@ import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Locale;
+
 public class Alloygery implements ModInitializer, ClientModInitializer, DataGeneratorEntrypoint
 {
 	public static final String MODID = "alloygery";
@@ -45,6 +47,7 @@ public class Alloygery implements ModInitializer, ClientModInitializer, DataGene
 					ResourceManagerHelper.registerBuiltinResourcePack(asResource("convert_vanilla_gear_to_alloygery_gear"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
 					ResourceManagerHelper.registerBuiltinResourcePack(asResource("vanilla_recipe_overrides"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED);
 					ResourceManagerHelper.registerBuiltinResourcePack(asResource("disable_vanilla_oregen"), modContainer, ResourcePackActivationType.NORMAL);
+					ResourceManagerHelper.registerBuiltinResourcePack(asResource("encumbrance"), modContainer, ResourcePackActivationType.NORMAL);
 				}
 		);
 
@@ -120,21 +123,21 @@ public class Alloygery implements ModInitializer, ClientModInitializer, DataGene
 
 	public static ResourceLocation asResource(String path)
 	{
-		return new ResourceLocation(MODID, path);
+		return new ResourceLocation(MODID, path.replace(' ', '_').toLowerCase(Locale.ROOT));
 	}
 
 	public static ResourceLocation asCommonResource(String path)
 	{
-		return new ResourceLocation("c", path);
+		return new ResourceLocation("c", path.replace(' ', '_').toLowerCase(Locale.ROOT));
 	}
 
 	public static ResourceLocation asFabricResource(String path)
 	{
-		return new ResourceLocation("fabric", path);
+		return new ResourceLocation("fabric", path.replace(' ', '_').toLowerCase(Locale.ROOT));
 	}
 
 	public static ResourceLocation asVanillaResource(String path)
 	{
-		return new ResourceLocation("minecraft", path);
+		return new ResourceLocation("minecraft", path.replace(' ', '_').toLowerCase(Locale.ROOT));
 	}
 }

@@ -46,8 +46,7 @@ public class MaterialHelper
         if(other == null || other == original)
             return original;
 
-        original.repairIngredient = other.repairIngredient;
-        original.dyeable = other.dyeable;
+        original.repairIngredient = other.repairIngredient == Ingredient.EMPTY ? original.repairIngredient : other.repairIngredient;
 
         other.materialProperties.forEach(original::addProperty);
 

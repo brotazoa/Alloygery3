@@ -17,6 +17,7 @@ import amorphia.alloygery.gear.datagen.convert.ConvertItemTagProvider;
 import amorphia.alloygery.gear.datagen.convert.ConvertModelProvider;
 import amorphia.alloygery.gear.datagen.convert.ConvertPackMetadataProvider;
 import amorphia.alloygery.gear.datagen.convert.ConvertRecipeProvider;
+import amorphia.alloygery.gear.datagen.encumbrancePack.EncumbranceDataProviders;
 import amorphia.alloygery.gear.datagen.recipe.GearRecipeProvider;
 import amorphia.alloygery.gear.item.SmithingImprovementItem;
 import amorphia.alloygery.gear.item.armor.ArmorBaseItem;
@@ -116,6 +117,11 @@ public class GearModule
         convertVanillaGearPack.addProvider(ConvertItemTagProvider::new);
         convertVanillaGearPack.addProvider(ConvertRecipeProvider::new);
 		convertVanillaGearPack.addProvider((FabricDataGenerator.Pack.Factory<ConvertPackMetadataProvider>) ConvertPackMetadataProvider::new);
+
+		FabricDataGenerator.Pack encumbrancePack = dataGenerator.createBuiltinResourcePack(Alloygery.asResource("encumbrance"));
+		encumbrancePack.addProvider((FabricDataGenerator.Pack.Factory<EncumbranceDataProviders.PackMetadataProvider>) EncumbranceDataProviders.PackMetadataProvider::new);
+		encumbrancePack.addProvider(EncumbranceDataProviders.AlloygeryMaterialProvider::new);
+		encumbrancePack.addProvider(EncumbranceDataProviders.ToolTypeProvider::new);
     }
 
     private static void makeItems()

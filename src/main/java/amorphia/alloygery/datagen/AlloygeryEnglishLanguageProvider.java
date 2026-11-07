@@ -64,6 +64,7 @@ public class AlloygeryEnglishLanguageProvider extends FabricLanguageProvider
 		translationBuilder.add("pack.alloygery.easier_starting_recipes.description", "A collection of recipes to help speed up the very early game. Defaults to enabled for new worlds.");
 		translationBuilder.add("pack.alloygery.convert_vanilla_gear.description", "Convert Vanilla tools and armor into their Alloygery equivalents. Defaults to enabled for new worlds. If you disable this remember to disable the companion Resource/Data pack.");
 		translationBuilder.add("pack.alloygery.vanilla_recipe_overrides.description", "Changes to Vanilla recipes and loot tables. Defaults to enabled for new worlds.");
+		translationBuilder.add("pack.alloygery.encumbrance.description", "RPG style movement penalties. Default to disabled for new worlds.");
 	}
 
 	public interface IAlloygeryEnglishLanguageProvider
