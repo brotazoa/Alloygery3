@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:birch_log"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "minecraft:stripped_birch_log"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:mangrove_wood"
+  },
+  "material_cost": 1,
+  "result": {
+    "count": 4,
+    "item": "minecraft:mangrove_planks"
+  }
+}

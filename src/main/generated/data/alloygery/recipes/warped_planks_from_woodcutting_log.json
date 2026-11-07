@@ -1,0 +1,11 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:warped_stem"
+  },
+  "material_cost": 1,
+  "result": {
+    "count": 4,
+    "item": "minecraft:warped_planks"
+  }
+}

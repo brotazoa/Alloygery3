@@ -42,21 +42,60 @@ public class MachinesRecipeProvider implements AlloygeryRecipeProvider.IAlloyger
 
     private void makeWoodcuttingRecipes(Consumer<FinishedRecipe> exporter)
     {
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.ACACIA_PLANKS, Items.ACACIA_BUTTON, Items.ACACIA_DOOR, Items.ACACIA_FENCE_GATE, Items.ACACIA_TRAPDOOR, Items.ACACIA_FENCE, Items.ACACIA_SLAB, Items.ACACIA_STAIRS, Items.ACACIA_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.BAMBOO_PLANKS, Items.BAMBOO_BUTTON, Items.BAMBOO_DOOR, Items.BAMBOO_FENCE_GATE, Items.BAMBOO_TRAPDOOR, Items.BAMBOO_FENCE, Items.BAMBOO_SLAB, Items.BAMBOO_STAIRS, Items.BAMBOO_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.BIRCH_PLANKS, Items.BIRCH_BUTTON, Items.BIRCH_DOOR, Items.BIRCH_FENCE_GATE, Items.BIRCH_TRAPDOOR, Items.BIRCH_FENCE, Items.BIRCH_SLAB, Items.BIRCH_STAIRS, Items.BIRCH_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.CHERRY_PLANKS, Items.CHERRY_BUTTON, Items.CHERRY_DOOR, Items.CHERRY_FENCE_GATE, Items.CHERRY_TRAPDOOR, Items.CHERRY_FENCE, Items.CHERRY_SLAB, Items.CHERRY_STAIRS, Items.CHERRY_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.CRIMSON_PLANKS, Items.CRIMSON_BUTTON, Items.CRIMSON_DOOR, Items.CRIMSON_FENCE_GATE, Items.CRIMSON_TRAPDOOR, Items.CRIMSON_FENCE, Items.CRIMSON_SLAB, Items.CRIMSON_STAIRS, Items.CRIMSON_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.DARK_OAK_PLANKS, Items.DARK_OAK_BUTTON, Items.DARK_OAK_DOOR, Items.DARK_OAK_FENCE_GATE, Items.DARK_OAK_TRAPDOOR, Items.DARK_OAK_FENCE, Items.DARK_OAK_SLAB, Items.DARK_OAK_STAIRS, Items.DARK_OAK_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.JUNGLE_PLANKS, Items.JUNGLE_BUTTON, Items.JUNGLE_DOOR, Items.JUNGLE_FENCE_GATE, Items.JUNGLE_TRAPDOOR, Items.JUNGLE_FENCE, Items.JUNGLE_SLAB, Items.JUNGLE_STAIRS, Items.JUNGLE_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.MANGROVE_PLANKS, Items.MANGROVE_BUTTON, Items.MANGROVE_DOOR, Items.MANGROVE_FENCE_GATE, Items.MANGROVE_TRAPDOOR, Items.MANGROVE_FENCE, Items.MANGROVE_SLAB, Items.MANGROVE_STAIRS, Items.MANGROVE_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.OAK_PLANKS, Items.OAK_BUTTON, Items.OAK_DOOR, Items.OAK_FENCE_GATE, Items.OAK_TRAPDOOR, Items.OAK_FENCE, Items.OAK_SLAB, Items.OAK_STAIRS, Items.OAK_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.SPRUCE_PLANKS, Items.SPRUCE_BUTTON, Items.SPRUCE_DOOR, Items.SPRUCE_FENCE_GATE, Items.SPRUCE_TRAPDOOR, Items.SPRUCE_FENCE, Items.SPRUCE_SLAB, Items.SPRUCE_STAIRS, Items.SPRUCE_SIGN);
-        makeWoodcuttingRecipesForWoodSet(exporter, Items.WARPED_PLANKS, Items.WARPED_BUTTON, Items.WARPED_DOOR, Items.WARPED_FENCE_GATE, Items.WARPED_TRAPDOOR, Items.WARPED_FENCE, Items.WARPED_SLAB, Items.WARPED_STAIRS, Items.WARPED_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.ACACIA_LOG, Items.STRIPPED_ACACIA_LOG, Items.ACACIA_WOOD, Items.STRIPPED_ACACIA_WOOD, Items.ACACIA_PLANKS, Items.ACACIA_BUTTON, Items.ACACIA_DOOR, Items.ACACIA_FENCE_GATE, Items.ACACIA_TRAPDOOR, Items.ACACIA_FENCE, Items.ACACIA_SLAB, Items.ACACIA_STAIRS, Items.ACACIA_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.BIRCH_LOG, Items.STRIPPED_BIRCH_LOG, Items.BIRCH_WOOD, Items.STRIPPED_BIRCH_WOOD, Items.BIRCH_PLANKS, Items.BIRCH_BUTTON, Items.BIRCH_DOOR, Items.BIRCH_FENCE_GATE, Items.BIRCH_TRAPDOOR, Items.BIRCH_FENCE, Items.BIRCH_SLAB, Items.BIRCH_STAIRS, Items.BIRCH_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.CHERRY_LOG, Items.STRIPPED_CHERRY_LOG, Items.CHERRY_WOOD, Items.STRIPPED_CHERRY_WOOD, Items.CHERRY_PLANKS, Items.CHERRY_BUTTON, Items.CHERRY_DOOR, Items.CHERRY_FENCE_GATE, Items.CHERRY_TRAPDOOR, Items.CHERRY_FENCE, Items.CHERRY_SLAB, Items.CHERRY_STAIRS, Items.CHERRY_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.CRIMSON_STEM, Items.STRIPPED_CRIMSON_STEM, Items.CRIMSON_HYPHAE, Items.STRIPPED_CRIMSON_HYPHAE, Items.CRIMSON_PLANKS, Items.CRIMSON_BUTTON, Items.CRIMSON_DOOR, Items.CRIMSON_FENCE_GATE, Items.CRIMSON_TRAPDOOR, Items.CRIMSON_FENCE, Items.CRIMSON_SLAB, Items.CRIMSON_STAIRS, Items.CRIMSON_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.DARK_OAK_LOG, Items.STRIPPED_DARK_OAK_LOG, Items.DARK_OAK_WOOD, Items.STRIPPED_DARK_OAK_WOOD, Items.DARK_OAK_PLANKS, Items.DARK_OAK_BUTTON, Items.DARK_OAK_DOOR, Items.DARK_OAK_FENCE_GATE, Items.DARK_OAK_TRAPDOOR, Items.DARK_OAK_FENCE, Items.DARK_OAK_SLAB, Items.DARK_OAK_STAIRS, Items.DARK_OAK_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.JUNGLE_LOG, Items.STRIPPED_JUNGLE_LOG, Items.JUNGLE_WOOD, Items.STRIPPED_JUNGLE_WOOD, Items.JUNGLE_PLANKS, Items.JUNGLE_BUTTON, Items.JUNGLE_DOOR, Items.JUNGLE_FENCE_GATE, Items.JUNGLE_TRAPDOOR, Items.JUNGLE_FENCE, Items.JUNGLE_SLAB, Items.JUNGLE_STAIRS, Items.JUNGLE_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.MANGROVE_LOG, Items.STRIPPED_MANGROVE_LOG, Items.MANGROVE_WOOD, Items.STRIPPED_MANGROVE_WOOD, Items.MANGROVE_PLANKS, Items.MANGROVE_BUTTON, Items.MANGROVE_DOOR, Items.MANGROVE_FENCE_GATE, Items.MANGROVE_TRAPDOOR, Items.MANGROVE_FENCE, Items.MANGROVE_SLAB, Items.MANGROVE_STAIRS, Items.MANGROVE_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.OAK_LOG, Items.STRIPPED_OAK_LOG, Items.OAK_WOOD, Items.STRIPPED_OAK_WOOD, Items.OAK_PLANKS, Items.OAK_BUTTON, Items.OAK_DOOR, Items.OAK_FENCE_GATE, Items.OAK_TRAPDOOR, Items.OAK_FENCE, Items.OAK_SLAB, Items.OAK_STAIRS, Items.OAK_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.SPRUCE_LOG, Items.STRIPPED_SPRUCE_LOG, Items.SPRUCE_WOOD, Items.STRIPPED_SPRUCE_WOOD, Items.SPRUCE_PLANKS, Items.SPRUCE_BUTTON, Items.SPRUCE_DOOR, Items.SPRUCE_FENCE_GATE, Items.SPRUCE_TRAPDOOR, Items.SPRUCE_FENCE, Items.SPRUCE_SLAB, Items.SPRUCE_STAIRS, Items.SPRUCE_SIGN);
+        makeWoodcuttingRecipesForWoodSet(exporter, Items.WARPED_STEM, Items.STRIPPED_WARPED_STEM, Items.WARPED_HYPHAE, Items.STRIPPED_WARPED_HYPHAE, Items.WARPED_PLANKS, Items.WARPED_BUTTON, Items.WARPED_DOOR, Items.WARPED_FENCE_GATE, Items.WARPED_TRAPDOOR, Items.WARPED_FENCE, Items.WARPED_SLAB, Items.WARPED_STAIRS, Items.WARPED_SIGN);
+
+        // bamboo, because it doesn't have a stripped wood variant
+        // planks
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_PLANKS, Items.BAMBOO_BLOCK, 1, 2, "block", exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_PLANKS, Items.STRIPPED_BAMBOO_BLOCK, 1, 2, "stripped_block", exporter);
+        // stripped
+        SingleIngredientRecipeBuilder.woodcutting(Items.STRIPPED_BAMBOO_BLOCK, Items.BAMBOO_BLOCK, exporter);
+        // mosaic
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_MOSAIC, Items.BAMBOO_BLOCK, 1, 1, "block", exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_MOSAIC, Items.STRIPPED_BAMBOO_BLOCK, 1, 1, "stripped_block", exporter);
+        // mosaic wood set
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_MOSAIC_SLAB, Items.BAMBOO_MOSAIC, 1, 2, null, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_MOSAIC_STAIRS, Items.BAMBOO_MOSAIC, exporter);
+        // wood set
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_BUTTON, Items.BAMBOO_PLANKS, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_DOOR, Items.BAMBOO_PLANKS, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_FENCE_GATE, Items.BAMBOO_PLANKS, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_TRAPDOOR, Items.BAMBOO_PLANKS, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_FENCE, Items.BAMBOO_PLANKS, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_SLAB, Items.BAMBOO_PLANKS, 1, 2, null, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_STAIRS, Items.BAMBOO_PLANKS, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(Items.BAMBOO_SIGN, Items.BAMBOO_PLANKS, exporter);
+
+        // sticks from any plank
+        SingleIngredientRecipeBuilder.woodcutting(Items.STICK, ItemTags.PLANKS, 1, 2, null, exporter);
     }
 
-    private void makeWoodcuttingRecipesForWoodSet(Consumer<FinishedRecipe> exporter, Item plank, Item button, Item door, Item gate, Item trapdoor, Item fence, Item slab, Item stair, Item sign)
+    private void makeWoodcuttingRecipesForWoodSet(Consumer<FinishedRecipe> exporter, Item log, Item strippedLog, Item wood, Item strippedWood, Item plank, Item button, Item door, Item gate, Item trapdoor, Item fence, Item slab, Item stair, Item sign)
     {
+        // planks
+        SingleIngredientRecipeBuilder.woodcutting(plank, log, 1, 4, "log", exporter);
+        SingleIngredientRecipeBuilder.woodcutting(plank, strippedLog, 1, 4, "stripped_log", exporter);
+        SingleIngredientRecipeBuilder.woodcutting(plank, wood, 1, 4, "wood", exporter);
+        SingleIngredientRecipeBuilder.woodcutting(plank, strippedWood, 1, 4, "stripped_wood", exporter);
+
+        // stripped
+        SingleIngredientRecipeBuilder.woodcutting(strippedLog, log, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(strippedWood, wood, 1, 1, "wood", exporter);
+
+        // wood
+        SingleIngredientRecipeBuilder.woodcutting(wood, log, exporter);
+        SingleIngredientRecipeBuilder.woodcutting(strippedWood, strippedLog, 1, 1, "stripped_log", exporter);
+
+        // wood set
         SingleIngredientRecipeBuilder.woodcutting(button, plank, exporter);
         SingleIngredientRecipeBuilder.woodcutting(door, plank, exporter);
         SingleIngredientRecipeBuilder.woodcutting(gate, plank, exporter);

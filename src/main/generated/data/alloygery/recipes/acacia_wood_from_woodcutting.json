@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "item": "minecraft:acacia_log"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "minecraft:acacia_wood"
+  }
+}
