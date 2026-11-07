@@ -45,6 +45,7 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -126,7 +127,7 @@ public class GearModule
 
     private static void makeItems()
     {
-        Set<ToolType> ALL_MINING_TOOLS = Set.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD, HAMMER, EXCAVATOR);
+        List<ToolType> ALL_MINING_TOOLS = List.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD, HAMMER, EXCAVATOR);
 
         EnumSet<PartTypes> STANDARD_TOOL_PART_TYPES = EnumSet.of(TOOL_HEAD, TOOL_BINDING, TOOL_HANDLE);
         EnumSet<PartTypes> RANGED_WEAPON_TOOL_PART_TYPES = EnumSet.of(BOW_LIMB, BOW_BINDING, BOW_STRING);
@@ -137,8 +138,8 @@ public class GearModule
         // ###### Tools and Tool Parts ######
 
         // primitive
-        makeGearItems(FLINT, TOOL_HEADS, Set.of(HATCHET, KNIFE, PICKAXE));
-        makeGearItems(STONE, TOOL_HEADS, Set.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD));
+        makeGearItems(FLINT, TOOL_HEADS, List.of(HATCHET, KNIFE, PICKAXE));
+        makeGearItems(STONE, TOOL_HEADS, List.of(HATCHET, KNIFE, AXE, HOE, PICKAXE, SHOVEL, SWORD));
 
         // metals
         makeGearItems(TIN, EnumSet.of(TOOL_BINDING, TOOL_HANDLE));
@@ -221,10 +222,10 @@ public class GearModule
 
     private static void makeGearItems(AlloygeryMaterial material, EnumSet<PartTypes> partTypes)
     {
-        makeGearItems(material, partTypes, Set.of());
+        makeGearItems(material, partTypes, List.of());
     }
 
-    private static void makeGearItems(AlloygeryMaterial material, EnumSet<PartTypes> partTypes, Set<ToolType> headTypes)
+    private static void makeGearItems(AlloygeryMaterial material, EnumSet<PartTypes> partTypes, List<ToolType> headTypes)
     {
         if (partTypes.contains(TOOL_HEAD))
         {

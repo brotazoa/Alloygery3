@@ -20,10 +20,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-import java.util.EnumSet;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModelProvider
 {
@@ -33,7 +30,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
 
     public static final EnumSet<ImprovementTypes> TOOL_IMPROVEMENT_TYPES = EnumSet.of(ImprovementTypes.TIPPED, ImprovementTypes.PLATED, ImprovementTypes.WRAPPED);
     public static final EnumSet<ImprovementTypes> ARMOR_IMPROVEMENT_TYPES = EnumSet.of(ImprovementTypes.PADDED, ImprovementTypes.ENGRAVED, ImprovementTypes.REINFORCED);
-    public static final Set<ArmorStyle> ARMOR_BASE_STYLES = Set.of(AlloygeryDefaultArmorStyles.CHAIN, AlloygeryDefaultArmorStyles.LEATHER, AlloygeryDefaultArmorStyles.WOOL);
+    public static final List<ArmorStyle> ARMOR_BASE_STYLES = List.of(AlloygeryDefaultArmorStyles.CHAIN, AlloygeryDefaultArmorStyles.LEATHER, AlloygeryDefaultArmorStyles.WOOL);
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators)
@@ -143,7 +140,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
                         modelLocation,
                         new TextureMapping().putForced(TextureSlot.LAYER0, baseTexture).putForced(TextureSlot.LAYER1, styleTexture),
                         itemModelGenerator.output,
-                        (resourceLocation, map) -> GearModelProvider.makeDynamicArmorOverrides(resourceLocation, map, template, Set.of(), EnumSet.noneOf(ImprovementTypes.class))
+                        (resourceLocation, map) -> GearModelProvider.makeDynamicArmorOverrides(resourceLocation, map, template, List.of(), EnumSet.noneOf(ImprovementTypes.class))
                 );
 
                 template.create(
@@ -165,7 +162,7 @@ public class GearModelProvider implements AlloygeryModelProvider.IAlloygeryModel
         }
     }
 
-    private static JsonObject makeDynamicArmorOverrides(ResourceLocation modelLocation, Map<TextureSlot, ResourceLocation> textureMap, ModelTemplate baseTemplate, Set<ArmorStyle> baseStyles, EnumSet<ImprovementTypes> upgrades)
+    private static JsonObject makeDynamicArmorOverrides(ResourceLocation modelLocation, Map<TextureSlot, ResourceLocation> textureMap, ModelTemplate baseTemplate, List<ArmorStyle> baseStyles, EnumSet<ImprovementTypes> upgrades)
     {
         JsonObject base = baseTemplate.createBaseTemplate(modelLocation, textureMap);
         JsonArray overridesArray = new JsonArray();
