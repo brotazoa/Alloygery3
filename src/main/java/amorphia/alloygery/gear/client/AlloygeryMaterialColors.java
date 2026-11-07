@@ -114,6 +114,7 @@ public class AlloygeryMaterialColors
         register("spruce", 8544570);
         register("stick", 6835742);
         register("warped", 3769218);
+        register("wooden", 6835742);
 
         // leather, pelts, and other animal drops
         register("leather", 10511680); // v 10511680 a 14117699

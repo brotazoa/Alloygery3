@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_head_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:wooden_axe_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alloygery:wooden_axe_from_parts"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_head_item",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alloygery:wooden_axe_from_parts"
+    ]
+  },
+  "sends_telemetry_event": false
+}

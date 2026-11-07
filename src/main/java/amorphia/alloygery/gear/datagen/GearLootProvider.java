@@ -83,20 +83,6 @@ public class GearLootProvider
 					CraftingMaterialModule.ITEMS.get("tin_ingot"),
 					1
 			));
-
-			provider.add("bonus_chest_replace_wooden_axe", new ReplaceItemLootModifier(
-					new LootItemCondition[] { LootTableIdCondition.builder(Alloygery.asVanillaResource("chests/spawn_bonus_chest")).build() },
-					Items.WOODEN_AXE,
-					GearModule.ITEMS.get("flint_hatchet"),
-					1
-			));
-
-			provider.add("bonus_chest_replace_wooden_pickaxe", new ReplaceItemLootModifier(
-					new LootItemCondition[] { LootTableIdCondition.builder(Alloygery.asVanillaResource("chests/spawn_bonus_chest")).build() },
-					Items.WOODEN_PICKAXE,
-					GearModule.ITEMS.get("flint_pickaxe"),
-					1
-			));
 		}
 	}
 }

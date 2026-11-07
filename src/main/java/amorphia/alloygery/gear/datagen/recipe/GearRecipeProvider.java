@@ -5,6 +5,7 @@ import amorphia.alloygery.craftingMaterials.CraftingMaterialModule;
 import amorphia.alloygery.datagen.AlloygeryRecipeProvider;
 import amorphia.alloygery.gear.GearModule;
 import amorphia.alloygery.gear.item.PartTypes;
+import amorphia.alloygery.gear.item.ToolHeadPartItem;
 import amorphia.alloygery.gear.item.armor.ArmorBaseItem;
 import amorphia.alloygery.gear.item.part.HandGuard;
 import amorphia.alloygery.gear.item.part.ToolBinding;
@@ -354,6 +355,9 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
     public static void generateToolShapedRecipe(Item item, Consumer<FinishedRecipe> exporter)
     {
         final Item toolHeadItem = BuiltInRegistries.ITEM.get(NBTHelper.getItemIdentifierFromTag(NBTHelper.getPartTagFromItemStack(item.getDefaultInstance(), TOOL_HEAD)));
+		if(toolHeadItem instanceof ToolHeadPartItem toolHeadPartItem && toolHeadPartItem.getPartMaterial() == AlloygeryDefaultMaterials.WOODEN)
+			return;
+
         final Item resultItem = item.getDefaultInstance().getItem();
         ToolRecipeShapedBuilder.shaped(RecipeCategory.TOOLS, resultItem)
                 .pattern("  h")
@@ -382,6 +386,9 @@ public class GearRecipeProvider implements AlloygeryRecipeProvider.IAlloygeryRec
     public static void generateSwordShapedRecipe(Item item, Consumer<FinishedRecipe> exporter)
     {
         final Item swordBladeItem = BuiltInRegistries.ITEM.get(NBTHelper.getItemIdentifierFromTag(NBTHelper.getPartTagFromItemStack(item.getDefaultInstance(), TOOL_HEAD)));
+		if(swordBladeItem instanceof ToolHeadPartItem toolHeadPartItem && toolHeadPartItem.getPartMaterial() == AlloygeryDefaultMaterials.WOODEN)
+			return;
+
         final Item resultItem = item.getDefaultInstance().getItem();
         ToolRecipeShapedBuilder.shaped(RecipeCategory.TOOLS, resultItem)
                 .pattern("  h")

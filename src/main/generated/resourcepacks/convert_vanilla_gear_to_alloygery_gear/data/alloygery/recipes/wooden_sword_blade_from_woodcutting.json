@@ -1,0 +1,10 @@
+{
+  "type": "alloygery:woodcutting",
+  "ingredient": {
+    "tag": "minecraft:planks"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:wooden_sword_blade"
+  }
+}

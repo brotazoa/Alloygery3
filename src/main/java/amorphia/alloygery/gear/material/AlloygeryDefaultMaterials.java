@@ -59,8 +59,10 @@ public class AlloygeryDefaultMaterials
     public static final AlloygeryMaterial MUSHROOM_STEM;
     public static final AlloygeryMaterial OAK;
     public static final AlloygeryMaterial SPRUCE;
-    public static final AlloygeryMaterial STICK;
     public static final AlloygeryMaterial WARPED;
+	// metal wood materials
+	public static final AlloygeryMaterial STICK;
+	public static final AlloygeryMaterial WOODEN;
 
     // leather and pelts and such
     public static final AlloygeryMaterial LEATHER;
@@ -456,6 +458,13 @@ public class AlloygeryDefaultMaterials
 				.property(AttributeProperty.of(AdditionalEntityAttributes.CRITICAL_BONUS_DAMAGE, TOOL_HANDLE, MULTIPLY_BASE, 1.1f))
 				.property(FireproofProperty.of(TOOL_HANDLE, ADDITION, 1))
                 .build());
+
+		WOODEN = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("wooden"))
+				.repairIngredientFromTag(ItemTags.PLANKS)
+				.standardToolProperties(10, -1, 0, 0.0f, 0.0f, 0.0f)
+				.property(AttributeProperty.of(Attributes.ATTACK_DAMAGE, TOOL_HEAD, MAX, 0.0f))
+				.build()
+		);
 
         // leather, hide, and other animal drops
         LEATHER = register(new MaterialHelper.MaterialBuilder(asAlloygeryMaterial("leather"))

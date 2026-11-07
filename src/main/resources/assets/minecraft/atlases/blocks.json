@@ -65,7 +65,8 @@
         "stone": "alloygery:template/palette/stone",
         "tin": "alloygery:template/palette/tin",
         "titanium": "alloygery:template/palette/titanium",
-        "titanium_gold": "alloygery:template/palette/titanium_gold"
+        "titanium_gold": "alloygery:template/palette/titanium_gold",
+        "wooden": "alloygery:template/palette/wooden"
       }
     },
     {

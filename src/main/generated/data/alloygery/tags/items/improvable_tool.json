@@ -154,6 +154,11 @@
     "alloygery:emerald_shovel",
     "alloygery:emerald_sword",
     "alloygery:emerald_hammer",
-    "alloygery:emerald_excavator"
+    "alloygery:emerald_excavator",
+    "alloygery:wooden_axe",
+    "alloygery:wooden_hoe",
+    "alloygery:wooden_pickaxe",
+    "alloygery:wooden_shovel",
+    "alloygery:wooden_sword"
   ]
 }

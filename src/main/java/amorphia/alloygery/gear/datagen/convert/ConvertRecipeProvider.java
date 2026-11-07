@@ -1,8 +1,10 @@
 package amorphia.alloygery.gear.datagen.convert;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.gear.GearModule;
 import amorphia.alloygery.gear.convert.VanillaItemConverter;
 import amorphia.alloygery.gear.datagen.recipe.GearRecipeProvider;
+import amorphia.alloygery.machines.datagen.recipe.SingleIngredientRecipeBuilder;
 import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -58,6 +60,43 @@ public class ConvertRecipeProvider extends FabricRecipeProvider
 		exporter.accept(new EmptyRecipeResult(RecipeBuilder.getDefaultRecipeId(Items.NETHERITE_PICKAXE).withSuffix("_smithing")));
 		exporter.accept(new EmptyRecipeResult(RecipeBuilder.getDefaultRecipeId(Items.NETHERITE_SHOVEL).withSuffix("_smithing")));
 		exporter.accept(new EmptyRecipeResult(RecipeBuilder.getDefaultRecipeId(Items.NETHERITE_SWORD).withSuffix("_smithing")));
+
+		// wooden tool recipes
+		SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("wooden_axe_head"), ItemTags.PLANKS, exporter);
+		SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("wooden_hoe_head"), ItemTags.PLANKS, exporter);
+		SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("wooden_pickaxe_head"), ItemTags.PLANKS, exporter);
+		SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("wooden_shovel_head"), ItemTags.PLANKS, exporter);
+		SingleIngredientRecipeBuilder.woodcutting(GearModule.ITEMS.get("wooden_sword_blade"), ItemTags.PLANKS, exporter);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, Items.WOODEN_AXE)
+				.requires(GearModule.ITEMS.get("wooden_axe_head"))
+				.requires(Items.STICK)
+				.unlockedBy("has_head_item", RecipeProvider.has(GearModule.ITEMS.get("wooden_axe_head")))
+				.save(exporter, Alloygery.asResource("wooden_axe_from_parts"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, Items.WOODEN_HOE)
+				.requires(GearModule.ITEMS.get("wooden_hoe_head"))
+				.requires(Items.STICK)
+				.unlockedBy("has_head_item", RecipeProvider.has(GearModule.ITEMS.get("wooden_hoe_head")))
+				.save(exporter, Alloygery.asResource("wooden_hoe_from_parts"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, Items.WOODEN_PICKAXE)
+				.requires(GearModule.ITEMS.get("wooden_pickaxe_head"))
+				.requires(Items.STICK)
+				.unlockedBy("has_head_item", RecipeProvider.has(GearModule.ITEMS.get("wooden_pickaxe_head")))
+				.save(exporter, Alloygery.asResource("wooden_pickaxe_from_parts"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, Items.WOODEN_SHOVEL)
+				.requires(GearModule.ITEMS.get("wooden_shovel_head"))
+				.requires(Items.STICK)
+				.unlockedBy("has_head_item", RecipeProvider.has(GearModule.ITEMS.get("wooden_shovel_head")))
+				.save(exporter, Alloygery.asResource("wooden_shovel_from_parts"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, Items.WOODEN_SWORD)
+				.requires(GearModule.ITEMS.get("wooden_sword_blade"))
+				.requires(Items.STICK)
+				.unlockedBy("has_head_item", RecipeProvider.has(GearModule.ITEMS.get("wooden_sword_blade")))
+				.save(exporter, Alloygery.asResource("wooden_sword_from_parts"));
     }
 
     @Override

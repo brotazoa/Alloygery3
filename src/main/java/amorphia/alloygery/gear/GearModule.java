@@ -13,10 +13,7 @@ import amorphia.alloygery.gear.client.DynamicGearClientReloadListener;
 import amorphia.alloygery.gear.client.DynamicGearItemModelPredicateProvider;
 import amorphia.alloygery.gear.data.*;
 import amorphia.alloygery.gear.datagen.*;
-import amorphia.alloygery.gear.datagen.convert.ConvertItemTagProvider;
-import amorphia.alloygery.gear.datagen.convert.ConvertModelProvider;
-import amorphia.alloygery.gear.datagen.convert.ConvertPackMetadataProvider;
-import amorphia.alloygery.gear.datagen.convert.ConvertRecipeProvider;
+import amorphia.alloygery.gear.datagen.convert.*;
 import amorphia.alloygery.gear.datagen.encumbrancePack.EncumbranceDataProviders;
 import amorphia.alloygery.gear.datagen.recipe.GearRecipeProvider;
 import amorphia.alloygery.gear.item.SmithingImprovementItem;
@@ -47,7 +44,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import static amorphia.alloygery.gear.material.AlloygeryDefaultMaterials.*;
 import static amorphia.alloygery.gear.item.PartTypes.*;
@@ -117,6 +113,7 @@ public class GearModule
         convertVanillaGearPack.addProvider(ConvertModelProvider::new);
         convertVanillaGearPack.addProvider(ConvertItemTagProvider::new);
         convertVanillaGearPack.addProvider(ConvertRecipeProvider::new);
+		convertVanillaGearPack.addProvider((FabricDataGenerator.Pack.Factory<ConvertLootProvider>) ConvertLootProvider::new);
 		convertVanillaGearPack.addProvider((FabricDataGenerator.Pack.Factory<ConvertPackMetadataProvider>) ConvertPackMetadataProvider::new);
 
 		FabricDataGenerator.Pack encumbrancePack = dataGenerator.createBuiltinResourcePack(Alloygery.asResource("encumbrance"));
@@ -176,6 +173,7 @@ public class GearModule
         makeGearItems(SPRUCE, EnumSet.of(TOOL_HANDLE));
         // makeGearPartItems(STICK, EnumSet.of(TOOL_HANDLE)); // don't make this item because we make it in the static block
         makeGearItems(WARPED, EnumSet.of(TOOL_HANDLE));
+		makeGearItems(WOODEN, TOOL_HEADS, List.of(AXE, HOE, PICKAXE, SHOVEL, SWORD));
 
         // leather and such
         makeGearItems(LEATHER, EnumSet.of(TOOL_BINDING));
@@ -343,14 +341,14 @@ public class GearModule
 
         HEAD_PART_MAKERS.put(AXE, material -> {
             final String materialName = MaterialHelper.getSimpleName(material);
-            Item axeHeadItem = registerItem(materialName + "_axe_head", new AxeHead(material));
+            Item headItem = registerItem(materialName + "_axe_head", new AxeHead(material));
             Item axeItem = registerItem(materialName + "_axe", new DynamicAxeItem(){
                 @Override
                 public @NotNull ItemStack getDefaultInstance()
                 {
                     ItemStack stack = super.getDefaultInstance();
                     final ListTag partsTag = NBTHelper.createPartsListTag(new PartTypes[]{TOOL_HEAD, TOOL_HANDLE});
-                    final CompoundTag headTag = NBTHelper.createPartTag(axeHeadItem, TOOL_HEAD, material);
+                    final CompoundTag headTag = NBTHelper.createPartTag(headItem, TOOL_HEAD, material);
                     final CompoundTag handleTag = NBTHelper.createPartTag(stickHandleItem, TOOL_HANDLE, STICK);
                     final CompoundTag alloygeryTag = NBTHelper.createAlloygeryDataTag(this, partsTag, headTag, handleTag);
                     stack.getOrCreateTag().put(AlloygeryNBTKeys.NBT, alloygeryTag);
@@ -358,14 +356,20 @@ public class GearModule
                 }
             });
 
-            AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(axeHeadItem);
+			if(material == WOODEN)
+			{
+				AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
+				return;
+			}
+
+            AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
             AlloygeryCreativeTabs.VANILLA_TOOLS.add(axeItem);
             AlloygeryCreativeTabs.VANILLA_COMBAT.add(axeItem);
         });
 
         HEAD_PART_MAKERS.put(HOE, material -> {
             final String materialName = MaterialHelper.getSimpleName(material);
-            Item hoeHeadItem = registerItem(materialName + "_hoe_head", new HoeHead(material));
+            Item headItem = registerItem(materialName + "_hoe_head", new HoeHead(material));
             Item hoeItem = registerItem(materialName + "_hoe", new DynamicHoeItem()
             {
                 @Override
@@ -373,7 +377,7 @@ public class GearModule
                 {
                     ItemStack stack = super.getDefaultInstance();
                     final ListTag partsTag = NBTHelper.createPartsListTag(new PartTypes[]{TOOL_HEAD, TOOL_HANDLE});
-                    final CompoundTag headTag = NBTHelper.createPartTag(hoeHeadItem, TOOL_HEAD, material);
+                    final CompoundTag headTag = NBTHelper.createPartTag(headItem, TOOL_HEAD, material);
                     final CompoundTag handleTag = NBTHelper.createPartTag(stickHandleItem, TOOL_HANDLE, STICK);
                     final CompoundTag alloygeryTag = NBTHelper.createAlloygeryDataTag(this, partsTag, headTag, handleTag);
                     stack.getOrCreateTag().put(AlloygeryNBTKeys.NBT, alloygeryTag);
@@ -381,13 +385,19 @@ public class GearModule
                 }
             });
 
-            AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(hoeHeadItem);
+			if(material == WOODEN)
+			{
+				AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
+				return;
+			}
+
+            AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
             AlloygeryCreativeTabs.VANILLA_TOOLS.add(hoeItem);
         });
 
         HEAD_PART_MAKERS.put(PICKAXE, material -> {
             final String materialName = MaterialHelper.getSimpleName(material);
-            Item pickaxeHeadItem = registerItem(materialName + "_pickaxe_head", new PickaxeHead(material));
+            Item headItem = registerItem(materialName + "_pickaxe_head", new PickaxeHead(material));
             Item pickaxeItem = registerItem(materialName + "_pickaxe", new DynamicPickaxeItem()
             {
                 @Override
@@ -395,7 +405,7 @@ public class GearModule
                 {
                     ItemStack stack = super.getDefaultInstance();
                     final ListTag partsTag = NBTHelper.createPartsListTag(new PartTypes[]{TOOL_HEAD, TOOL_HANDLE});
-                    final CompoundTag headTag = NBTHelper.createPartTag(pickaxeHeadItem, TOOL_HEAD, material);
+                    final CompoundTag headTag = NBTHelper.createPartTag(headItem, TOOL_HEAD, material);
                     final CompoundTag handleTag = NBTHelper.createPartTag(stickHandleItem, TOOL_HANDLE, STICK);
                     final CompoundTag alloygeryTag = NBTHelper.createAlloygeryDataTag(this, partsTag, headTag, handleTag);
                     stack.getOrCreateTag().put(AlloygeryNBTKeys.NBT, alloygeryTag);
@@ -403,7 +413,13 @@ public class GearModule
                 }
             });
 
-            AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(pickaxeHeadItem);
+			if(material == WOODEN)
+			{
+				AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
+				return;
+			}
+
+            AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
             AlloygeryCreativeTabs.VANILLA_TOOLS.add(pickaxeItem);
         });
 
@@ -424,6 +440,12 @@ public class GearModule
                     return stack;
                 }
             });
+
+			if(material == WOODEN)
+			{
+				AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
+				return;
+			}
 
             AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
             AlloygeryCreativeTabs.VANILLA_TOOLS.add(toolItem);
@@ -448,6 +470,12 @@ public class GearModule
                     return stack;
                 }
             });
+
+			if(material == WOODEN)
+			{
+				AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
+				return;
+			}
 
             AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(headItem);
             AlloygeryCreativeTabs.ALLOYGERY_PART_ITEMS.add(guardItem);
