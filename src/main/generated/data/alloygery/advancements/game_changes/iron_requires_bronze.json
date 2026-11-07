@@ -4,7 +4,11 @@
     "wrong_tool": {
       "conditions": {
         "block_predicate": {
-          "tag": "minecraft:iron_ores"
+          "blocks": [
+            "minecraft:iron_ore",
+            "minecraft:deepslate_iron_ore",
+            "alloygery:feronyte"
+          ]
         },
         "needs_correct_tool": false
       },

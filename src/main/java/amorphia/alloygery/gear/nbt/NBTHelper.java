@@ -274,6 +274,22 @@ public class NBTHelper
         dataTag.put(PROPERTY_LIST, propertiesListTag);
     }
 
+    public static void setDyeColorForPartOnStack(ItemStack stack, PartTypes partType, int color)
+    {
+        if(!hasAlloygeryTag(stack))
+            return;
+
+        getPartTagFromItemStack(stack, partType).putInt(DYE_COLOR, color);
+    }
+
+    public static void removeDyeColorFromPartOnStack(ItemStack stack, PartTypes partType)
+    {
+        if(!hasAlloygeryTag(stack))
+            return;
+
+        getPartTagFromItemStack(stack, partType).remove(DYE_COLOR);
+    }
+
     public static int getPartDyeColorFromStack(ItemStack stack, PartTypes partType)
     {
         return partHasDyeColor(stack, partType) ? getPartTagFromItemStack(stack, partType).getInt(DYE_COLOR) : -1;

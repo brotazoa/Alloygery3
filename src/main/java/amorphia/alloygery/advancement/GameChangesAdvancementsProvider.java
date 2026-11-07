@@ -16,6 +16,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
@@ -55,7 +56,7 @@ public class GameChangesAdvancementsProvider extends FabricAdvancementProvider
 						false
 				)
 				.addCriterion("wrong_tool", BlockBrokenTrigger.Conditions.blockBroken(
-						BlockPredicate.Builder.block().of(BlockTags.IRON_ORES),
+						BlockPredicate.Builder.block().of(Blocks.IRON_ORE, Blocks.DEEPSLATE_IRON_ORE, WorldGenModule.FERONYTE),
 						false
 				))
 				.build(Alloygery.asResource("game_changes/iron_requires_bronze"));

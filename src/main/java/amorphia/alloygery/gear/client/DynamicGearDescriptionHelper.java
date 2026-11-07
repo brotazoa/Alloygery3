@@ -107,17 +107,11 @@ public class DynamicGearDescriptionHelper
         if(gearStack == null || gearStack.isEmpty())
             return;
 
-        if(!NBTHelper.hasAlloygeryTag(gearStack) || !isAdvanced.isAdvanced())
-        {
-            gearStack = gearStack.copy();
-            gearStack.getOrCreateTag().put(AlloygeryNBTKeys.NBT, NBTHelper.getAlloygeryDataTag(gearStack.getItem().getDefaultInstance()));
-        }
-
         List<PartTypes> parts = NBTHelper.getPartTypesListFromItemStack(gearStack);
         if(parts.isEmpty())
             return;
 
-        if (Screen.hasShiftDown() && gearStack.getItem() instanceof IDynamicTool)
+        if (Screen.hasShiftDown() && gearStack.getItem() instanceof IDynamicTool && isAdvanced.isAdvanced())
         {
             parts.add(PartTypes.TOOL_TYPE);
         }
@@ -152,7 +146,7 @@ public class DynamicGearDescriptionHelper
 				)).withStyle(ChatFormatting.WHITE));
 			}
 
-            if (Screen.hasShiftDown())
+            if (Screen.hasShiftDown() && isAdvanced.isAdvanced())
             {
 				if (PartTypes.isImprovement(part))
 				{
